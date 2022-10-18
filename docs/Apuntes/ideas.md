@@ -21,9 +21,13 @@ MongoDB?
 Despliegue
 Docker? lo tengo yo en Ubuntu
 
+Pagina web
+GitHub Pages - Pero no se puede PHP
+Apache? (DAW)
+Buscar alternativas en otros proyectos del año pasado
+
 
 Preguntar por el resto de profesores
-
 
 ## Páginas para guiarnos
 
