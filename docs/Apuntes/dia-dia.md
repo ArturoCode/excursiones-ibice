@@ -10,3 +10,5 @@ Control de versiones
 Prototipado
 Comienzo programación básica
 
+27/10
+

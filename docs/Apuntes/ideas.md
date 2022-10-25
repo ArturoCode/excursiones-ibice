@@ -29,6 +29,23 @@ Buscar alternativas en otros proyectos del año pasado
 
 Preguntar por el resto de profesores
 
+### Posible Desarrollo
+
+Frontend -> JavaScript, HTML, CSS, SASS, Boostrap
+Backend -> Node.js + MySQL
+Despliegue -> ¿Docker? + Apache + Amazon Web Services
+
+Video de como trabajar con VSCode y XAMPP
+
+
+Integrar node.js con MySql
+
+NodeJS ¡¡¡desde cero!!! - Mysql https://www.youtube.com/watch?v=27JCqmykNdc
+https://www.neoguias.com/como-conectarse-a-mysql-usando-node-js/
+
+Buscar info de desplegar Apache con Amazon Web Services
+
+
 ## Páginas para guiarnos
 
 
