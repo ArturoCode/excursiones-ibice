@@ -8,15 +8,16 @@ Excursiones Íbice es una página para reservar excursiones personalizadas por l
 
 ## Lenguajes y tecnologías utilizadas
 
-Frontend -> JavaScript
-Backend -> PHP / NodeJS
-BBDD -> MySQL
-Lenguaje de Marcas & Diseño -> HTML, CSS, SASS, Bootstrap
-Despliegue -> Apache + Amazon Web Services ¿+ Docker?
+Frontend -> JavaScript<br/>
+Backend -> PHP / NodeJS<br/>
+BBDD -> MySQL<br/>
+Lenguaje de Marcas & Diseño -> HTML, CSS, SASS, Bootstrap<br/>
+Despliegue -> Apache + Amazon Web Services ¿+ Docker?<br/>
 
 ## Secciones de la página
 
-
+<br/>
+<br/>
 
 ## Consulta de la memoria del proyecto
 
