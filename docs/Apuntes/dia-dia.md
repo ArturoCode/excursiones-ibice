@@ -10,5 +10,7 @@ Control de versiones
 Prototipado
 Comienzo programación básica
 
-27/10
+26/10
 
+Terminar prototipado
+Detalles de lenguajes
