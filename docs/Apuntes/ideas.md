@@ -45,6 +45,19 @@ https://www.neoguias.com/como-conectarse-a-mysql-usando-node-js/
 
 Buscar info de desplegar Apache con Amazon Web Services
 
+Docker, PHP/Node.js, Apache, MySql 
+
+https://hub.docker.com/r/pensiero/apache-php-mysql
+https://steemit.com/busy/@piotr42/tutorial-setting-up-a-web-server-with-docker-apache-php-mysql
+https://www.cloudreach.com/en/technical-blog/containerize-this-how-to-use-php-apache-mysql-within-docker-containers/
+https://openwebinars.net/blog/infraestructura-lamp-con-docker-compose/
+https://www.section.io/engineering-education/dockerized-php-apache-and-mysql-container-development-environment/
+https://www.kodetop.com/crea-tu-ambiente-de-desarrollo-php-mysql-con-docker/
+
+https://www.bezkoder.com/docker-compose-nodejs-mysql/
+https://www.youtube.com/watch?v=RR_oMDp4kEc
+https://www.bogotobogo.com/DevOps/Docker/Step-by-Step-React-Node-MySQL-App.php
+https://github.com/igorsuhinin/docker-nginx-php-apache-mysql-nodejs-phpmyadmin
 
 ## Páginas para guiarnos
 
