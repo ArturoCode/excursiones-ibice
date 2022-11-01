@@ -2,4 +2,24 @@
 
 body {
     background-color: #ffffff;
+    width: 1848px;
   }
+
+  #logo{
+    width:200px;
+    height: 65px;
+  }
+
+#header {
+  background-image: url("../media/header.jpg");
+  width: 1848px;
+  height: 380px;
+  
+}
+#menu{
+  position:fixed;  
+  color: #f2f2f2; 
+}
+
+
+
