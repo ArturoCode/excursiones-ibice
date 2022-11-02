@@ -21,6 +21,8 @@ De donde viene el nombre, brainstorming, etc etc etc
 
 Incluir idea de imagenes de licencia
 
+Logo: Hecho por Arturo, Canva -- Logo montañismo blanco negro @bycreativetemplates -- Favoritos
+
 Imagenes de España: https://unsplash.com/es/s/fotos/spain-landscape
 
 header.jpg -> Foto de Mario La Pergola https://unsplash.com/es/fotos/sVWA1zvMD3E?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink

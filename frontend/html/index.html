@@ -12,6 +12,14 @@
     />
     <link rel="stylesheet" href="../css/index.css" />
 
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+
     <title>Inicio - Excursiones Íbice</title>
   </head>
   <body>
@@ -24,7 +32,7 @@
             <button
               class="navbar-toggler nav-bar-color navbar-light"
               type="button"
-              data-toggle="collapse"
+              data-bs-toggle="collapse"
               data-target="#navbarSupportedContent"
               aria-controls="navbarSupportedContent"
               aria-expanded="false"
@@ -45,6 +53,7 @@
                     data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
+                    style="color:black"
                   >
                     EXCURSIONES
                   </a>
@@ -56,7 +65,7 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">BLOG</a>
+                  <a class="nav-link" href="#" style="color:black">BLOG</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a
@@ -67,6 +76,7 @@
                     data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
+                    style="color:black"
                   >
                     CONÓCENOS
                   </a>
@@ -75,7 +85,7 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#">CONTACTO</a>
+                  <a class="nav-link" href="#" style="color:black">CONTACTO</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a
@@ -86,6 +96,7 @@
                     data-bs-toggle="dropdown"
                     aria-haspopup="true"
                     aria-expanded="false"
+                    style="color:black"
                   >
                     USER<img />
                   </a>
@@ -106,51 +117,72 @@
     </header>
 
     <!--CONTENIDO-->
+    <div id="contenido">
+      <!--EXCURSIONES SELECCIONADAS-->      
+      <div class="row">Los más populares</div>      
+      <div class="row excursiones-seleccionadas">
+        <div class="col-4 ficha">
 
-    <!--EXCURSIONES SELECCIONADAS-->
-    <div class="excursiones-seleccionadas">
-      <div class="excursion"></div>
-      <div class="excursion"></div>
-      <div class="excursion"></div>
+        </div>
+        <div class="col-4 ficha">                 
+        </div> 
+        <div class="col-4 ficha">                 
+        </div>       
+      </div>
+      <!--PROMOCIONES-->
+      <div class="row promociones">
+        <div class="col-6 promo">
+
+        </div>
+        <div class="col-6 promo">
+
+        </div>
+      </div>
+
+      <!--EXCURSIONES SELECCIONADAS-->
+      <div class="row">Disfruta del otoño</div>      
+      <div class="row excursiones-seleccionadas">
+        <div class="col-4 ficha">
+
+        </div>
+        <div class="col-4 ficha">                 
+        </div> 
+        <div class="col-4 ficha">                 
+        </div>       
+      </div>
+
+      <!--PROMOCIONES-->
+      <div class="row promociones">
+        <div class="col-6 promo">
+
+        </div>
+        <div class="col-6 promo">
+
+        </div>
+      </div>
+
+      <!--OPINIONES-->
+      <div id="opiniones">
+        <!--FOTO-->
+        <div id="foto"></div>
+
+        <!--OPINION-->
+        <div id="opinion"></div>
+      </div>
+
+      <!--PRESENTACION IBICE-->
+      <div id="presentacion-ibice">
+        <!--EXPLICACION-->
+        <div id="copy"></div>
+
+        <!--CARROUSEL-->
+        <div id="carrousel"></div>
+      </div>
     </div>
+        
 
-    <!--PROMOCIONES-->
-    <div class="promociones">
-      <div class="promo"></div>
-      <div class="promo"></div>
-    </div>
 
-    <!--EXCURSIONES SELECCIONADAS-->
-    <div class="excursiones-seleccionadas">
-      <div class="excursion"></div>
-      <div class="excursion"></div>
-      <div class="excursion"></div>
-    </div>
-
-    <!--PROMOCIONES-->
-    <div class="promociones">
-      <div class="promo"></div>
-      <div class="promo"></div>
-    </div>
-
-    <!--OPINIONES-->
-    <div id="opiniones">
-      <!--FOTO-->
-      <div id="foto"></div>
-
-      <!--OPINION-->
-      <div id="opinion"></div>
-    </div>
-
-    <!--PRESENTACION IBICE-->
-    <div id="presentacion-ibice">
-      <!--EXPLICACION-->
-      <div id="copy"></div>
-
-      <!--CARROUSEL-->
-      <div id="carrousel"></div>
-    </div>
-
+    
     <!--FOOTER-->
     <footer class="text-center text-muted bg-light">
       <div class="row">
@@ -172,11 +204,19 @@
           </p>
         </div>
 
-        <div class="col-4">
+        <div class="col-4" id="contacto">
           <h6 class="text-uppercase mb-4">Contacto</h6>
-          <p>info@correo.com</p>
-          <p>+ 91 321 23 12</p>
+          <p>hola@excursionesibice.com</p>          
           <p>+ 673 231 223</p>
+          <a href="#" target="_blank">
+            <i class="fab fa-twitter fa-2x margin-top-20px margin-right-20px"></i>
+          </a>      
+          <a href="#" target="_blank">
+            <i class="fab fa-instagram fa-2x margin-top-20px margin-right-20px"></i>
+          </a>      
+          <a href="#" target="_blank">
+              <i class="fab fa-facebook fa-2x margin-top-20px margin-right-20px"></i>
+          </a>
         </div>
       </div>
     </footer>
