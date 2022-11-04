@@ -68,25 +68,9 @@ https://www.tripadvisor.es/
 
 https://www.groupon.es/ - Ideas de anuncios, secciones
 
-https://www.viajeselcorteingles.es/especiales/navidad
-
 ## National Geographic - Entradas blog, promos, excursiones
 
-10 lugares terroríficos España - CASTILLO DE RIBA DE SANTIUSTE EN GUADALAJARA
 
-https://viajes.nationalgeographic.com.es/a/10-lugares-terrorificos-donde-pasar-halloween-espana_13367
-
-25  playas mas bonitas de españa
-
-https://viajes.nationalgeographic.com.es/a/mejores-playas-espana_11759#slide-3
-
-Termas balnearios paisejes Pirineos
-
-https://viajes.nationalgeographic.com.es/lifestyle/mejores-balnearios-pirineos_15127
-
-Pueblos que se toman muy en serio la Navidad España
-
-https://viajes.nationalgeographic.com.es/a/pueblos-para-pasar-navidad_14884
 
 
 ### Ideas de contenido pagina

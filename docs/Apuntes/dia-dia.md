@@ -44,3 +44,11 @@ Dejar claro nuestro nivel de PHP
 about-us - Arturo
 FAQ - Alejandro
 
+Arreglado compresion footer
+Ajustado menu
+
+Menu - Bocadillo !!!
+Menu - Enlace ademas de desplegable !!!
+
+
+

@@ -1,5 +1,143 @@
 /*PROYECTO */
 
+/*
+* {
+  border:2px red solid;
+}
+*/
+
 body {
-    background-color: #ffffff;
+  background-color: #ffffff;
+}
+
+#logo {
+  width: 200px;
+  height: 65px;
+  margin-top: -15px;
+}
+
+#header {
+  background-image: url("../media/header.jpg");
+  background-size: cover;
+  height: 380px;
+}
+#header li:first-of-type {
+  margin-left: 60px;
+}
+#header a {
+  margin: 20px;
+  color:black;
+  font-weight: 400;
+}
+#header div.dropdown-menu a {
+  color: black;
+  margin: 10px 0;
+}
+
+#menu {
+  /*Cambiar el fixed por un boton que suba al inicio de la pagina/*
+  /*position: fixed;*/
+  width: 100%;
+  /*padding-bottom: 10px;*/
+}
+
+
+#titulo {
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.span{
+  font-weight: bold;
+}
+
+
+
+#titulo-faq{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+.faq-container {    
+  max-width: 100%;
+  margin: 50px auto 0 auto;
+  padding: 2rem;
+}
+.faq-container h2 {
+  margin-bottom: 50px;
+  font-size: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+  color: #364f6b;
+}
+details { 
+  background-color: #f6f8fa;
+  width: 100%;
+  margin-bottom: 1rem;   
+  border-radius: 8px;  
+  border: 1px solid #d8e0e9;
+  color: #364f6b;
+  
+}
+details summary {  
+  font-weight: 400;
+  font-size: 1.25rem;
+  padding: 1rem;
+  cursor: pointer;
+  list-style: none;
+}
+details ul, details p{
+  
+  padding: 1rem;
+  margin: 0 1rem 1rem 1rem;
+  background: #f6f8fa;
+  border-left: 2px solid #364f6b;
+}
+details ul{
+  padding: 2rem;
+}
+
+details:hover,
+details[open] {
+  box-shadow: 5px 5px 15px #d9d9d9;
+}
+
+details[open] {
+  background: #ffffff;
+}
+
+details[open] summary {
+  font-weight: 600;
+}
+
+details summary::after {
+    content: "+";    
+    float: right;
+}
+
+footer {
+  padding: 30px 0;
+}
+
+@media (max-width: 630px) {
+
+  footer p{
+    font-size: 10px;
   }
+  #logo-footer{
+    width:100%;
+  }
+
+  
+}
+
+#menu nav {
+  padding: 0.5rem 0;
+}
+
+#contacto a{
+  margin:10px;
+}
+
+
+

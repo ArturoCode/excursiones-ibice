@@ -1,0 +1,91 @@
+<!--SNIPPETS-->
+
+<!--Preguntas FAQ-->
+
+<HTML>
+
+    <div class="faq-container">       
+        <details>
+        <summary>¿Qué material tengo que llevar?</summary>
+        <p>This answer is always open!</p>
+      </details>
+      
+      <details>
+        <summary>Question number 2</summary>
+        <p>But this answer is always closed, until you click in the question</p>
+      </details>
+        
+        <details>
+        <summary>Question number 3</summary>
+        <p>Another FAQ answer, and it looks like it was also hidden.</p>
+      </details>
+        
+        <details>
+        <summary>Question number 4</summary>
+        <p>Another response, and it seems that they are still not giving us any information.</p>
+      </details>
+        
+        <details>
+        <summary>And question number 5</summary>
+        <p>It seems that this is already the last answer. Finally we have reached the end!</p>
+      </details>     
+      </div>
+      
+
+</HTML>
+
+.faq-container {    
+    max-width: 1200px;
+    margin: 50px auto 0 auto;
+    padding: 2rem;
+  }
+  .faq-container h2 {
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    color: #364f6b;
+  }
+  details { 
+    background-color: #f6f8fa;
+    width: 100%;
+    margin-bottom: 1rem;   
+    border-radius: 8px;  
+    border: 1px solid #d8e0e9;
+    color: #364f6b;
+    
+  }
+  details summary {  
+    font-weight: 400;
+    font-size: 1.25rem;
+    padding: 1rem;
+    cursor: pointer;
+    list-style: none;
+  }
+  details p {
+    padding: 1rem;
+    margin: 0 1rem 1rem 1rem;
+    background: #f6f8fa;
+    border-left: 2px solid #364f6b;
+  }
+  
+  details:hover,
+  details[open] {
+    box-shadow: 5px 5px 15px #d9d9d9;
+  }
+  
+  details[open] {
+    background: #ffffff;
+  }
+  
+  details[open] summary {
+    font-weight: 600;
+  }
+  
+  details summary::after {
+      content: "+";    
+      float: right;
+  }
+
+
+  En esta empresa tenemos a un desarrollador comprometido con los scouts y a otro admirador de la naturaleza y con mucha pasión por la documentación y descubrir lugares nuevos.

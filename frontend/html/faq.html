@@ -1,100 +1,247 @@
+
+    
+
+
+
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Excursiones Íbice</title>
-</head>
-<body>
-    <!--CABECERA-->     
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/faq.css" />
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+
+    <title>Inicio - Excursiones Íbice</title>
+  </head>
+  <body>
+    <!--CABECERA con imagen-->
     <header>
-        <!--MENÚ-->
-        <div id="menu">              
-            <img/>
-        </div>        
-    </div></header>
+      <div id="header">        
+        <!--MENÚ-->          
+        <div id="menu">               
+          <nav class="navbar navbar-expand-lg">            
+            <button
+              class="navbar-toggler nav-bar-color navbar-light"
+              type="button"
+              data-toggle="collapse"
+              data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+            <span class="navbar-toggler-icon"></span>
+            </button>                      
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">              
+              <ul class="navbar-nav w-100 justify-content-around">         
+                <a href="index.html"><img id="logo" src="../media/logo.png" /></a>          
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="./listado_excursiones.html"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    
+                  >
+                    EXCURSIONES
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="./listado_excursiones.html">LISTADO</a>
+                    <a class="dropdown-item" href="#">SEPTIEMBRE 2022</a>
+                    <a class="dropdown-item" href="#">OCTUBRE 2022</a>
+                    <a class="dropdown-item" href="#">NOVIEMBRE 2022</a>
+                    <a class="dropdown-item" href="#">DICIEMBRE 2022</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./blog.html" >BLOG</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="./about-us.html"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    
+                  >
+                    CONÓCENOS
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="./about-us.html">SOBRE LA EMPRESA</a>
+                    <a class="dropdown-item" href="./faq.html">FAQ</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./contact.html" >CONTACTO</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a
+                    class="nav-link dropdown-toggle"
+                    href="#"
+                    id="navbarDropdown"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-haspopup="true"
+                    aria-expanded="false"
+                    
+                  >
+                    USER<img />
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="./user/login.html">INICIAR SESIÓN</a>
+                    <a class="dropdown-item" href="./user/register.html">REGISTRARSE</a>
+                    <!--  <a class="dropdown-item" href="./user/profile.html">PERFIL</a>  -->
+                    <!--  <a class="dropdown-item" href="#">CERRAR SESION</a>  -->
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>            
+      </div>
+      
+            
+    </header>
 
     <!--CONTENIDO-->
-    <h1></h1>
+    <div class="container"  id="contenido">
+        <h1 id="titulo">Cómo reservar y otras preguntas que te has podido hacer</h1>
 
-    <!--RESERVAS-->
-    <div id="reservas">
-        
-    </div>
+        <!--RESERVAS-->
+        <div id="reservas">        
+        </div>
 
-    <!--MEMBRESIAS-->
-    <div id="membresia">
-        
-    </div>
-
-    <!--TIPOS DE PAGO-->
-    <div id="tipo-pago">
-        
-    </div>
-
-    <!--CONDICIONES COMPRA-->
-    <div id="condicion-compra">
-        
-    </div>
-
-    <div>
-        <!--HORARIOS -->
-        <div id="horarios">
+        <!--MEMBRESIAS-->
+        <div id="membresia">
             
         </div>
 
-        <!--PUNTOS RECOGIDA-->
-        <div id="puntos-recogida">
+        <!--TIPOS DE PAGO-->
+        <div id="tipo-pago">
             
         </div>
-    </div>   
+
+        <!--CONDICIONES COMPRA-->
+        <div id="condicion-compra">
+            
+        </div>
+
+        <div>
+            <!--HORARIOS -->
+            <div id="horarios">
+                
+            </div>
+
+            <!--PUNTOS RECOGIDA-->
+            <div id="puntos-recogida">
+                
+            </div>
+        </div>   
+        
+        <!--TIPOS DE TRANSPORTE-->
+        <div id="tipo-transporte">
+            
+        </div>
+
+        <!--PREGUNTAS FRECUENTES-->
+        <div class="faq-container">
+            <h1 id="titulo-faq">Preguntas frecuentes</h1>
+          <details>
+            <summary>¿Qué material tengo que llevar?</summary>
+            <ul>
+              <li><span class="span">BOTAS DE MONTAÑA:</span> Ligeras y preferiblemente impermeables, altas, que sujeten el tobillo, con suela flexible y dibujo bien marcado. (sólo para las marchas muy fáciles y llanas pueden servir unas deportivas fuertes).</li>
+              <li><span  class="span">MOCHILA:</span> De tamaño medio, donde meter la comida del día, agua, ropa de abrigo, etc… suele ser suficiente con una capacidad de 35/45 L., preferible con la espalda acolchada y cinturón lumbar. Ésto último ayuda a descargar los hombros del peso y hace más confortable la marcha. </li>
+              <li><span  class="span">CANTIMPLORA:</span> O botella de plástico. De un litro o más según la temporada, que habrá que llevar siempre llena desde casa.</li>
+              <li><span  class="span">CHUBASQUERO:</span> Que nos libre de una caladura en cualquier época del año. Si te haces asiduo senderista, puede convenirte una chaqueta impermeable o anorak, que también corta el aire y resiste mejor la lluvia. Si verdaderamente la marcha se prevé con agua y no es por terreno muy cerrado, es muy recomendable llevar un paraguas. Puede servirnos uno plegable que llevaremos en la mochila o, mejor aún, uno grande de punta metálica que nos servirá de bastón si no llueve. No consideramos recomendables las capas de agua, pues no permiten la transpiración, escurren el agua sobre las botas o el pantalón y son trabajosas de poner y quitar, así como incómodas para caminar con ellas.</li>
+              <li><span class="span">BASTÓN DE MARCHA:</span> telescópico, muy apropiado para casi todo tipo de ruta si está regulado a la altura apropiada. Especialmente recomendable para marchas que tengan mucha bajada.</li>
+            </ul>
+          </details>          
+          <details>
+            <summary>Me preocupa no seguir el ritmo en excursiones grupales...</summary>
+            <p>Excursiones Íbice es un Club de senderismo y Viajes que fomenta caminatas de nivel bajo-medio o medio: el 90% de las actividades son de nivel básico, aproximadamente 2/3  horas de camino antes y 2h después de comer, las cuales podría realizar cualquier persona con forma física normal. Se trata de disfrutar de la excursión o viaje, no de machacarnos. Siempre que se vaya a realizar una actividad con un poco más de nivel de dificultad, se avisará previamente.</p>
+          </details>            
+          <details>
+            <summary>Tengo ganas de apuntarme, pero no quiero ir solo</summary>
+            <p>  
+              <p>No necesitas esperar a encontrar a alguien que pueda acompañarte, planear un viaje con familiares o amigos puede ser una tarea complicada: hay que adaptar fechas, presupuestos, gustos… Quizá lleves años guardando ese destino soñado en tu lista de deseos, pero nunca has tenido ocasión de ir por no haber encontrado a la persona que pueda acompañarte, que tenga vacaciones en las mismas fechas que tú o que en ese momento disponga del presupuesto necesario para dicho proyecto. Además, es posible que el viaje de tus sueños no acabe de corresponderse con el de tu acompañante.</p>
+              <p>Viajar de forma individual se dibuja como la solución idónea para poner, definitivamente, punto y final a la espera.</p>
+              <p>Anímate y no te cortes compañer@ de las montañas, en todas las excursiones hay senderistas nuevos, y la mayoria se apuntan solos y te aseguramos que así es más fácil integrarse,  es muy enriquecedor hacer amigos nuevos y que cuando te apuntas por tu cuenta a un club regresas con unos cuantos conocidos y unos pocos más de amigos y te sientes fenomenal y pletórico…No desperdicies esta oportunidad y no busques tus compañeros fuera del club, dentro te será muchísimo mas fácil encontrarlos y compartir vuestra afición por la naturaleza.</p>
+            </p>
+            </details>
+            
+            <details>
+            <summary>No quiero que el tiempo me ague la fiesta</summary>
+            <p>Another response, and it seems that they are still not giving us any information.</p>
+          </details>
+            
+            <details>
+            <summary>And question number 5</summary>
+            <p>It seems that this is already the last answer. Finally we have reached the end!</p>
+          </details>     
+          </div>
+    </div>
+
     
-    <!--TIPOS DE TRANSPORTE-->
-    <div id="tipo-transporte">
-        
-    </div>
-
-    <!--PREGUNTAS FRECUENTES-->
-    <div id="preguntas-frecuentes">
-        <h1></h1>
-
-        <!--PREGUNTAS-->
-        <div class="pregunta-frecuente">
-
-        </div>
-
-        <div class="pregunta-frecuente">
-
-        </div>
-
-        <div class="pregunta-frecuente">
-
-        </div>
-
-        <div class="pregunta-frecuente">
-
-        </div>
-    </div>
-
     <!--FOOTER-->
-    <footer><div id="footer">
+<footer class="text-center text-muted bg-light mt-5">
+  <div class="row">
+    <div class="col-4">
+      <img id="logo-footer" src="../media/logo_body.png" width="20%"/>
+      <p class="text-center p-3">Excursiones Íbice ©2022</p>
+    </div>
 
-        <!--SECCIONES LEGALES-->
-        <div class="footer-seccion">
+    <div class="col-4">
+      <h5 class="text-uppercase fw-bold mb-4">Secciones</h5>
+      <p>
+        <a href="./listado_excursiones.html" class="text-reset">Excursiones</a>
+      </p>
+      <p>
+        <a href="./blog.html" class="text-reset">Blog</a>
+      </p>
+      <p>
+        <a href="./about-us.html" class="text-reset">Conócenos</a>
+      </p>
+    </div>
 
-        </div>
-
-        <!--MAPA DE NAVEGACION-->
-        <div class="footer-seccion">
-
-        </div>
-
-        <!--SOCIAL-->
-        <div class="footer-seccion">
-
-        </div>
-    </div></footer>
-    
-</body>
+    <div class="col-4" id="contacto">
+      <h5 class="text-uppercase mb-4">Contacto</h5></a>
+      <p><a href="contact.html">hola@excursionesibice.com</a></p>          
+      <p>+34 666 666 666</p>
+      <a href="#" target="_blank">
+        <i class="fab fa-twitter fa-2x margin-top-20px margin-right-20px"></i>
+      </a>      
+      <a href="#" target="_blank">
+        <i class="fab fa-instagram fa-2x margin-top-20px margin-right-20px"></i>
+      </a>      
+      <a href="#" target="_blank">
+          <i class="fab fa-facebook fa-2x margin-top-20px margin-right-20px"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
