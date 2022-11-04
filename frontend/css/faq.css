@@ -40,6 +40,10 @@ body {
   width: 100%;
   /*padding-bottom: 10px;*/
 }
+.row{
+  /*Para que no tenga el margen por defecto de bootstrap*/
+  margin:0;
+}
 
 
 #titulo {
@@ -86,14 +90,14 @@ details summary {
   cursor: pointer;
   list-style: none;
 }
-details ul, details p{
+details ul, details div,details ol{
   
   padding: 1rem;
   margin: 0 1rem 1rem 1rem;
   background: #f6f8fa;
   border-left: 2px solid #364f6b;
 }
-details ul{
+details ul,details ol{
   padding: 2rem;
 }
 

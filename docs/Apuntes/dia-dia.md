@@ -29,7 +29,7 @@ Alejandro: Index
 
 -----------------------------------
 
-03/11
+04/11
 
 Mail con cc a la tutora
 
@@ -41,14 +41,20 @@ Y queremos hacer el backend con nodejs y docker. Lo ves viable?????
 
 Dejar claro nuestro nivel de PHP
 
-about-us - Arturo
-FAQ - Alejandro
-
 Arreglado compresion footer
 Ajustado menu
 
+about-us - Arturo
+FAQ - Alejandro
+
 Menu - Bocadillo !!!
-Menu - Enlace ademas de desplegable !!!
+Menu - Enlace ademas de desplegable - JS? !!!
 
 
 
+---------------------------------------------------
+
+05/11
+
+Revision de FAQ y demás
+Y ya vemos
