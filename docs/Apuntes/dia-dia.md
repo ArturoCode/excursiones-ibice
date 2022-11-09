@@ -54,7 +54,22 @@ Menu - Enlace ademas de desplegable - JS? !!!
 
 ---------------------------------------------------
 
-05/11
+07/11
 
-Revision de FAQ y demás
-Y ya vemos
+Revision
+
+09/11
+
+Listado excursiones
+Detalles excursion
+Blog
+Ejemplo entrada
+Arreglar contact
+
+
+10/11
+
+Unificar menu con el logo de user y todo en todas las paginas
+User diseño
+Dudas Jorge va a ir a las 19:00
+PLanificar resto de la semana

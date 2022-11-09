@@ -34,6 +34,7 @@ body {
   margin: 10px 0;
 }
 
+
 #menu {
   /*Cambiar el fixed por un boton que suba al inicio de la pagina/*
   /*position: fixed;*/
@@ -57,67 +58,27 @@ body {
 
 
 
-#titulo-faq{
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 25px;
+input[type=text],[type=email],[type=password] {
+  display:block;
+  width: 90%; 
+  padding: 13px;  
+  border: 1px solid black;
+  border-radius: 4px; 
+  box-sizing: border-box;
+  margin-top: 6px; 
+  margin-bottom: 16px; 
 }
-.faq-container {    
-  max-width: 100%;
-  margin: 50px auto 0 auto;
-  
-}
-.faq-container h2 {
-  margin-bottom: 50px;
-  font-size: 2.5rem;
-  font-weight: 600;
-  text-align: center;
-  color: #364f6b;
-}
-details { 
-  background-color: #f6f8fa;
-  width: 100%;
-  margin-bottom: 1rem;   
-  border-radius: 8px;  
-  border: 1px solid #d8e0e9;
-  color: #364f6b;
-  
-}
-details summary {  
-  font-weight: 400;
-  font-size: 1.25rem;
-  padding: 1rem;
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
-  list-style: none;
-}
-details ul, details div,details ol{
-  
-  padding: 1rem;
-  margin: 0 1rem 1rem 1rem;
-  background: #f6f8fa;
-  border-left: 2px solid #364f6b;
-}
-details ul,details ol{
-  padding: 2rem;
+  transition-duration: 0.4s;
 }
 
-details:hover,
-details[open] {
-  box-shadow: 5px 5px 15px #d9d9d9;
-}
-
-details[open] {
-  background: #ffffff;
-}
-
-details[open] summary {
-  font-weight: 600;
-}
-
-details summary::after {
-    content: "+";    
-    float: right;
-}
 
 footer {
   padding: 30px 0;

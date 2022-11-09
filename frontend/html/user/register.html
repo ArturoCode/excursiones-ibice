@@ -10,7 +10,7 @@
       integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../../css/faq.css" />
+    <link rel="stylesheet" href="../../css/register.css" />
 
     <link
         rel="stylesheet"
@@ -99,7 +99,7 @@
                     aria-expanded="false"
                     
                   >
-                    USER<img />
+                  <i class="fa fa-fw fa-user fa-lg"></i>
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="login.html">INICIAR SESIÓN</a>
@@ -118,11 +118,24 @@
     </header>
 
     <!--CONTENIDO-->
-    <div class="container"  id="contenido"> 
+    <div class="container"  id="contenido">
 
-     <!--FORMULARIO DE REGISTRO-->
-     <div id="formulario">
-
+      <div id="formulario">      
+        <h1 id="titulo">Registrarse</h1>
+          <hr>
+          <form action="#">
+            <label for="nombre"><span class="span">Nombre y apellidos</span></label>
+            <input type="text" placeholder="Nombre, apellidos" name="nombrecompleto" required>
+            <label for="nombreusuario"><span class="span">Nombre de usuario</span></label>
+            <input type="text" placeholder="Nombre usuario" name="nombrecompleto"  required>
+            <label for="email"><span class="span">Email</span></label>
+            <input type="email" placeholder="Introduce el correo" name="email" required>
+            <label for="psw"><span class="span">Contraseña<span></label>
+            <input type="password" placeholder="Introduce la contraseña" name="psw" required>
+            <input type="submit" value="Enviar">
+          </form>
+      </div>
+    
     </div>
 
 </div>

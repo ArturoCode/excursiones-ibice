@@ -70,7 +70,7 @@ https://www.groupon.es/ - Ideas de anuncios, secciones
 
 ## National Geographic - Entradas blog, promos, excursiones
 
-
+Buscar en las promos y coger los enlaces
 
 
 ### Ideas de contenido pagina

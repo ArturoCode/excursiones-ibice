@@ -40,11 +40,19 @@ body {
   width: 100%;
   /*padding-bottom: 10px;*/
 }
+
+.nav-item a {
+  color: black;
+}
+
 .row{
   /*Para que no tenga el margen por defecto de bootstrap*/
   margin:0;
 }
+/*.col-4,.col5,.col-6,.col-7{
+  border: 1px solid black;
 
+}*/
 
 #titulo {
   margin-top: 30px;
@@ -52,71 +60,17 @@ body {
 }
 
 .span{
-  font-weight: bold;
+  font-weight:bold;
+}
+.img{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
-
-#titulo-faq{
-  text-align: center;
-  margin-top: 30px;
-  margin-bottom: 25px;
-}
-.faq-container {    
-  max-width: 100%;
-  margin: 50px auto 0 auto;
-  
-}
-.faq-container h2 {
-  margin-bottom: 50px;
-  font-size: 2.5rem;
-  font-weight: 600;
-  text-align: center;
-  color: #364f6b;
-}
-details { 
-  background-color: #f6f8fa;
+#img-blog{
   width: 100%;
-  margin-bottom: 1rem;   
-  border-radius: 8px;  
-  border: 1px solid #d8e0e9;
-  color: #364f6b;
   
-}
-details summary {  
-  font-weight: 400;
-  font-size: 1.25rem;
-  padding: 1rem;
-  cursor: pointer;
-  list-style: none;
-}
-details ul, details div,details ol{
-  
-  padding: 1rem;
-  margin: 0 1rem 1rem 1rem;
-  background: #f6f8fa;
-  border-left: 2px solid #364f6b;
-}
-details ul,details ol{
-  padding: 2rem;
-}
-
-details:hover,
-details[open] {
-  box-shadow: 5px 5px 15px #d9d9d9;
-}
-
-details[open] {
-  background: #ffffff;
-}
-
-details[open] summary {
-  font-weight: 600;
-}
-
-details summary::after {
-    content: "+";    
-    float: right;
 }
 
 footer {
@@ -142,6 +96,7 @@ footer {
 #contacto a{
   margin:10px;
 }
+
 
 
 
