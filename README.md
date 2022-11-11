@@ -2,9 +2,9 @@
 
 Trabajo Final del Grado Superior de Desarrollo de Aplicaciones Web | IES Juan de la Cierva (Madrid). 
 
-Autores: Arturo Urbanos Vara y Alejandro Calvo de Francisco
+Autores: Arturo Urbanos Vara y Alejandro Calvo de Francisco.
 
-Excursiones Íbice es una página para reservar excursiones personalizadas por lugares de España 
+Excursiones Íbice es una página para reservar excursiones personalizadas por lugares de España.
 
 ## Lenguajes y tecnologías utilizadas
 
@@ -32,7 +32,7 @@ Un apartado para hablar sobre los lugares de algunas excursiones con datos que c
 
 ### Conócenos
 
-Página con información de Íbice y del tipo de excursiones que hay, además de una pequeña bio de los desarrolladores
+Página con información de Íbice y del tipo de excursiones que hay, además de una pequeña bio de los desarrolladores.
 
 ### FAQ | Preguntas frecuentes
 
@@ -46,11 +46,11 @@ Página que explica a los diferentes tipos de usuarios cómo contactar con nosot
 
 #### Registro
 
-Página para registrarse como usuario de la página con un sencillo formulario
+Página para registrarse como usuario de la página con un sencillo formulario.
 
 #### Login 
 
-Página para acceder a la página siendo un usuario ya registrado
+Página para acceder a la página siendo un usuario ya registrado.
 
 #### Perfil
 
@@ -59,4 +59,4 @@ Página con tu información básica de usuario, las últimas excursiones que has
 
 ## Consulta de la memoria del proyecto
 
-[Enlace]
+[Enlace]()
