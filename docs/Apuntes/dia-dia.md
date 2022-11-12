@@ -73,6 +73,10 @@ Dudas Jorge va a ir a las 19:00
 
 12/11
 
-Unificar menu con el logo de user y todo en todas las paginas
-User diseño
+Unificar menu con el logo de user y todo en todas las paginas -- V
+User diseño -- V
+
+13/11
+
+Empezar a mirar video, w3schools y nodejs express - backend
 PLanificar resto de la semana
