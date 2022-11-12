@@ -69,7 +69,10 @@ Arreglar contact
 
 10/11
 
+Dudas Jorge va a ir a las 19:00
+
+12/11
+
 Unificar menu con el logo de user y todo en todas las paginas
 User diseño
-Dudas Jorge va a ir a las 19:00
 PLanificar resto de la semana
