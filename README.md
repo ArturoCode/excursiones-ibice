@@ -4,7 +4,7 @@ Trabajo Final del Grado Superior de Desarrollo de Aplicaciones Web | IES Juan de
 
 Autores: Arturo Urbanos Vara y Alejandro Calvo de Francisco.
 
-Excursiones Íbice es una página para reservar excursiones personalizadas por lugares de España. También tiene un blog con información de lugares y diferentes secciones, además de la creación de usuarios con funciones personalizadas.
+Excursiones Íbice es una página para reservar excursiones personalizadas por lugares de España.
 
 ## Lenguajes y tecnologías utilizadas
 
