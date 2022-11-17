@@ -71,6 +71,11 @@ body {
 .info div{
   margin:10px; 
 }
+.info div div.d-inline-block{
+  margin:0;
+  margin-left:5px;
+}
+
 
 
 .detalles-excursion {

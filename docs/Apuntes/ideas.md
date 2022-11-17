@@ -66,6 +66,16 @@ https://www.youtube.com/watch?v=RR_oMDp4kEc
 https://www.bogotobogo.com/DevOps/Docker/Step-by-Step-React-Node-MySQL-App.php
 https://github.com/igorsuhinin/docker-nginx-php-apache-mysql-nodejs-phpmyadmin
 
+
+------------------------------
+
+Boton de se me ha olvidado la contraseña
+Send mail node.js (se supone que el lo miro en youtube para php)
+porque lo del send mail ademas del se me ha olvidado la contraseña tambien queremos implementarlo para
+
+formularios controlarlos con js frontend
+tambien js para animaciones frontend
+
 ## Páginas para guiarnos
 
 
