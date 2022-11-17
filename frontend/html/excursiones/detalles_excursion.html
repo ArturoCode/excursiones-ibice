@@ -11,7 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../../css/detalles_excursion.css" />
-
+    <script src="../../js/detalles_excursion.js"></script>
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -22,7 +22,7 @@
 
     <title>Excursión - Excursiones Íbice</title>
   </head>
-  <body>
+  <body onload="getExcursion(1)">
     <!--CABECERA con imagen-->
     <header>
       <div id="header">        
@@ -123,76 +123,77 @@
       <div class="row detalles-excursion">                   
           <div class="col-6 img"><img id="imagenf" src="https://cristalderoca.com/senderismo/wp-content/uploads/2018/11/camino-santiago-cristalderoca-home-500x325.jpg" alt="Camino de Santiago Excursiones Íbice"></div>
           <div class="col-6 info">
-            <div>
+            <div >
               <i class="fa fa-calendar" ></i>
-              <span class="span">Fecha: </span>Sábado 3 a Martes 6 de Diciembre
+              <span class="span">Fecha inicio: </span><div class="d-inline-block" id="fecha-inicio"></div>
             </div>
             <div>
-              <i class="bi bi-bar-chart-fill"></i>
-              <span class="span">Nivel: </span>Básico
+              <i class="fa fa-calendar" ></i>
+              <span class="span">Fecha final: </span><div class="d-inline-block" id="fecha-final"></div>
+            </div>
+            <div>
+              <i class="fas fa-chart-area"></i>
+              <span class="span">Nivel: </span><div class="d-inline-block" id="nivel"></div>
             </div>
             <div>
               <i class="fa fa-bus" ></i>
-              <span class="span">Transporte: </span>Bus
+              <span class="span">Transporte: </span><div class="d-inline-block" id="transporte"></div>
             </div>
             <div>
               <i class="fa fa-map-signs"></i>
-              <span class="span">Destino: </span> Málaga
+              <span class="span">Destino: </span> <div class="d-inline-block" id="destino"></div>
             </div>
             <div>             
               <i class="fa fa-clock" ></i>
-              <span class="span">Hora de salida: </span> 21:00h PC /  21:10h F / 21:30h G
+              <span class="span">Hora de salida: </span><div class="d-inline-block" id="hora-salida"></div> 
             </div>
             <div>
               <i class="fa fa-clock"></i>
-              <span class="span">Hora de regreso: </span> 07:00h G /  07:30h F / 08:00h PC
+              <span class="span">Hora de regreso: </span><div class="d-inline-block" id="hora-regreso"></div> 
             </div> 
             <div>
               <i class="fa fa-map-marker"></i>
-              <span class="span">Punto de salida: </span> Getafe / Fuencarral /  Plaza Castilla
+              <span class="span">Punto de salida: </span><div class="d-inline-block" id="punto-salida"></div> 
             </div>            
             <hr>
-            <div>
-             Precio Viaje 6 dias: 555€
-            </div>
+            Precio Viaje 6 dias:
+            <div class="d-inline-block" id="precio"></div>
           </div>         
       </div>
       <h1 id="titulo">Descripcion del viaje</h1>
-      <div class="row">
-        <div class="col-6 descripcion">
-            <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit blandit at quisque, nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum aliquam conubia cras.risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum aliquam conubia cras  nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum
-            </p>
+      <div id="descripciones">
+        <div id="descripcion1" class="row">        
+          <div class="col-6 descripcion">
+              <p></p>
+          </div>
+          <div class="col-6 img">
+              <a href=""><img id="img-exc" src="../../media/promo2.png"/></a>
+          </div>
         </div>
-        <div class="col-6 img">
-            <a href=""><img id="img-exc" src="../../media/promo2.png"/></a>
+        <div id="descripcion2" class="row">
+          <div class="col-6 img">
+              <a href=""><img id="img-exc" src="../../media/promo2.png"/></a>
+          </div>
+          <div class="col-6 texto">
+            <p></p>
+          </div>        
         </div>
       </div>
-      <div class="row">
-        <div class="col-6 img">
-            <a href=""><img id="img-exc" src="../../media/promo2.png"/></a>
+      <div id="informacion">
+        <h1>Tipos de material</h1>
+        <div id="info-material"class="col-12">
+          <p></p>
         </div>
-        <div class="col-6 texto">
-          <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit blandit at quisque, nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum aliquam conubia cras  nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum ali.
-          </p>
-        </div>        
-      </div>
-      <h1 id="titulo">Tipos de material</h1>
-      <div class="col-12">
-        <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit blandit at quisque, nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum aliquam conubia cras  nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum ali.
-        </p>
-      </div>
-      <h1 id="titulo">Tiempo atmosferico</h1>
-      <div class="col-12">
-        <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit blandit at quisque, nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum aliquam conubia cras  nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum ali.
-        </p>
-      </div>
-      <h1 id="titulo">Otros detalles</h1>
-      <div class="col-12">
-        <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit blandit at quisque, nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum aliquam conubia cras  nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum ali.
-        </p>
-      </div>
-
-
+        <h1>Tiempo atmosferico</h1>
+        <div id="info-atmosferico" class="col-12">
+          <p></p>
+        </div>
+        <h1>Otros detalles</h1>
+        <div id="info-detalles" class="col-12">
+          <p></p>
+        </div>
+      </div>        
+      
     </div>
 
 
