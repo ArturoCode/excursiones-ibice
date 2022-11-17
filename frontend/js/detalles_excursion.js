@@ -11,12 +11,14 @@ var opciones = {
       .then((response) => response.json())
       .then((data) => {
         //Cambiar el formato de las fechas creando un objeto date con la fecha y cambiandolo a la fecha formato españa
+        document.getElementById("nombre-excursion").innerHTML = data.nombre_excursion;
         document.getElementById("fecha-inicio").innerHTML = new Date(
           data.fecha_inicio
         ).toLocaleDateString("es-ES", opciones);
         document.getElementById("fecha-final").innerHTML = new Date(
           data.fecha_fin
         ).toLocaleDateString("es-ES", opciones);
+
         document.getElementById("nivel").innerHTML = data.nivel;
         document.getElementById("transporte").innerHTML = data.transporte;
         document.getElementById("destino").innerHTML = data.destino;
@@ -25,12 +27,11 @@ var opciones = {
         document.getElementById("punto-salida").innerHTML = data.lugar_salida;
         document.getElementById("precio").innerHTML = data.precio+" €";
   
-        //Esto del fin de párrafo?????? Porque siguen saliendo caracteres raros /d/g/n
         var descripcionArray = data.descripcion.split("(fin-parrafo)");
         var descripciones = document.getElementById("descripciones");
         var descripcion1 = document.getElementById("descripcion1");
         var descripcion2 = document.getElementById("descripcion2");
-  
+        //
         for (var i = 0; i < descripcionArray.length; i++) {
           var descripcionTemporal;
           if (i % 2 === 0) descripcionTemporal = descripcion1.cloneNode(true);

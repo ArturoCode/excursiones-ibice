@@ -61,7 +61,7 @@ body {
   justify-content: center;
   align-items: center;
 }
-#img-exc{
+#img-exc, #imagenf{
   width: 100%;
 }
 .info{
@@ -77,7 +77,10 @@ body {
 }
 
 
-
+#nombre-excursion{
+  text-align: center;
+  font-size: 1.70em;
+}
 .detalles-excursion {
   background-color: white;
   padding: 20px;
@@ -87,6 +90,17 @@ body {
 }
 footer {
   padding: 30px 0;
+}
+
+@media (max-width: 939px) {
+
+  .detalles-excursion{
+    display:block;
+    
+  }
+  .info,.img{
+    max-width: 100%;
+  }
 }
 
 @media (max-width: 630px) {

@@ -99,5 +99,16 @@ cambiado el tipo por defecto de usuarios a usuario siempre
 
 TUTORIA
 
+Mirar chat Telegram
+
 TARDE
 
+Empezado a ...
+
+17/11
+
+Conexion a SQL de Excursion
+Pasar funcionamiento a Ibice
+Preguntas sobre el metodo y demas
+Ir haciendo cambios en excursion hasta que este perfecto con datos de prueba
+Mirar comentarios en los archivos
