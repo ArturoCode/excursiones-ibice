@@ -22,6 +22,10 @@
 
     <title>Excursión - Excursiones Íbice</title>
   </head>
+  <!--VALE, AQUÍ ESTÁS PONIENDO LA UNO POR DEFECTO. NO LE PUEDES PASAR LA ID DE LA EXCURSION DE LA URL????-->
+  <!--Porque así tendríamos que crear html por excursion que haya aunque solo cambiemos la funcion de getExcursion-->
+  
+  <!-- Y claro, que hariamos para listar las excursiones cuando son varias. Tanto en el index, profile como en el listado general y las de cada mes-->
   <body onload="getExcursion(1)">
     <!--CABECERA con imagen-->
     <header>
@@ -117,12 +121,20 @@
             
     </header>
 
+     <!-- !!!!!!!! Arreglar el CSS y pulir el contenido-->   
+
+      <!-- !!!!!!!! Por ejemplo la imagen de la excursión debería reducirse al reducir ventana-->   
+
     <!--CONTENIDO-->
     <div class="container"  id="contenido"> 
-      <h1 id="titulo">Detalles Excursion</h1> 
-      <div class="row detalles-excursion">                   
+      <h1 id="titulo">Detalles de la excursion</h1> 
+      <div class="row detalles-excursion"> 
+          <!-- !!!!!!!! Deberíamos coger la imagen de la BBDD-->                  
           <div class="col-6 img"><img id="imagenf" src="https://cristalderoca.com/senderismo/wp-content/uploads/2018/11/camino-santiago-cristalderoca-home-500x325.jpg" alt="Camino de Santiago Excursiones Íbice"></div>
           <div class="col-6 info">
+
+             <!-- !!!!!!!! Deberíamos coger EL NOMBRE DE LA BBDD porque esta tambien se muestra en el formato pequeño, la necesitamos coger-->   
+
             <div >
               <i class="fa fa-calendar" ></i>
               <span class="span">Fecha inicio: </span><div class="d-inline-block" id="fecha-inicio"></div>
@@ -156,7 +168,7 @@
               <span class="span">Punto de salida: </span><div class="d-inline-block" id="punto-salida"></div> 
             </div>            
             <hr>
-            Precio Viaje 6 dias:
+            Precio:
             <div class="d-inline-block" id="precio"></div>
           </div>         
       </div>
