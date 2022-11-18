@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 17-11-2022 a las 21:34:22
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 18-11-2022 a las 20:49:40
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -51,6 +51,8 @@ INSERT INTO `blog` (`id_entrada`, `titulo_entrada`, `url_imagen`, `descripcion_e
 
 CREATE TABLE `excursiones` (
   `id_excursion` int(11) NOT NULL,
+  `nombre_excursion` text NOT NULL,
+  `url_imagen_principal` text NOT NULL,
   `fecha_inicio` date NOT NULL,
   `fecha_fin` date NOT NULL,
   `nivel` text NOT NULL,
@@ -71,8 +73,9 @@ CREATE TABLE `excursiones` (
 -- Volcado de datos para la tabla `excursiones`
 --
 
-INSERT INTO `excursiones` (`id_excursion`, `fecha_inicio`, `fecha_fin`, `nivel`, `transporte`, `destino`, `hora_salida`, `hora_regreso`, `lugar_salida`, `precio`, `descripcion`, `material`, `tiempo_atmosferico`, `detalles`, `url_imagen`) VALUES
-(1, '2022-11-19', '2022-11-19', 'Básico', 'Bus', 'Guadalajara', '08:00:00', '20:30:00', 'Getafe', 24, 'En un entorno privilegiado Valverde de los Arroyos, el pueblo mas bonito de la arquitectura negra de Guadalajara, nos ofrece un paisaje alpino como ningún otro. Con el Pico Ocejón como telón de fondo y característica silueta, nos hará sentir pequeños bajo su falda. Sus abruptas y verticales laderas riegan el valle con las aguas del Arroyo de la Gargantilla, Angostura y de la Chorrera antes de unirse para dar paso al Rio Sorbe. El Arroyo de la Chorrera se precipita de manera ordenada y se desliza por la negra pizarra de la Sierra de Ayllon dando forma a la Chorrera de Despeñalagua, un capricho de la naturaleza, sin duda de sinigual belleza. (fin-parrafo)Antes de regresar a Madrid, haremos una parada en la Ermita del Enebral y la Ciudad Encantada de Tamajón, un capricho que el aire, el agua y el tiempo ha formado, dejando su huella dibujando en la roca caliza misteriosas formas y alguna que otra cueva que podremos descubrir mientras paseamos por tan singular lugar....te vienes?', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', '2°, Lluvia débil, Sensación T. 12°', 'INCLUYE: Transporte en autobús, Ruta de senderismo 8 km. nivel básico, Seguro básico accidentes. Guías', '');
+INSERT INTO `excursiones` (`id_excursion`, `nombre_excursion`, `url_imagen_principal`, `fecha_inicio`, `fecha_fin`, `nivel`, `transporte`, `destino`, `hora_salida`, `hora_regreso`, `lugar_salida`, `precio`, `descripcion`, `material`, `tiempo_atmosferico`, `detalles`, `url_imagen`) VALUES
+(1, 'CAMINO DE SANTIAGO', 'http://localhost:2000/images/despenalagua-destacada.jpg', '2022-11-19', '2022-11-19', 'Básico', 'Bus', 'Guadalajara', '08:00:00', '20:30:00', 'Getafe', 24, 'En un entorno privilegiado Valverde de los Arroyos, el pueblo mas bonito de la arquitectura negra de Guadalajara, nos ofrece un paisaje alpino como ningún otro. Con el Pico Ocejón como telón de fondo y característica silueta, nos hará sentir pequeños bajo su falda. Sus abruptas y verticales laderas riegan el valle con las aguas del Arroyo de la Gargantilla, Angostura y de la Chorrera antes de unirse para dar paso al Rio Sorbe.\r\nEl Arroyo de la Chorrera se precipita de manera ordenada y se desliza por la negra pizarra de la Sierra de Ayllon dando forma a la Chorrera de Despeñalagua, un capricho de la naturaleza, sin duda de sinigual belleza.(fin-parrafo)Antes de regresar a Madrid, haremos una parada en la Ermita del Enebral y la Ciudad Encantada de Tamajón, un capricho que el aire, el agua y el tiempo ha formado, dejando su huella dibujando en la roca caliza misteriosas formas y alguna que otra cueva que podremos descubrir mientras paseamos por tan singular lugar....te vienes?', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', '2°, Lluvia débil, Sensación T. 12°', 'INCLUYE: Transporte en autobús, Ruta de senderismo 8 km. nivel básico, Seguro básico accidentes/r.c.\r\nGuías', 'http://localhost:2000/images/despenalagua-destacada.jpg,http://localhost:2000/images/despenalagua-slider.jpg'),
+(2, 'HOCES DEL RIAZA, BOSQUES ENCANTADOS', 'http://localhost:2000/images/despenalagua-slider.jpg', '2022-11-20', '2022-11-20', 'Básico 12 Km', 'Bus', 'Segovia', '08:15:00', '20:00:00', 'Plaza Castilla', 25, 'Recorremos hoy las Hoces del Riaza donde el río ha excavado un espectacular cañón entre cortados de las duras rocas calizas, uno de los mayores conjuntos de hoces, cañones, acantilados y desfiladeros y parajes solitarios de gran belleza, que se pueden contemplar en el interior de la Península Ibérica.(fin-parrafo)La capital del buitre leonado es, sin duda, Montejo de la Vega de la Serrezuela, un pequeño pueblo segoviano que tiene casi más letras que habitantes, y en cuyos alrededores prosperan cultivos agrícolas al amparo de las aguas del río Riaza. Desde Montejo, que cuenta con una cooperativa consagrada a la explotación turística de la hoz, parte la pista de tierra que, a lo largo de 12 kilómetros hasta las inmediaciones del caserío amurallado de Maderuelo,  permite remontar las aguas por entre precipicios abarrotados de buitres.', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', '2°, Lluvia débil, Sensación T. 12°', 'INCLUYE\r\nTransporte en autocar\r\nRuta de senderismo Puentes de la Ermita del Casuar  (12 km Nivel Básico )\r\nSeguro de accidentes/r.c.\r\nGuías.', 'http://localhost:2000/images/despenalagua-slider.jpg');
 
 -- --------------------------------------------------------
 
@@ -94,8 +97,8 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `email`, `password`, `nombre_usuario`, `membresia`, `tipo_usuario`) VALUES
-(1, 'administrador@excursionesibice.com', 'holamundo', 'administrador', 'Administrador', 'admin'),
-(2, 'usuario@excursionesibice.com', 'holamundo', 'usuarioprueba', 'Usuario', 'usuario');
+(1, 'administrador@excursionesibice.com', 'holamundo', 'administrador', 'ADMINISTRADOR', 'admin'),
+(2, 'usuario@excursionesibice.com', 'holamundo', 'usuarioprueba', 'usuario', 'usuario');
 
 --
 -- Índices para tablas volcadas
@@ -133,7 +136,7 @@ ALTER TABLE `blog`
 -- AUTO_INCREMENT de la tabla `excursiones`
 --
 ALTER TABLE `excursiones`
-  MODIFY `id_excursion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_excursion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`

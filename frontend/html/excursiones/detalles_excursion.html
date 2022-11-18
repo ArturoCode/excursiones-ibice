@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+  <head>    
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +11,7 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="../../css/detalles_excursion.css" />
+    <script src="../../js/config.js"></script>
     <script src="../../js/detalles_excursion.js"></script>
     <link
         rel="stylesheet"
@@ -26,7 +27,7 @@
   <!--Porque así tendríamos que crear html por excursion que haya aunque solo cambiemos la funcion de getExcursion-->
   
   <!-- Y claro, que hariamos para listar las excursiones cuando son varias. Tanto en el index, profile como en el listado general y las de cada mes-->
-  <body onload="getExcursion(1)">
+  <body onload="getExcursion()">
     <!--CABECERA con imagen-->
     <header>
       <div id="header">        
@@ -131,7 +132,7 @@
       <div class="row detalles-excursion"> 
           <!-- !!!!!!!! Deberíamos coger la imagen de la BBDD-->  
           <div class="col-12" id="nombre-excursion"></div>               
-          <div class="col-6 img "><img id="imagenf" src="https://cristalderoca.com/senderismo/wp-content/uploads/2018/11/camino-santiago-cristalderoca-home-500x325.jpg" alt="Camino de Santiago Excursiones Íbice"></div>
+          <div class="col-6 img "><img id="imagenf" alt="Camino de Santiago Excursiones Íbice"></div>
           <div class="col-6 info">
             <!-- !!!!!!!! Deberíamos coger EL NOMBRE DE LA BBDD porque esta tambien se muestra en el formato pequeño, la necesitamos coger-->   
             
@@ -179,12 +180,12 @@
               <p></p>
           </div>
           <div class="col-6 img">
-              <a href=""><img id="img-exc" src="../../media/promo2.png"/></a>
+              <a href=""><img id="img-exc"/></a>
           </div>
         </div>
         <div id="descripcion2" class="row">
           <div class="col-6 img">
-              <a href=""><img id="img-exc" src="../../media/promo2.png"/></a>
+              <a href=""><img id="img-exc"/></a>
           </div>
           <div class="col-6 texto">
             <p></p>
