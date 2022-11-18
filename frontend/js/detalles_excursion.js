@@ -5,13 +5,21 @@ var opciones = {
     day: "numeric",
   };
   
-  function getExcursion(id) {
-    var url = `http://localhost:3000/excursiones/${id}`;
+  function getExcursion() {
+    //objeto que te parsea los queryParams y el id haces la peticion
+    console.log(window.location.search)
+    var urlParams = new URLSearchParams(window.location.search)
+    var id = urlParams.get("id")       
+
+    var url = `${config.urlBackend}/excursiones/${id}`;
+
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
-        //Cambiar el formato de las fechas creando un objeto date con la fecha y cambiandolo a la fecha formato españa
         document.getElementById("nombre-excursion").innerHTML = data.nombre_excursion;
+        
+        document.getElementById("imagenf").src = data.url_imagen_principal;
+        //Cambiar el formato de las fechas creando un objeto date con la fecha y cambiandolo a la fecha formato españa
         document.getElementById("fecha-inicio").innerHTML = new Date(
           data.fecha_inicio
         ).toLocaleDateString("es-ES", opciones);
@@ -28,16 +36,20 @@ var opciones = {
         document.getElementById("precio").innerHTML = data.precio+" €";
   
         var descripcionArray = data.descripcion.split("(fin-parrafo)");
+        var imagesArray = data.url_imagen.split(",");
         var descripciones = document.getElementById("descripciones");
         var descripcion1 = document.getElementById("descripcion1");
         var descripcion2 = document.getElementById("descripcion2");
-        //
+        //poner texto izq o derecha 
         for (var i = 0; i < descripcionArray.length; i++) {
           var descripcionTemporal;
           if (i % 2 === 0) descripcionTemporal = descripcion1.cloneNode(true);
           else descripcionTemporal = descripcion2.cloneNode(true);
           descripcionTemporal.getElementsByTagName("p")[0].innerHTML =
             descripcionArray[i];
+          descripcionTemporal.getElementsByTagName("img")[0].src =
+            imagesArray[i];
+          
           descripciones.appendChild(descripcionTemporal);
         }
   
