@@ -53,6 +53,12 @@ a.btn{
   width: 100%;
 }
 
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; 
+
+}
+
 #menu {
   /*Cambiar el fixed por un boton que suba al inicio de la pagina/*
   /*position: fixed;*/
@@ -204,6 +210,12 @@ footer {
     padding-left: 20px;
     padding-bottom: 10px;
     
+  }
+
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
+
   }
   
 }
