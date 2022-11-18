@@ -6,7 +6,7 @@ var opciones = {
   };
   
   function getExcursion() {
-    //objeto que te parsea los queryParams y el id haces la peticion
+    //objeto que te parsea los queryParams(te lo pasa por la url) y con el id haces la peticion
     console.log(window.location.search)
     var urlParams = new URLSearchParams(window.location.search)
     var id = urlParams.get("id")       
