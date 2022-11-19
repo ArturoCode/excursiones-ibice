@@ -22,6 +22,8 @@ app.use(cors())
 //servir estaticamente la carpeta public
 app.use(express.static("public"))
 
+//EXCURSIONES
+
 app.get('/api/excursiones/:id', (req, res) => {
   const id= req.params['id']
   const query = `SELECT * FROM excursiones WHERE id_excursion=${id}`
@@ -43,6 +45,31 @@ app.get('/api/excursiones', (req, res) => {
     res.json(result)
   });
 })
+
+//BLOG
+
+app.get('/api/blog/:id', (req, res) => {
+  const id= req.params['id']
+  const query = `SELECT * FROM blog WHERE id_entrada=${id}`
+  dbcon.query(query, function (err, result, fields) {
+    if (err) throw err
+    if (result.length===0){
+      res.status(404).send("NOT FOUND")
+      return
+    }   
+    res.json(result[0])
+  });
+})
+
+app.get('/api/blog', (req, res) => {
+  const query = `SELECT * FROM blog`
+  dbcon.query(query, function (err, result, fields) {
+    if (err) throw err
+    
+    res.json(result)
+  });
+})
+
 //servir estaticamente el frontend
 app.use("/js",express.static("../frontend/js"))
 app.use("/css",express.static("../frontend/css"))
