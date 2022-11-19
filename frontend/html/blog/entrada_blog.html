@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="../../css/entrada_blog.css" />
     <script src="../../js/config.js"></script>
+    <script src="../../js/entrada_blog.js"></script>
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -20,47 +21,50 @@
         referrerpolicy="no-referrer"
         />
 
-    <title>Blog - Excursiones Íbice</title>
+    <title>Entrada del blog - Excursiones Íbice</title>
   </head>
-  <body>
+  <body onload="getEntrada()">
     <!--CABECERA con imagen-->
     <header>
       <div id="header">        
         <!--MENÚ-->          
         <div id="menu">               
           <nav class="navbar navbar-expand-lg">            
-            <button
-              class="navbar-toggler nav-bar-color navbar-light"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
+            <button id="menu-desplegable"
+              class="navbar-toggler nav-bar-color navbar-light" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#navbarSupportedContent" 
+              aria-controls="navbarSupportedContent" 
+              aria-expanded="false" 
               aria-label="Toggle navigation"
             >
-            <span class="navbar-toggler-icon"></span>
+              <span id="icono-menu"class="navbar-toggler-icon"></span>
             </button>                      
             <div class="collapse navbar-collapse" id="navbarSupportedContent">              
-              <ul class="navbar-nav w-100 justify-content-around">         
+              <ul class="navbar-nav  justify-content-around">         
                 <a href="../index.html"><img id="logo" src="../../media/logo.png" /></a>          
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html" >INICIO</a>
+                </li>
                 <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="../listado_excursiones.html"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
+                  <a  class="btn excursiones" href="../listado_excursiones.html">EXCURSIONES</a>
+                  <button 
+                    type="button" 
+                    class="btn dropdown-toggle dropdown-toggle-split" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
                     aria-expanded="false"
-                    
                   >
-                    EXCURSIONES
-                  </a>
+                  
+                  </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="../listado_excursiones.html">LISTADO</a>
                     <a class="dropdown-item" href="#">SEPTIEMBRE 2022</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">OCTUBRE 2022</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">NOVIEMBRE 2022</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">DICIEMBRE 2022</a>
                   </div>
                 </li>
@@ -68,41 +72,36 @@
                   <a class="nav-link" href="../blog.html" >BLOG</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="../about-us.html"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
+                  <a  class="btn conocenos" href="../about-us.html">CONÓCENOS</a>
+                  <button 
+                    type="button" 
+                    class="btn dropdown-toggle dropdown-toggle-split" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
                     aria-expanded="false"
-                    
-                  >
-                    CONÓCENOS
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../about-us.html">SOBRE LA EMPRESA</a>
-                    <a class="dropdown-item" href="../faq.html">FAQ</a>
+                  >                  
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="../faq.html">FAQ</a>                                      
                   </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="../contact.html" >CONTACTO</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
+                  <a  class="btn user" href="../user/login.html"><i class="fa fa-fw fa-user fa-lg"></i></a>
+                  <button 
+                    type="button" 
+                    class="btn dropdown-toggle dropdown-toggle-split" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
                     aria-expanded="false"
-                    
-                  >
-                  <i class="fa fa-fw fa-user fa-lg"></i>
+                  >                  
+                  </button>                 
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="../user/login.html">INICIAR SESIÓN</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="../user/register.html">REGISTRARSE</a>
                     <!--  <a class="dropdown-item" href="./user/profile.html">PERFIL</a>  -->
                     <!--  <a class="dropdown-item" href="#">CERRAR SESION</a>  -->
@@ -120,60 +119,28 @@
     <!--CONTENIDO-->
 
     <!--SECCIONES BLOG-->
-    
-
-
-    <div class="container"  id="contenido">        
-        <h1 id="titulo" text-align="center">Titulo entrada1</h1> 
-        <div id="seccion1">
-            <h1 class="col-12"id="titulo">seccion1</h1> 
-            <div class="row seccion">
-                <div class="col-6 texto">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit blandit at quisque, nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum aliquam conubia cras.risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum aliquam conubia cras  nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum
-                    </p>
-                </div>
-                <div class="col-6 img">
-                    <a href=""><img id="img-blog" src="../../media/promo2.png"/></a>
-                </div>
-            </div>
-            
-            <div class="row seccion">
-                <div class="col-6 img">
-                    <a href=""><img id="img-blog" src="../../media/promo2.png"/></a>
-                </div>
-                <div class="col-6 texto">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit blandit at quisque, nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum aliquam conubia cras  nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum ali.
-                    </p>
-                </div>
-                
-            </div>
+  
+    <div class="container mt-5"  id="contenido">        
+      <div><h1 id="titulo-entrada" class="mb-5">Entrada del blog</h1></div>  
+      <div id="secciones">
+        <div id="seccion1" class="row mb-5">        
+          <div class="col-6 texto">
+              <p></p>
+          </div>
+          <div class="col-6 img">
+              <a href=""><img id="img-blog"/></a>
+          </div>
         </div>
-        
-        <div id="seccion2">
-            <h1 class="col-12" id="titulo">seccion2</h1> 
-            <div class="row seccion">
-                <div class="col-6 texto">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit blandit at quisque, nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum aliquam conubia cras.risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum aliquam conubia cras  nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum
-                    </p>
-                </div>
-                <div class="col-6 img">
-                    <a href=""><img id="img-blog" src="../../media/promo2.png"/></a>
-                </div>
-            </div>
-            
-            <div class="row seccion">
-                <div class="col-6 img">
-                    <a href=""><img id="img-blog" src="../../media/promo2.png"/></a>
-                </div>
-                <div class="col-6 texto">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipiscing elit blandit at quisque, nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum aliquam conubia cras  nullam ultricies fusce malesuada. Odio erat porta molestie porttitor congue ultrices, risus class vehicula aptent eu pulvinar, euismod bibendum orci tristique senectus. Phasellus pretium netus blandit mattis urna massa tincidunt sapien vel, curabitur hendrerit nascetur eget etiam sagittis hac porta litora felis, integer enim aliquet interdum fermentum ali.
-                    </p>
-                </div>
-                
-            </div>
+        <div id="seccion2" class="row mb-5">
+          <div class="col-6 img">
+              <a href=""><img id="img-blog"/></a>
+          </div>
+          <div class="col-6 texto">
+            <p></p>
+          </div>        
         </div>
+      </div>
     </div>
-    
 
 <!--FOOTER-->
 <footer class="text-center text-muted bg-light mt-5">

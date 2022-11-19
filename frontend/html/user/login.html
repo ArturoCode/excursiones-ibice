@@ -29,38 +29,41 @@
         <!--MENÚ-->          
         <div id="menu">               
           <nav class="navbar navbar-expand-lg">            
-            <button
-              class="navbar-toggler nav-bar-color navbar-light"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
+            <button id="menu-desplegable"
+              class="navbar-toggler nav-bar-color navbar-light" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#navbarSupportedContent" 
+              aria-controls="navbarSupportedContent" 
+              aria-expanded="false" 
               aria-label="Toggle navigation"
             >
-            <span class="navbar-toggler-icon"></span>
+              <span id="icono-menu"class="navbar-toggler-icon"></span>
             </button>                      
             <div class="collapse navbar-collapse" id="navbarSupportedContent">              
-              <ul class="navbar-nav w-100 justify-content-around">         
+              <ul class="navbar-nav  justify-content-around">         
                 <a href="../index.html"><img id="logo" src="../../media/logo.png" /></a>          
+                <li class="nav-item">
+                  <a class="nav-link" href="../index.html" >INICIO</a>
+                </li>
                 <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="../listado_excursiones.html"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
+                  <a  class="btn excursiones" href="../listado_excursiones.html">EXCURSIONES</a>
+                  <button 
+                    type="button" 
+                    class="btn dropdown-toggle dropdown-toggle-split" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
                     aria-expanded="false"
-                    
                   >
-                    EXCURSIONES
-                  </a>
+                  
+                  </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="../listado_excursiones.html">LISTADO</a>
                     <a class="dropdown-item" href="#">SEPTIEMBRE 2022</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">OCTUBRE 2022</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">NOVIEMBRE 2022</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">DICIEMBRE 2022</a>
                   </div>
                 </li>
@@ -68,44 +71,38 @@
                   <a class="nav-link" href="../blog.html" >BLOG</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="../about-us.html"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
+                  <a  class="btn conocenos" href="../about-us.html">CONÓCENOS</a>
+                  <button 
+                    type="button" 
+                    class="btn dropdown-toggle dropdown-toggle-split" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
                     aria-expanded="false"
-                    
-                  >
-                    CONÓCENOS
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../about-us.html">SOBRE LA EMPRESA</a>
-                    <a class="dropdown-item" href="../faq.html">FAQ</a>
+                  >                  
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="../faq.html">FAQ</a>                                      
                   </div>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="../contact.html" >CONTACTO</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a
-                    class="nav-link dropdown-toggle"
-                    href="#"
-                    id="navbarDropdown"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-haspopup="true"
+                  <a  class="btn user" href="./login.html"><i class="fa fa-fw fa-user fa-lg"></i></a>
+                  <button 
+                    type="button" 
+                    class="btn dropdown-toggle dropdown-toggle-split" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
                     aria-expanded="false"
-                    
-                  >
-                  <i class="fa fa-fw fa-user fa-lg"></i>
+                  >                  
+                  </button>                 
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../user/profile.html">PERFIL</a>
-                    <a class="dropdown-item" href="../user/login.html">INICIAR SESIÓN</a>
-                    <a class="dropdown-item" href="../user/register.html">REGISTRARSE</a>
-                    <!--  <a class="dropdown-item" href="./user/profile.html">PERFIL</a>  -->
+                    <a class="dropdown-item" href="./profile.html">PERFIL</a>
+                    <a class="dropdown-item" href="./login.html">INICIAR SESIÓN</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="./register.html">REGISTRARSE</a>
                     <!--  <a class="dropdown-item" href="#">CERRAR SESION</a>  -->
                   </div>
                 </li>
