@@ -59,13 +59,13 @@
                   
                   </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">SEPTIEMBRE 2022</a>
+                    <a class="dropdown-item" href="./listado_excursiones.html?mes=septiembre">SEPTIEMBRE 2022</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">OCTUBRE 2022</a>
+                    <a class="dropdown-item" href="./listado_excursiones.html?mes=octubre">OCTUBRE 2022</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">NOVIEMBRE 2022</a>
+                    <a class="dropdown-item" href="./listado_excursiones.html?mes=noviembre">NOVIEMBRE 2022</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">DICIEMBRE 2022</a>
+                    <a class="dropdown-item" href="./listado_excursiones.html?mes=diciembre">DICIEMBRE 2022</a>
                   </div>
                 </li>
                 <li class="nav-item">
@@ -112,24 +112,22 @@
           </nav>
         </div>            
         <!--BARRA DE BUSQUEDA-->
-        <div id="barra-busqueda">          
-          <form>
+        <div id="barra-busqueda">         
             <select id="lugares"> 
               <option value="">Lugares</option>
-              <option value="">Oviedo</option> 
-              <option value="">A Coruña</option>
-              <option value="">Murcia</option>
-              <option value="">Teruel</option>
+              <option value="Guadalajara">Guadalajara</option> 
+              <option value="Segovia">Segovia</option>
+              <option value="Murcia">Murcia</option>
+              <option value="Teruel">Teruel</option>
             </select>
-            <select id="lugares"> 
+            <select id="meses"> 
               <option value="">Mes de salida</option>
-              <option value="SEP">Septiembre</option> 
-              <option value="OCT">Octubre</option>
-              <option value="NOV">Noviembre</option>
-              <option value="DIC">Diciembre</option>
+              <option value="septiembre">Septiembre</option> 
+              <option value="octubre">Octubre</option>
+              <option value="noviembre">Noviembre</option>
+              <option value="diciembre">Diciembre</option>
             </select>
-            <input type="submit"></input>
-          </form>
+            <button onclick="filtrarExcursiones()">Enviar</button>          
         </div>        
       </div>
       

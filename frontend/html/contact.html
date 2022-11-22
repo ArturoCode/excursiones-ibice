@@ -150,16 +150,16 @@
         <div id="contactar">
             <h1 id="titulo">Contáctanos</h1>
                <hr>
-             <form action="#">
+             <form action="/api/contacto" method="post">
 
                <label for="nombre">Nombre y apellidos</label>
-               <input type="text" id="contac" name="nombrecompleto" placeholder="Nombre, apellidos" required>
+               <input type="text" id="nombre" name="nombre" placeholder="Nombre, apellidos" required>
 
                <label for="email">E-mail</label>
-               <input type="email" id="contac" name="email" placeholder="E-mail" required>
+               <input type="email" id="email" name="email" placeholder="E-mail" required>
                
                <label for="telefono">Asunto</label>
-               <input type="text" id="contac" name="asunto" placeholder="Asunto del mensaje" required>				
+               <input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje" required>				
 
                <label for="mensaje">Mensaje</label>
                <textarea id="mensaje" name="mensaje" placeholder="Escribe..." required></textarea>

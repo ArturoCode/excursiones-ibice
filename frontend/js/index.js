@@ -44,4 +44,19 @@ var opciones = {
       
     });
   }
+
+  function filtrarExcursiones(){
+    const destino = document.getElementById("lugares").value;
+    const mes = document.getElementById("meses").value;
+    var url = `${config.url}/listado_excursiones.html?`;
+    if(destino && destino.length > 0){
+      url += `&destino=${destino}`
+    }
+    if(mes && mes.length > 0){
+      url += `&mes=${mes}`
+    }
+    //cambiar de url
+    window.location=url
+
+  }
   

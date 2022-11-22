@@ -30,10 +30,7 @@ body {
   margin-left: 60px;
 }
 
-#header a {
-  margin: 20px;
-  margin-right: 5px;
- 
+#header a { 
   justify-content: center;
   align-items: center;
   color:black;
@@ -62,7 +59,7 @@ a.btn{
 #menu {
   /*Cambiar el fixed por un boton que suba al inicio de la pagina/*
   /*position: fixed;*/
-
+  padding: 20px;
   width: 100%;
   /*padding-bottom: 10px;*/
 }
@@ -74,16 +71,24 @@ a.btn{
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top:100px;
-  background-color: black;  
+  top: 380px;
+  position: absolute;
+  transform: translate(-50%,-50% );
+  left: calc(100vw / 2);
+  background-color: black;
+  border-radius: 15px;
+  width: 25%;
+  margin: 0px;
 }
 
-#lugares{
+#lugares,#meses{
   padding: 13px;  
+  margin:3px;
   border: 1px solid black;
   border-radius: 5px;   
 }
-input[type=submit] {
+#barra-busqueda button {
+  margin:3px;
   background-color: #4CAF50;
   color: white;
   padding: 12px 20px;
@@ -93,7 +98,7 @@ input[type=submit] {
   transition-duration: 0.4s;
 }
 
-input[type=submit]:hover {
+#barra-busqueda button:hover {
   background-color: lightblue;
 }
 
