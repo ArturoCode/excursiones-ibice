@@ -34,14 +34,25 @@ var opciones = {
             //si es una de las tres primeras la pones en popular, de la 3 a la 6 en otoño           
             if(data.indexOf(excursion)<3) popularesDOM.appendChild(fichaTemp)
             else otonoDOM.appendChild(fichaTemp)
-
-
-        }
+          }
         //elimar plantilla
         fichaDOM.remove()
+        });
+    }
 
-        
-      
-    });
+  function filtrarExcursiones(){
+    const destino = document.getElementById("lugares").value;
+    const mes = document.getElementById("meses").value;
+    var url = `${config.url}/listado_excursiones.html?`;
+    if(destino && destino.length > 0){
+      url += `&destino=${destino}`
+    }
+    if(mes && mes.length > 0){
+      url += `&mes=${mes}`
+    }
+    
+    //Cambiar de URL
+    window.location=url
+
   }
   

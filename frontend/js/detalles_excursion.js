@@ -16,7 +16,7 @@ var opciones = {
       .then((response) => response.json())
       .then((data) => {
         
-        
+        document.getElementById("nombre-excursion").innerHTML = data.nombre_excursion;
         document.getElementById("imagenf").src = data.url_imagen_principal;
         //Cambiar el formato de las fechas creando un objeto date con la fecha y cambiandolo a la fecha formato españa
         document.getElementById("fecha-inicio").innerHTML = new Date(

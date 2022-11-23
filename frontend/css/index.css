@@ -13,7 +13,7 @@ body {
 #logo {
   width: 200px;
   height: 65px;
-  margin-top: -15px;
+  margin-top: -10px;
 }
 
 #header {
@@ -30,10 +30,7 @@ body {
   margin-left: 60px;
 }
 
-#header a {
-  margin: 20px;
-  margin-right: 5px;
- 
+#header a { 
   justify-content: center;
   align-items: center;
   color:black;
@@ -62,13 +59,20 @@ a.btn{
 #menu {
   /*Cambiar el fixed por un boton que suba al inicio de la pagina/*
   /*position: fixed;*/
-
+  padding: 20px;
   width: 100%;
   /*padding-bottom: 10px;*/
 }
 
 
 /*BARRA DE BUSQUEDA*/
+
+#centro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #barra-busqueda{
   padding:10px;
   display: flex;
@@ -76,13 +80,30 @@ a.btn{
   align-items: center;
   margin-top:100px;
   background-color: black;  
+  width: fit-content;
+  border-radius: 15px;
+  
+  
+  /*top: 380px;
+  position: absolute;
+  transform: translate(-50%,-50% );
+  left: calc(100vw / 2);
+  background-color: black;
+  border-radius: 15px;
+  width: 25%;
+  margin: 0px;
+  */
 }
 
-#lugares{
+#lugares,#meses{
   padding: 13px;  
+  margin: 3px;
   border: 1px solid black;
   border-radius: 5px;   
 }
+
+/*
+
 input[type=submit] {
   background-color: #4CAF50;
   color: white;
@@ -94,6 +115,23 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
+  background-color: lightblue;
+}
+
+*/
+
+#barra-busqueda button {
+  margin:3px;
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+#barra-busqueda button:hover {
   background-color: lightblue;
 }
 
@@ -118,9 +156,39 @@ input[type=submit]:hover {
 
 
 /*FICHA EXCURSION Y PROMOCIONES*/
-.ficha{
-  height:500px;
+
+#populares{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+#excursion-otono{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.datosFicha{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ficha{
+  /*height:500px;*/
+
+  height:530px;
+  width: 350px;
+  border: 1px solid black;
+  border-radius: 5%;
+  margin-right: 30px;
+  margin: 10px;
+  padding-top: 10px;
+
+}
+
 .promo{
   height:300px;
   display: flex;
@@ -128,7 +196,18 @@ input[type=submit]:hover {
   justify-content: center;
 
 }
+
+/*
 #img-promo,#imagenf{
+  width: 100%;
+}
+*/
+
+#imagenf{
+  width: 90%;
+}
+
+#img-promo{
   width: 100%;
 }
 
