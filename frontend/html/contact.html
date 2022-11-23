@@ -143,37 +143,39 @@
 
         <!--EXPLICACIÓN-->
         <div class="col-12">
-            <p>Si quieres trabajar con nuestra empresa ya sea en tema de transporte, alojamiento o materiales para nuestras excursiones, no dudeis en hacernos llegar vuestra propuesta a través de nuestro formulario de contacto.</p>
-        </div>
-    </div>
+          <p>Si quieres trabajar con nuestra empresa ya sea en tema de transporte, alojamiento o materiales para nuestras excursiones, no dudeis en hacernos llegar vuestra propuesta a través de nuestro formulario de contacto.</p>
+      </div>
+  </div>
 
-        <div id="contactar">
-            <h1 id="titulo">Contáctanos</h1>
-               <hr>
-             <form action="/api/contacto" method="post">
+  <!-- El contacto ahora funciona, pero se queda cargando la página como si no hubiera terminado el post del form que va a la funcion-->
 
-               <label for="nombre">Nombre y apellidos</label>
-               <input type="text" id="nombre" name="nombre" placeholder="Nombre, apellidos" required>
+      <div id="contactar">
+          <h1 id="titulo">Contáctanos</h1>
+             <hr>
+           <form action="/api/contacto" method="post">
 
-               <label for="email">E-mail</label>
-               <input type="email" id="email" name="email" placeholder="E-mail" required>
-               
-               <label for="telefono">Asunto</label>
-               <input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje" required>				
+             <label for="nombre">Nombre y apellidos</label>
+             <input type="text" id="nombre" name="nombre" placeholder="Nombre, apellidos" required>
 
-               <label for="mensaje">Mensaje</label>
-               <textarea id="mensaje" name="mensaje" placeholder="Escribe..." required></textarea>
+             <label for="email">E-mail</label>
+             <input type="email" id="email" name="email" placeholder="E-mail" required>
+             
+             <label for="telefono">Asunto</label>
+             <input type="text" id="asunto" name="asunto" placeholder="Asunto del mensaje" required>				
 
-               <input type="submit" value="Enviar">
+             <label for="mensaje">Mensaje</label>
+             <textarea id="mensaje" name="mensaje" placeholder="Escribe..." required></textarea>
 
-             </form>
-           </div>      
+             <input type="submit" value="Enviar">
 
-        
-    </div>
+           </form>
+         </div>      
 
-    
-        <!--FOOTER-->
+      
+  </div>
+
+  
+      <!--FOOTER-->
 <footer class="text-center text-muted bg-light mt-5">
   <div class="row">
     <div class="col-4">

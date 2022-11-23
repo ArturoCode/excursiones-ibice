@@ -115,9 +115,33 @@ input[type=submit]:hover {
 }
 
 /*FICHA EXCURSION Y PROMOCIONES*/
-.ficha{
-  height:500px;
+
+#excursiones{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.datosFicha{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ficha{
+  /*height:500px;*/
+
+  height:530px;
+  width: 350px;
+  border: 1px solid black;
+  border-radius: 5%;
+  margin-right: 30px;
+  margin: 10px;
+  padding-top: 10px;
+
+}
+
 .promo{
   height:300px;
   display: flex;
@@ -125,7 +149,18 @@ input[type=submit]:hover {
   justify-content: center;
 
 }
+
+/*
 #img-promo,#imagenf{
+  width: 100%;
+}
+*/
+
+#imagenf{
+  width: 90%;
+}
+
+#img-promo{
   width: 100%;
 }
 

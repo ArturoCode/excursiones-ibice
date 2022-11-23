@@ -112,6 +112,7 @@
           </nav>
         </div>            
         <!--BARRA DE BUSQUEDA-->
+        <div id="centro">
         <div id="barra-busqueda">         
             <select id="lugares"> 
               <option value="">Lugares</option>
@@ -130,6 +131,7 @@
             <button onclick="filtrarExcursiones()">Enviar</button>          
         </div>        
       </div>
+    </div>
       
             
     </header>
@@ -141,10 +143,10 @@
       <h3 id="titulo">Los más populares</h3>      
       <div id="populares" class="row excursiones-seleccionadas">  
         <!--FICHA EXCURSION-->      
-        <div id="ficha" class="col-4 ficha">          
+        <div id="ficha" class="ficha">   <!--class="col-3 ficha"-->    
           <div>
             <a id="url-excursion" href="./excursiones/detalles_excursion.html"><!--conectado con la base de datos y mostrarlo en detalles excursion -->
-              <img id="imagenf" alt="Camino de Santiago Excursiones Íbice">
+              <div align="center"><img id="imagenf" alt="Camino de Santiago Excursiones Íbice"/></div>
             </a>
           </div>
           <div class="datosFicha">
@@ -159,20 +161,20 @@
                 Hora de salida:<div id="hora-salida"></div>
             </div>
             <div>              
-                <i class="fa fa-arrow-circle-left"></i> 
-                Hora de regreso:<div id="hora-regreso"></div>
-            </div>
-            <div>
-              <i class="fa fa-map-signs"></i>
-              Destino:<div id="destino"></div>
-            </div>
-            <hr>
-            <div id="precio">
-             
-            </div>           
+              <i class="fa fa-arrow-circle-left"></i> 
+              Hora de regreso:<div id="hora-regreso"></div>
+          </div>
+          <div>
+            <i class="fa fa-map-signs"></i>
+            Lugar de destino:<div id="destino"></div>
+          </div>
+          <div>
+            <i class="fas fa-money-bill-wave"></i>
+            Precio del viaje:<div id="precio"></div>           
           </div> 
         </div>
       </div>
+    </div>
       <!--PROMOCIONES-->
       <div class="row promociones">
         <div class="col-6 promo">
@@ -197,32 +199,29 @@
         </div>
       </div>
 
+      <!--QUE SEA UN CARRUSEL DE OPINIONES????-->
+
       <!--OPINIONES-->
+      <h3 id="titulo" style="margin-bottom: -10px;">Opiniones destacadas</h3> 
       <div class="row" id="opiniones">
         <!--FOTO-->
         <div class="col-5" id="contenedor-foto-opinion">
           <div>
-            <a href="#"><!--conectado con la base de datos y mostrarlo en detalles excursion -->
-              <img id="imagenop" src="../media/promo2.png" alt="Camino de Santiago Excursiones Íbice">
-            </a>
+            <img id="img-promo" src="../media/opinion_usuario.png" alt="Camino de Santiago Excursiones Íbice">
           </div>
         </div>
         <!--OPINION-->
         <div class="col-7" id="opinion">
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit nullam tellus tempor tibus gravida cubilia montes iaculis curae, scelerisque tincidunt accumsan viverra neque sodales convallis sollicitudin volutpat congue inceptos. Potenti nisi praesent ac dui himenaeos viverra porta commodo fermentum cras, ullamcorper convallis facilisi sagittis magnis inceptos habitasse lacus cursus metus tellus, ridiculus libero eu ornare torquent fusce a semper donec.</p>
+          <p><b><i>«Llevo más de un año viajando por España con Excursiones Íbice y os lo recomiendo muchísimo, su trato es muy profesional. No hace falta viajar fuera de nuestro país para ver lugares bonitos y conocer nuevas costumbres».</b></i></p>
         </div>
       </div>
 
 
       <!--PRESENTACION IBICE-->
+      <h3 id="titulo">Galería de recuerdos</h3> 
       <div class="row" id="presentacion-ibice">
-        <!--EXPLICACION-->
-        <div class="col-5" id="copy">
-          <p>Lorem ipsum dolor sit amet consectetur adipiscing elit nullam tellus tempor tibus gravida cubilia montes iaculis curae, scelerisque tincidunt accumsan viverra neque sodales convallis sollicitudin volutpat congue inceptos. Potenti nisi praesent ac dui himenaeos viverra porta commodo fermentum cras, ullamcorper convallis facilisi sagittis magnis inceptos habitasse lacus cursus metus tellus, ridiculus libero eu ornare torquent fusce a semper donec.</p>
-        </div>
-          
         <!--CARROUSEL-->
-        <div class="col-7" id="carrousel">
+        <div class="col-12" id="carrousel">
           <div>
             <a href="#"><!--conectado con la base de datos y mostrarlo en detalles excursion -->
               <img id="carrousel-foto" src="https://cristalderoca.com/senderismo/wp-content/uploads/2018/11/camino-santiago-cristalderoca-home-500x325.jpg" alt="Camino de Santiago Excursiones Íbice">
@@ -261,7 +260,8 @@
 
     <div class="col-4" id="contacto">
       <h5 class="text-uppercase mb-4">Contacto</h5></a>
-      <p><a href="contact.html">hola@excursionesibice.com</a></p>          
+      <!-- hola@excursionesibice.com< -->
+      <p><a href="contact.html">excursionesibice@gmail.com</a></p>          
       <p>+34 666 666 666</p>
       <a href="#" target="_blank">
         <i class="fab fa-twitter fa-2x margin-top-20px margin-right-20px"></i>

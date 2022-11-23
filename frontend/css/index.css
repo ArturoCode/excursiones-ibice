@@ -13,7 +13,7 @@ body {
 #logo {
   width: 200px;
   height: 65px;
-  margin-top: -15px;
+  margin-top: -10px;
 }
 
 #header {
@@ -66,12 +66,25 @@ a.btn{
 
 
 /*BARRA DE BUSQUEDA*/
+
+#centro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #barra-busqueda{
   padding:10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 380px;
+  margin-top:100px;
+  background-color: black;  
+  width: fit-content;
+  border-radius: 15px;
+  
+  
+  /*top: 380px;
   position: absolute;
   transform: translate(-50%,-50% );
   left: calc(100vw / 2);
@@ -79,14 +92,34 @@ a.btn{
   border-radius: 15px;
   width: 25%;
   margin: 0px;
+  */
 }
 
 #lugares,#meses{
   padding: 13px;  
-  margin:3px;
+  margin: 3px;
   border: 1px solid black;
   border-radius: 5px;   
 }
+
+/*
+
+input[type=submit] {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+input[type=submit]:hover {
+  background-color: lightblue;
+}
+
+*/
+
 #barra-busqueda button {
   margin:3px;
   background-color: #4CAF50;
@@ -123,9 +156,39 @@ a.btn{
 
 
 /*FICHA EXCURSION Y PROMOCIONES*/
-.ficha{
-  height:500px;
+
+#populares{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+#excursion-otono{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.datosFicha{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ficha{
+  /*height:500px;*/
+
+  height:530px;
+  width: 350px;
+  border: 1px solid black;
+  border-radius: 5%;
+  margin-right: 30px;
+  margin: 10px;
+  padding-top: 10px;
+
+}
+
 .promo{
   height:300px;
   display: flex;
@@ -133,7 +196,18 @@ a.btn{
   justify-content: center;
 
 }
+
+/*
 #img-promo,#imagenf{
+  width: 100%;
+}
+*/
+
+#imagenf{
+  width: 90%;
+}
+
+#img-promo{
   width: 100%;
 }
 
