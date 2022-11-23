@@ -100,29 +100,35 @@ var nodemailer = require('nodemailer');
 const bodyParser = require("body-parser")
 
 app.post('/api/contacto', (req, res) => {
-
+  
   const {nombre, email, asunto, mensaje} = req.body
-
+  var emailIntroducido = email;
   var transporter = nodemailer.createTransport({
     service: 'gmail',
     //autenticacion gmail
     auth: {
+      //user: 'excursionesibice@gmail.com',
+      //pass: 'excursionesibice2022'
       user: 'acalvoconpelo@gmail.com',
       pass: 'eoowrypcrwsvgeki'
     }
   });
+  
+  
 
   var mailOptions = {
-    from: 'acalvoconpelo@gmail.com',
-    to: 'acalvoconpelo@gmail.com',
+    from: `${emailIntroducido}`,
+    to: 'excursionesibice@gmail.com',
     subject: asunto,
-    text: mensaje
+    text: "El mensaje es: " + mensaje + ". Te lo ha mandado desde: " + emailIntroducido + 
+      "(" + nombre + ")."
   };
 
   transporter.sendMail(mailOptions, function(error, info){
     if (error) {
       console.log(error);
     } else {
+      console.log(emailIntroducido);
       console.log('Email sent: ' + info.response);
     }
   });
