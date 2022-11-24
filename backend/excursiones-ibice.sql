@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost
--- Tiempo de generación: 23-11-2022 a las 12:40:00
+-- Servidor: 127.0.0.1
+-- Tiempo de generación: 24-11-2022 a las 19:07:45
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -105,8 +105,11 @@ CREATE TABLE `usuarios` (
 --
 
 INSERT INTO `usuarios` (`id_usuario`, `email`, `password`, `nombre_usuario`, `membresia`, `tipo_usuario`) VALUES
-(1, 'administrador@excursionesibice.com', 'holamundo', 'administrador', 'ADMINISTRADOR', 'admin'),
-(2, 'usuario@excursionesibice.com', 'holamundo', 'usuarioprueba', 'usuario', 'usuario');
+(1, 'excursionesibice@gmail.com', 'holamundo', 'administrador', 'ADMINISTRADOR', 'admin'),
+(2, 'usuario@excursionesibice.com', 'holamundo', 'usuarioprueba', 'usuario', 'usuario'),
+(4, 'rober@gmail.com', '$2b$12$ofivKJ.Qv4NOEWK8g5WADunYgO38cfIUJqOjqgMmSMVz6UnN.b/cy', 'rober', 'usuario', 'usuario'),
+(5, 'inigo@gmail.com', '$2b$12$K8O3g516pYDI46ezVL/49.HR8WgA1cEVNoQbruLSHhON27EjGD4ue', 'IÑIGO', 'usuario', 'usuario'),
+(6, 'alex@gmail.com', '$2b$12$RFtGOd8j6sGXs/iFac0w.u5B2okENj9.KCPWmCJIpFTXOTzJGp/ha', 'alex', 'usuario', 'usuario');
 
 --
 -- Índices para tablas volcadas
@@ -128,7 +131,8 @@ ALTER TABLE `excursiones`
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  ADD PRIMARY KEY (`id_usuario`);
+  ADD PRIMARY KEY (`id_usuario`),
+  ADD UNIQUE KEY `email` (`email`,`nombre_usuario`) USING HASH;
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -150,7 +154,7 @@ ALTER TABLE `excursiones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
