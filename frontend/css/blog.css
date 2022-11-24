@@ -83,10 +83,8 @@ a.btn{
 }
 
 
-
-.img {
-  background-color: #aaa;
-  width:100%;
+#imagen-principal{
+  border-radius: 5%;
 }
 
 .entrada {
@@ -94,7 +92,18 @@ a.btn{
   padding: 20px;
   margin-top: 20px;
   border: 1px solid black;
-  border-radius: 2px;
+  border-radius: 15px;
+  box-shadow: 0 2px 5px rgba(0.3, 0.3, 0.3, 0.9);
+	overflow: hidden;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.entrada:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
 
 #mas-info{
@@ -158,6 +167,11 @@ footer {
   .dropdown:hover .dropdown-menu {
     display: block;
     margin-top: 0; 
+
+  }
+
+  .entrada {
+    display: block;
 
   }
   
