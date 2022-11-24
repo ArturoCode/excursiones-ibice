@@ -53,11 +53,18 @@ a.btn{
 
 .dropdown:hover .dropdown-menu {
   display: block;
-  margin-top: 0; 
+  margin: 0;
+  padding:0;
+  left:auto;
 
 }
 
-#perfil,#cerrar-sesion,#header-nombre-usuario{
+#cerrar-sesion{
+  cursor: pointer;
+}
+
+
+#perfil,#cerrar-sesion,#header-nombre-usuario,#barra2,#barra3{
   display: none;
 }
 

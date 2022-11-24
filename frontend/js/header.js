@@ -4,16 +4,17 @@ window.addEventListener("load", () => {
 function usuarioLoggeado() {
   var user = localStorage.getItem("user");
 
-  if (user) {
-    console.log(user);
+  if (user) {   
     user = JSON.parse(user);
     document.getElementById("header-nombre-usuario").style.display = "block";
     document.getElementById("iniciar-sesion").style.display = "none";
+    document.getElementById("barra1").style.display = "none";
+    document.getElementById("barra2").style.display = "none";
     document.getElementById("registrarse").style.display = "none";
     document.getElementById("perfil").style.display = "block";
+    document.getElementById("barra3").style.display = "block";
     document.getElementById("cerrar-sesion").style.display = "block";
-    document.getElementById("header-nombre-usuario").innerHTML = user.nombre;
-    document.getElementsByClassName("dropdown-divider").style.display= "none";
+    document.getElementById("header-nombre-usuario").innerHTML = user.nombre;    
   }
 }
 
