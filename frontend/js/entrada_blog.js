@@ -5,13 +5,15 @@ function getEntrada() {
 
     var url = `${config.urlBackend}/blog/${id}`;
 
-    //document.getElementById("#titulo-entrada").innerHTML = entrada.titulo_entrada;
-
     fetch(url)
       .then((response) => response.json())
       .then((data) => {
+
+        document.getElementById("titulo-entrada").innerHTML = data.titulo_entrada;
+
         var textoArray = data.texto_entrada.split("(fin-parrafo)");
         var imagesArray = data.url_imagen.split(",");
+        
         var secciones = document.getElementById("secciones");
         var seccion1 = document.getElementById("seccion1");
         var seccion2 = document.getElementById("seccion2");

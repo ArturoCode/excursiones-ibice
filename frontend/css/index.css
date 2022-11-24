@@ -114,23 +114,7 @@ a.btn{
   border-radius: 5px;   
 }
 
-/*
 
-input[type=submit] {
-  background-color: #4CAF50;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  transition-duration: 0.4s;
-}
-
-input[type=submit]:hover {
-  background-color: lightblue;
-}
-
-*/
 
 #barra-busqueda button {
   margin:3px;
@@ -169,6 +153,16 @@ input[type=submit]:hover {
 
 /*FICHA EXCURSION Y PROMOCIONES*/
 
+.datosFicha div{
+  display: -webkit-inline-box;
+  margin-top:10px;
+}
+
+.datosFicha div div{
+  
+  margin-left: 10px;
+}
+
 #populares{
   display: flex;
   align-items: center;
@@ -195,10 +189,18 @@ input[type=submit]:hover {
   width: 350px;
   border: 1px solid black;
   border-radius: 5%;
+  box-shadow: 0 2px 5px rgba(0.3, 0.3, 0.3, 0.9);
+	overflow: hidden;
   margin-right: 30px;
   margin: 10px;
   padding-top: 10px;
+  transition: 0.3s;
 
+}
+
+.ficha:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
 
 .promo{
@@ -206,7 +208,12 @@ input[type=submit]:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: 0.3s;
 
+}
+
+.promo:hover{
+  transform: scaleX(1.06);
 }
 
 /*
@@ -217,6 +224,8 @@ input[type=submit]:hover {
 
 #imagenf{
   width: 90%;
+  border-radius: 5%;
+  margin-bottom: 10px;
 }
 
 #img-promo{

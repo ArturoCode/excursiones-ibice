@@ -115,6 +115,15 @@ a.btn{
   border: 1px solid black;
   border-radius: 2px;
 }
+
+#informacion {
+  margin-top: 60px;
+}
+
+#info-material, #info-atmosferico, #info-detalles{
+  margin-bottom: 35px;
+}
+
 footer {
   padding: 30px 0;
 }
@@ -179,6 +188,27 @@ footer {
   }
   .info,.img{
     max-width: 100%;
+  }
+
+  #descripcion1{
+    display: block;
+  }
+
+  #descripcion1 img{
+    margin-bottom: 20px;
+  }
+
+  #descripciones p{
+    width: 220%;
+    text-align: justify;
+  }
+  
+  #descripcion2{
+    display: block;
+  }
+
+  #descripcion2 img{
+    margin-bottom: 20px;
   }
 }
 
