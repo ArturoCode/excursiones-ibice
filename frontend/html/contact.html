@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="../css/contact.css" />
     <script src="../js/config.js"></script>
+    <script src="../js/contact.js"></script>
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -152,7 +153,7 @@
       <div id="contactar">
           <h1 id="titulo">Contáctanos</h1>
              <hr>
-           <form action="/api/contacto" method="post">
+           <form onsubmit="enviarMailContacto(event)">
 
              <label for="nombre">Nombre y apellidos</label>
              <input type="text" id="nombre" name="nombre" placeholder="Nombre, apellidos" required>
@@ -169,6 +170,7 @@
              <input type="submit" value="Enviar">
 
            </form>
+           <div id="mensaje-ok">Se ha enviado tu solicitud de contacto</div>
          </div>      
 
       

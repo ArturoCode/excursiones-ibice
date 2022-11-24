@@ -16,6 +16,7 @@ body {
   margin-top: -10px;
 }
 
+
 #header {
   background-image: url("../media/header.jpg");
   background-size: cover;
@@ -54,6 +55,10 @@ a.btn{
   display: block;
   margin-top: 0; 
 
+}
+
+#perfil,#cerrar-sesion,#header-nombre-usuario{
+  display: none;
 }
 
 #menu {

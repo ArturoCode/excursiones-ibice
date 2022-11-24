@@ -82,6 +82,10 @@ a.btn{
   font-weight: bold;
 }
 
+#mensaje-ok{
+  display: none;
+}
+
 input[type=text],[type=number],[type=email], textarea {
   display:block;
   width: 90%; 

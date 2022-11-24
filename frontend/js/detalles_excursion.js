@@ -9,7 +9,7 @@ var opciones = {
     //objeto que te parsea los queryParams(te lo pasa por la url) y con el id haces la peticion
     var urlParams = new URLSearchParams(window.location.search)
     var id = urlParams.get("id")       
-
+    
     var url = `${config.urlBackend}/excursiones/${id}`;
 
     fetch(url)

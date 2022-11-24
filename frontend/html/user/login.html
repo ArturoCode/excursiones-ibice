@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="../../css/login.css" />
     <script src="../../js/config.js"></script>
+    <script src="../../js/login.js"></script>
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -121,11 +122,11 @@
       <div id="formulario">      
         <h1 id="titulo">Identificación de usuario</h1>
           <hr>
-          <form action="#">
+          <form onsubmit="iniciarSesion(event)">
             <label for="email"><span class="span">Email</span></label>
             <input type="email" placeholder="Introduce el correo" name="email" required>
             <label for="psw"><span class="span">Contraseña<span></label>
-            <input type="password" placeholder="Introduce la contraseña" name="psw" required>
+            <input type="password" placeholder="Introduce la contraseña" name="password" required>
             <input type="submit" value="Enviar">
           </form>
       </div>

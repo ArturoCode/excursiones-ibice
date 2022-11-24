@@ -12,6 +12,7 @@
     />
     <link rel="stylesheet" href="../../css/register.css" />
     <script src="../../js/config.js"></script>
+    <script src="../../js/register.js"></script>
     <link
         rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -121,15 +122,13 @@
       <div id="formulario">      
         <h1 id="titulo">Registrarse</h1>
           <hr>
-          <form action="#">
-            <label for="nombre"><span class="span">Nombre y apellidos</span></label>
-            <input type="text" placeholder="Nombre, apellidos" name="nombrecompleto" required>
+          <form onsubmit="registrarse(event)">            
             <label for="nombreusuario"><span class="span">Nombre de usuario</span></label>
-            <input type="text" placeholder="Nombre usuario" name="nombrecompleto"  required>
+            <input type="text" placeholder="Nombre usuario" name="nombre_usuario" required>
             <label for="email"><span class="span">Email</span></label>
             <input type="email" placeholder="Introduce el correo" name="email" required>
             <label for="psw"><span class="span">Contraseña<span></label>
-            <input type="password" placeholder="Introduce la contraseña" name="psw" required>
+            <input type="password" placeholder="Introduce la contraseña" name="password" required>
             <input type="submit" value="Enviar">
           </form>
       </div>
