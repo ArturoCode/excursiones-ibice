@@ -331,6 +331,9 @@ footer {
   
 }
 
+#secciones{
+  text-decoration: inherit;
+}
 
 #menu nav {
   padding: 0.5rem 0;
