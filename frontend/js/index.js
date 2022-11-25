@@ -13,7 +13,7 @@ var opciones = {
       .then((data) => {
         //coger solo los 6 primeras excursiones
         data = data.slice(0,6)
-
+        
         var popularesDOM = document.getElementById("populares");
         var otonoDOM = document.getElementById("excursion-otono");
         var fichaDOM = document.getElementById("ficha");

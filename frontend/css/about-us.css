@@ -89,18 +89,23 @@ a.btn{
   font-weight: bold;
 }
 
+
 /*SOBRE ÍBICE*/
 #empresa{
   display: flex;
   align-items: center;
   justify-content: center;
   height: 250px;
-  text-align: center;
+  text-align: justify;
   /*border: 1px solid black;*/
 }
 #imagenop{
   width: 75%; 
   margin-top: -10px; 
+}
+
+#tipos-excursiones{
+  text-align: justify;
 }
 
 /*SOBRE LOS CREADORES*/
@@ -174,6 +179,19 @@ footer {
     display: block;
     margin-top: 0; 
 
+  }
+
+  #empresa{
+    display: block;
+  }
+
+  #empresa p {
+    width: 200%;
+    text-align: justify;
+  }
+
+  #tipos-excursiones{
+    position: relative;
   }
   
 }
