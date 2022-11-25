@@ -21,10 +21,11 @@ async function iniciarSesion(event) {
   return false;
 }
 
-function getSession() {
+async function getSession() {
   var url = `${config.urlBackend}/sesion`;
 
-  fetch(url)
+  await fetch(url)
+    .catch((err) => console.log(err)) 
     .then((res) => res.json())
     .then((data) => {    
       localStorage.setItem("user", JSON.stringify(data.user));

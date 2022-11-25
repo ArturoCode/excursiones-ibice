@@ -116,6 +116,16 @@ a.btn{
   border-radius: 2px;
 }
 
+#descripciones{
+  text-align: justify;
+}
+
+#descripcion2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 #informacion {
   margin-top: 60px;
 }
@@ -208,7 +218,15 @@ footer {
   }
 
   #descripcion2 img{
+    margin-top: 200px;
     margin-bottom: 20px;
+    float: left;
+  }
+
+  #descripcion2 p{
+    position: absolute;
+    top: -540px;
+    width: 200%;
   }
 }
 

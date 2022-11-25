@@ -22,11 +22,7 @@ body {
   background-size: cover;
   height: 380px;
 }
-#header li{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 #header li:first-of-type {
   margin-left: 60px;
 }
@@ -40,6 +36,13 @@ body {
 #header div.dropdown-menu a {
   color: black;
   margin: 10px 0;
+}
+
+.dropdown-menu {
+  left: 50% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
 }
 
 a.btn{
@@ -252,9 +255,6 @@ a.btn{
   text-align: center;
   /*border: 1px solid black;*/
 }
-#carrousel-foto{
-  width: 100%;
-}
 
 
 footer {
@@ -331,6 +331,9 @@ footer {
   
 }
 
+a.text-reset{
+  text-decoration: inherit;
+}
 
 #menu nav {
   padding: 0.5rem 0;

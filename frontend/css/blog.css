@@ -98,6 +98,7 @@ a.btn{
   transition: 0.3s;
   display: flex;
   justify-content: center;
+  text-align: justify;
   align-items: center;
 }
 
@@ -172,7 +173,7 @@ footer {
 
   .entrada {
     display: block;
-
+    width: fit-content;
   }
   
 }
