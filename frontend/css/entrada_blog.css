@@ -99,6 +99,22 @@ a.btn{
   
 }
 
+#secciones{
+  text-align: justify;
+}
+
+#seccion1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#seccion2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 footer {
   padding: 30px 0;
 }
@@ -160,6 +176,37 @@ footer {
   .info,.img{
     max-width: 100%;
   }
+
+  #seccion1{
+    display: block;
+  }
+
+  #seccion1 img{
+    margin-bottom: 20px;
+  }
+
+  #seccion1 p{
+    width: 230%;
+    text-align: justify;
+  }
+  
+  #seccion2{
+    display: block;
+  }
+
+  #seccion2 img{
+    margin-top: 200px;
+    margin-bottom: 20px;
+    float: left;
+  }
+
+  #seccion2 p{
+    position: absolute;
+    top: -540px;
+    width: 200%;
+    text-align: justify;
+  }
+
 }
 
 @media (max-width: 630px) {
