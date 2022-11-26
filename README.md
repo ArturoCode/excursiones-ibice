@@ -14,8 +14,6 @@ BBDD -> MySQL<br/>
 Lenguaje de Marcas & Diseño -> HTML, CSS, SASS, Bootstrap<br/>
 Despliegue -> Docker <br/>
 
-Otros: Apache + Amazon Web Services <br/>
-
 ## Secciones de la página
 
 ### Página de inicio
