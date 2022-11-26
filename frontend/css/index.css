@@ -236,17 +236,82 @@ a.btn{
 }
 
 /*OPINIONES*/
+
+/*
 #opiniones{
   display: flex;
   align-items: center;
   justify-content: center;
   height: 250px;
   text-align: center;
-  /*border: 1px solid black;*/
 }
 #imagenop{
   width: 50%;  
 }
+*/
+
+#carrusel-opiniones{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container1{
+  max-width: 800px;
+  background-color: white;
+  padding: 0;
+}
+.review{
+  font-size: 30px;
+  font-weight: 600;
+  padding: 30px 0 ;
+}
+.name{
+  font-size: 18px;
+  color: #c1e718;
+  margin: 0;
+}
+.job{
+  color: #c8c8c8;
+  font-size: 14px;
+}
+.carousel-inner1{
+  max-width: 800px;
+}
+.fa-minus {
+  font-size: 14px;
+}
+.carousel-indicators1 {
+  bottom: -20px;
+  right: 0;
+  margin: 0;
+}
+
+.carousel-indicators1 [data-bs-target ] {
+  height: 10px;
+  border: 2px solid black;
+  width: 10px;
+  background-color: inherit;
+  border-radius: 50%;
+}
+.carousel-indicators1 .active{
+  border: 2px solid transparent;
+  background-color:#c1e718;
+}
+.left{
+  color: rgb(20, 20, 20);
+  font-weight: 600;
+}
+.right{
+  color: rgb(12, 12, 12);
+  font-weight: 600;
+}
+.carousel-control-next1, .carousel-control-prev1 {
+  position: relative;
+
+}
+
+
 /*PRESENTACION IBICE*/
 #presentacion-ibice{
   display: flex;
@@ -260,8 +325,6 @@ a.btn{
 footer {
   padding: 30px 0;
 }
-
-
 
 
 @media (max-width: 990px) {
@@ -342,6 +405,36 @@ a.text-reset{
 
 #contacto a{
   margin:10px;
+}
+
+@media (max-width:560px) {
+  .review{
+      font-size: 14px;
+      font-weight: 600;
+  }
+  .name{
+      font-size: 13px;
+  }
+  .job{
+      font-size: 10px;
+  }
+  .right{
+      font-size: 12px;
+  }
+  .left{
+      font-size: 12px;
+  }
+  .carousel-indicators1 [data-bs-target ] {
+      height: 8px;
+      border: 1px solid black;
+      width: 8px;
+      background-color: inherit;
+      border-radius: 50%;
+  }
+  .carousel-indicators1 .active{
+      border: 1px solid transparent;
+      background-color:#c1e718;
+  }
 }
 
 
