@@ -182,16 +182,17 @@ footer {
   }
 
   #empresa{
-    display: block;
+    display: flex;
+    width: fit-content;
   }
 
-  #empresa p {
-    width: 200%;
+  #contenedor-foto-opinion{
+    max-width: 100%;
+  }
+
+  #info {
+    max-width: 100%;
     text-align: justify;
-  }
-
-  #tipos-excursiones{
-    position: relative;
   }
   
 }

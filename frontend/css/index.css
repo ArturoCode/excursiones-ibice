@@ -54,6 +54,36 @@ a.btn{
   
 }
 
+
+
+.nav:link:hover a{
+  color: white;
+}
+
+a.btn:hover{
+  background-color: #343434;
+  color: white;
+ 
+}
+
+#header-nombre-usuario,#inicio,#excursiones,#blog,#conocenos,#contacto{
+    border-radius: 10px;
+  
+}
+
+#excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
+  padding:7px;
+}
+#header-nombre-usuario:hover,#inicio:hover,#excursiones:hover,#blog:hover,#conocenos:hover,#contacto:hover{
+  background-color: #343434;
+  color: white;  
+}
+
+#icono-usuario:hover{
+  background-color: #343434;
+  color: white;
+  opacity: .5;
+}
 .navbar-nav{
   width: 100%;
 }
@@ -68,7 +98,10 @@ a.btn{
   cursor: pointer;
 }
 
-
+/*.nav-item.dropdown{
+  margin-top:1px;
+}
+*/
 #perfil,#cerrar-sesion,#header-nombre-usuario,#barra2,#barra3{
   display: none;
 }
@@ -119,14 +152,17 @@ a.btn{
   padding: 13px;  
   margin: 3px;
   border: 1px solid black;
-  border-radius: 5px;   
+  border-radius: 5px;  
+  width:200px; 
 }
+
+
 
 
 
 #barra-busqueda button {
   margin:3px;
-  background-color: #4CAF50;
+  background-color:#C1E718;
   color: white;
   padding: 12px 20px;
   border: none;
@@ -136,7 +172,7 @@ a.btn{
 }
 
 #barra-busqueda button:hover {
-  background-color: lightblue;
+  background-color: gold;
 }
 
 .nav-item a {
@@ -161,7 +197,14 @@ a.btn{
 
 /*FICHA EXCURSION Y PROMOCIONES*/
 
-#button-container{}
+#button-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:10px;
+
+}
+
 .datosFicha div{
   display: -webkit-inline-box;
   margin-top:10px;
@@ -237,22 +280,96 @@ a.btn{
   margin-bottom: 10px;
 }
 
+
+#nombre-excursion{
+  text-decoration: none;
+  color:#C1E718;
+}
+#nombre-excursion:hover{
+  text-decoration: none;
+  color:gold;
+}
 #img-promo{
   width: 100%;
 }
 
 /*OPINIONES*/
+
+/*
 #opiniones{
   display: flex;
   align-items: center;
   justify-content: center;
   height: 250px;
   text-align: center;
-  /*border: 1px solid black;*/
 }
 #imagenop{
   width: 50%;  
 }
+*/
+
+#carrusel-opiniones{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container1{
+  max-width: 800px;
+  background-color: white;
+  padding: 0;
+}
+.review{
+  font-size: 30px;
+  font-weight: 600;
+  padding: 30px 0 ;
+}
+.name{
+  font-size: 18px;
+  color: #c1e718;
+  margin: 0;
+}
+.job{
+  color: #c8c8c8;
+  font-size: 14px;
+}
+.carousel-inner1{
+  max-width: 800px;
+}
+.fa-minus {
+  font-size: 14px;
+}
+.carousel-indicators1 {
+  bottom: -20px;
+  right: 0;
+  margin: 0;
+}
+
+.carousel-indicators1 [data-bs-target ] {
+  height: 10px;
+  border: 2px solid black;
+  width: 10px;
+  background-color: inherit;
+  border-radius: 50%;
+}
+.carousel-indicators1 .active{
+  border: 2px solid transparent;
+  background-color:#c1e718;
+}
+.left{
+  color: rgb(20, 20, 20);
+  font-weight: 600;
+}
+.right{
+  color: rgb(12, 12, 12);
+  font-weight: 600;
+}
+.carousel-control-next1, .carousel-control-prev1 {
+  position: relative;
+
+}
+
+
 /*PRESENTACION IBICE*/
 #presentacion-ibice{
   display: flex;
@@ -262,57 +379,6 @@ a.btn{
   /*border: 1px solid black;*/
 }
 
-#MiCarousel {
-  margin-top: 30px;
-  margin-bottom: 30px;
-  -webkit-box-shadow: 10px 10px 38px -13px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: 10px 10px 38px -13px rgba(0, 0, 0, 0.75);
-  box-shadow: 10px 10px 38px -13px rgba(0, 0, 0, 0.75);
-}
-
-.carousel-img {
-  background-color: #000;
-  color: #fff;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  -webkit-clip-path: polygon(0 0, 96% 0, 100% 100%, 0% 100%);
-  clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
-  opacity: 0.8;
-}
-
-.div-r{
-  padding: 40px;
-  z-index: 2;
-}
-
-.carousel-title{
-  font-size: 80px;
-  font-weight: bold;
-  margin-left: 20px;
-  margin-top: 20px;
-}
-
-.carousel-pagination{
-  background-color: #000 !important;
-  width: 15px !important;
-  height: 15px !important;
-  border-radius: 100%;
-  position: relative;
-  bottom: -50px;
-  opacity: 0.5;
-}
-
-.carousel-pagination.active{
-  opacity: 1;
-}
-
-/*ahora el carrousel funciona pero sigue viendose raro
-es del css en carousel-img pero no veo como tocarlo
-*/
 
 footer {
   padding: 30px 0;
@@ -337,18 +403,29 @@ footer {
   
   #header li{
     display:inline-block;
-    background-color: lightgray;
+    background-color: #343434;
     
   }
   #header a{
     margin:0;
+    color:white;
   
   }
   
+  #header-nombre-usuario,#inicio,#excursione,#blog,#conocenos,#contacto{   
+    color: white;  
+  }
+  #header-nombre-usuario:hover,#inicio:hover,#excursiones:hover,#blog:hover,#conocenos:hover,#contacto:hover{
+     color: white;  
+  }
+  #excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
+    padding:0;
+  }
   
   .btn{
     padding: 0;
   }
+
   #header div.dropdown-menu a {
    margin:0;
    padding-left:10px;
@@ -362,19 +439,26 @@ footer {
     width: 250px;
 
   }
-  #header ul {
-
-    padding-top:5px;
+  #header ul {   
     padding-left: 20px;
     padding-bottom: 10px;
     
   }
-
+  .nav-item.dropdown{
+    margin-top:0;
+  }
   .dropdown-menu {    
     transform:none;
   }
   .dropdown-menu {    
     transform:none!important;
+  }
+  .promo{
+    width: 100%;
+  }
+
+  .dropdown-toggle{
+    color:white
   }
   
   
@@ -404,5 +488,33 @@ a.text-reset{
   margin:10px;
 }
 
-
+@media (max-width:560px) {
+  .review{
+      font-size: 14px;
+      font-weight: 600;
+  }
+  .name{
+      font-size: 13px;
+  }
+  .job{
+      font-size: 10px;
+  }
+  .right{
+      font-size: 12px;
+  }
+  .left{
+      font-size: 12px;
+  }
+  .carousel-indicators1 [data-bs-target ] {
+      height: 8px;
+      border: 1px solid black;
+      width: 8px;
+      background-color: inherit;
+      border-radius: 50%;
+  }
+  .carousel-indicators1 .active{
+      border: 1px solid transparent;
+      background-color:#c1e718;
+  }
+}
 

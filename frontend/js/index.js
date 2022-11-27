@@ -44,7 +44,7 @@ function getExcursiones() {
             }       
             if (infoUsuario.guardadas.includes(excursion.id_excursion)) {          
               botonGuardar.onclick = eliminarExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
-              botonGuardar.style.backgroundColor = "#41ff33"
+              botonGuardar.style.backgroundColor = "#FF0000"
             } else {          
               botonGuardar.onclick = añadirExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
               botonGuardar.style.backgroundColor = "inherit"
@@ -124,7 +124,7 @@ function filtrarExcursiones() {
       .then((response) => response.json())
       .then((data) => {      
         var boton = document.getElementById(idBoton)      
-        boton.style.backgroundColor = "#41ff33";
+        boton.style.backgroundColor = "#FF0000";
         boton.onclick = 
           eliminarExcursionGuardada(id, boton.id);
           

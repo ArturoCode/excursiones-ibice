@@ -45,7 +45,7 @@ var opciones = {
             }       
             if (infoUsuario.guardadas.includes(excursion.id_excursion)) {          
               botonGuardar.onclick = eliminarExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
-              botonGuardar.style.backgroundColor = "#41ff33"
+              botonGuardar.style.backgroundColor = "#FF0000"
             } else {          
               botonGuardar.onclick = añadirExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
               botonGuardar.style.backgroundColor = "inherit"
