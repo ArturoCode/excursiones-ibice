@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-11-2022 a las 19:07:45
+-- Tiempo de generación: 27-11-2022 a las 17:52:21
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -79,11 +79,79 @@ CREATE TABLE `excursiones` (
 INSERT INTO `excursiones` (`id_excursion`, `nombre_excursion`, `url_imagen_principal`, `fecha_inicio`, `fecha_fin`, `nivel`, `transporte`, `destino`, `hora_salida`, `hora_regreso`, `lugar_salida`, `precio`, `descripcion`, `material`, `tiempo_atmosferico`, `detalles`, `url_imagen`) VALUES
 (1, 'CAMINO DE SANTIAGO', 'http://localhost:2000/images/despenalagua-destacada.jpg', '2022-11-19', '2022-11-19', 'Básico', 'Bus', 'Guadalajara', '08:00:00', '20:30:00', 'Getafe', 24, 'En un entorno privilegiado Valverde de los Arroyos, el pueblo mas bonito de la arquitectura negra de Guadalajara, nos ofrece un paisaje alpino como ningún otro. Con el Pico Ocejón como telón de fondo y característica silueta, nos hará sentir pequeños bajo su falda. Sus abruptas y verticales laderas riegan el valle con las aguas del Arroyo de la Gargantilla, Angostura y de la Chorrera antes de unirse para dar paso al Rio Sorbe.\r\nEl Arroyo de la Chorrera se precipita de manera ordenada y se desliza por la negra pizarra de la Sierra de Ayllon dando forma a la Chorrera de Despeñalagua, un capricho de la naturaleza, sin duda de sinigual belleza.(fin-parrafo)Antes de regresar a Madrid, haremos una parada en la Ermita del Enebral y la Ciudad Encantada de Tamajón, un capricho que el aire, el agua y el tiempo ha formado, dejando su huella dibujando en la roca caliza misteriosas formas y alguna que otra cueva que podremos descubrir mientras paseamos por tan singular lugar....te vienes?', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', '2°, Lluvia débil, Sensación T. 12°', 'INCLUYE: Transporte en autobús, Ruta de senderismo 8 km. nivel básico, Seguro básico accidentes/r.c.\r\nGuías', 'http://localhost:2000/images/despenalagua-destacada.jpg,http://localhost:2000/images/despenalagua-slider.jpg'),
 (2, 'HOCES DEL RIAZA', 'http://localhost:2000/images/despenalagua-slider.jpg', '2022-11-20', '2022-11-20', 'Básico 12 Km', 'Bus', 'Segovia', '08:15:00', '20:00:00', 'Plaza Castilla', 25, 'Recorremos hoy las Hoces del Riaza donde el río ha excavado un espectacular cañón entre cortados de las duras rocas calizas, uno de los mayores conjuntos de hoces, cañones, acantilados y desfiladeros y parajes solitarios de gran belleza, que se pueden contemplar en el interior de la Península Ibérica.(fin-parrafo)La capital del buitre leonado es, sin duda, Montejo de la Vega de la Serrezuela, un pequeño pueblo segoviano que tiene casi más letras que habitantes, y en cuyos alrededores prosperan cultivos agrícolas al amparo de las aguas del río Riaza. Desde Montejo, que cuenta con una cooperativa consagrada a la explotación turística de la hoz, parte la pista de tierra que, a lo largo de 12 kilómetros hasta las inmediaciones del caserío amurallado de Maderuelo,  permite remontar las aguas por entre precipicios abarrotados de buitres.', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', '2°, Lluvia débil, Sensación T. 12°', 'INCLUYE\r\nTransporte en autocar\r\nRuta de senderismo Puentes de la Ermita del Casuar  (12 km Nivel Básico )\r\nSeguro de accidentes/r.c.\r\nGuías.', 'http://localhost:2000/images/despenalagua-slider.jpg'),
-(3, 'HOCES DEL RIAZA', 'http://localhost:2000/images/despenalagua-slider.jpg', '2022-11-20', '2022-11-20', 'Básico 12 Km', 'Bus', 'Segovia', '08:15:00', '20:00:00', 'Plaza Castilla', 25, 'Recorremos hoy las Hoces del Riaza donde el río ha excavado un espectacular cañón entre cortados de las duras rocas calizas, uno de los mayores conjuntos de hoces, cañones, acantilados y desfiladeros y parajes solitarios de gran belleza, que se pueden contemplar en el interior de la Península Ibérica.(fin-parrafo)La capital del buitre leonado es, sin duda, Montejo de la Vega de la Serrezuela, un pequeño pueblo segoviano que tiene casi más letras que habitantes, y en cuyos alrededores prosperan cultivos agrícolas al amparo de las aguas del río Riaza. Desde Montejo, que cuenta con una cooperativa consagrada a la explotación turística de la hoz, parte la pista de tierra que, a lo largo de 12 kilómetros hasta las inmediaciones del caserío amurallado de Maderuelo,  permite remontar las aguas por entre precipicios abarrotados de buitres.', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', '2°, Lluvia débil, Sensación T. 12°', 'INCLUYE\r\nTransporte en autocar\r\nRuta de senderismo Puentes de la Ermita del Casuar  (12 km Nivel Básico )\r\nSeguro de accidentes/r.c.\r\nGuías.', 'http://localhost:2000/images/despenalagua-slider.jpg'),
+(3, 'HOCES DEL RIAZA 3', 'http://localhost:2000/images/despenalagua-slider.jpg', '2022-11-20', '2022-11-20', 'Básico 12 Km', 'Bus', 'Segovia', '08:15:00', '20:00:00', 'Plaza Castilla', 25, 'Recorremos hoy las Hoces del Riaza donde el río ha excavado un espectacular cañón entre cortados de las duras rocas calizas, uno de los mayores conjuntos de hoces, cañones, acantilados y desfiladeros y parajes solitarios de gran belleza, que se pueden contemplar en el interior de la Península Ibérica.(fin-parrafo)La capital del buitre leonado es, sin duda, Montejo de la Vega de la Serrezuela, un pequeño pueblo segoviano que tiene casi más letras que habitantes, y en cuyos alrededores prosperan cultivos agrícolas al amparo de las aguas del río Riaza. Desde Montejo, que cuenta con una cooperativa consagrada a la explotación turística de la hoz, parte la pista de tierra que, a lo largo de 12 kilómetros hasta las inmediaciones del caserío amurallado de Maderuelo,  permite remontar las aguas por entre precipicios abarrotados de buitres.', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', '2°, Lluvia débil, Sensación T. 12°', 'INCLUYE\r\nTransporte en autocar\r\nRuta de senderismo Puentes de la Ermita del Casuar  (12 km Nivel Básico )\r\nSeguro de accidentes/r.c.\r\nGuías.', 'http://localhost:2000/images/despenalagua-slider.jpg'),
 (4, 'HOCES DEL RIAZA', 'http://localhost:2000/images/despenalagua-slider.jpg', '2022-11-20', '2022-11-20', 'Básico 12 Km', 'Bus', 'Segovia', '08:15:00', '20:00:00', 'Plaza Castilla', 25, 'Recorremos hoy las Hoces del Riaza donde el río ha excavado un espectacular cañón entre cortados de las duras rocas calizas, uno de los mayores conjuntos de hoces, cañones, acantilados y desfiladeros y parajes solitarios de gran belleza, que se pueden contemplar en el interior de la Península Ibérica.(fin-parrafo)La capital del buitre leonado es, sin duda, Montejo de la Vega de la Serrezuela, un pequeño pueblo segoviano que tiene casi más letras que habitantes, y en cuyos alrededores prosperan cultivos agrícolas al amparo de las aguas del río Riaza. Desde Montejo, que cuenta con una cooperativa consagrada a la explotación turística de la hoz, parte la pista de tierra que, a lo largo de 12 kilómetros hasta las inmediaciones del caserío amurallado de Maderuelo,  permite remontar las aguas por entre precipicios abarrotados de buitres.', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', '2°, Lluvia débil, Sensación T. 12°', 'INCLUYE\r\nTransporte en autocar\r\nRuta de senderismo Puentes de la Ermita del Casuar  (12 km Nivel Básico )\r\nSeguro de accidentes/r.c.\r\nGuías.', 'http://localhost:2000/images/despenalagua-slider.jpg'),
 (5, 'HOCES DEL RIAZA', 'http://localhost:2000/images/despenalagua-slider.jpg', '2022-11-20', '2022-11-20', 'Básico 12 Km', 'Bus', 'Segovia', '08:15:00', '20:00:00', 'Plaza Castilla', 25, 'Recorremos hoy las Hoces del Riaza donde el río ha excavado un espectacular cañón entre cortados de las duras rocas calizas, uno de los mayores conjuntos de hoces, cañones, acantilados y desfiladeros y parajes solitarios de gran belleza, que se pueden contemplar en el interior de la Península Ibérica.(fin-parrafo)La capital del buitre leonado es, sin duda, Montejo de la Vega de la Serrezuela, un pequeño pueblo segoviano que tiene casi más letras que habitantes, y en cuyos alrededores prosperan cultivos agrícolas al amparo de las aguas del río Riaza. Desde Montejo, que cuenta con una cooperativa consagrada a la explotación turística de la hoz, parte la pista de tierra que, a lo largo de 12 kilómetros hasta las inmediaciones del caserío amurallado de Maderuelo,  permite remontar las aguas por entre precipicios abarrotados de buitres.', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', '2°, Lluvia débil, Sensación T. 12°', 'INCLUYE\r\nTransporte en autocar\r\nRuta de senderismo Puentes de la Ermita del Casuar  (12 km Nivel Básico )\r\nSeguro de accidentes/r.c.\r\nGuías.', 'http://localhost:2000/images/despenalagua-slider.jpg'),
 (6, 'HOCES DEL RIAZA', 'http://localhost:2000/images/despenalagua-slider.jpg', '2022-11-20', '2022-11-20', 'Básico 12 Km', 'Bus', 'Segovia', '08:15:00', '20:00:00', 'Plaza Castilla', 25, 'Recorremos hoy las Hoces del Riaza donde el río ha excavado un espectacular cañón entre cortados de las duras rocas calizas, uno de los mayores conjuntos de hoces, cañones, acantilados y desfiladeros y parajes solitarios de gran belleza, que se pueden contemplar en el interior de la Península Ibérica.(fin-parrafo)La capital del buitre leonado es, sin duda, Montejo de la Vega de la Serrezuela, un pequeño pueblo segoviano que tiene casi más letras que habitantes, y en cuyos alrededores prosperan cultivos agrícolas al amparo de las aguas del río Riaza. Desde Montejo, que cuenta con una cooperativa consagrada a la explotación turística de la hoz, parte la pista de tierra que, a lo largo de 12 kilómetros hasta las inmediaciones del caserío amurallado de Maderuelo,  permite remontar las aguas por entre precipicios abarrotados de buitres.', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', '2°, Lluvia débil, Sensación T. 12°', 'INCLUYE\r\nTransporte en autocar\r\nRuta de senderismo Puentes de la Ermita del Casuar  (12 km Nivel Básico )\r\nSeguro de accidentes/r.c.\r\nGuías.', 'http://localhost:2000/images/despenalagua-slider.jpg'),
 (7, 'HOCES DEL RIAZA', 'http://localhost:2000/images/despenalagua-slider.jpg', '2022-11-20', '2022-11-20', 'Básico 12 Km', 'Bus', 'Segovia', '08:15:00', '20:00:00', 'Plaza Castilla', 25, 'Recorremos hoy las Hoces del Riaza donde el río ha excavado un espectacular cañón entre cortados de las duras rocas calizas, uno de los mayores conjuntos de hoces, cañones, acantilados y desfiladeros y parajes solitarios de gran belleza, que se pueden contemplar en el interior de la Península Ibérica.(fin-parrafo)La capital del buitre leonado es, sin duda, Montejo de la Vega de la Serrezuela, un pequeño pueblo segoviano que tiene casi más letras que habitantes, y en cuyos alrededores prosperan cultivos agrícolas al amparo de las aguas del río Riaza. Desde Montejo, que cuenta con una cooperativa consagrada a la explotación turística de la hoz, parte la pista de tierra que, a lo largo de 12 kilómetros hasta las inmediaciones del caserío amurallado de Maderuelo,  permite remontar las aguas por entre precipicios abarrotados de buitres.', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', '2°, Lluvia débil, Sensación T. 12°', 'INCLUYE\r\nTransporte en autocar\r\nRuta de senderismo Puentes de la Ermita del Casuar  (12 km Nivel Básico )\r\nSeguro de accidentes/r.c.\r\nGuías.', 'http://localhost:2000/images/despenalagua-slider.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `excursiones_guardadas`
+--
+
+CREATE TABLE `excursiones_guardadas` (
+  `id_usuario` int(11) NOT NULL,
+  `id_excursion` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `excursiones_guardadas`
+--
+
+INSERT INTO `excursiones_guardadas` (`id_usuario`, `id_excursion`) VALUES
+(5, 3),
+(5, 5),
+(6, 2),
+(6, 3),
+(6, 4),
+(6, 5),
+(6, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `excursiones_hechas`
+--
+
+CREATE TABLE `excursiones_hechas` (
+  `id_usuario` int(11) NOT NULL,
+  `id_excursion` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `excursiones_hechas`
+--
+
+INSERT INTO `excursiones_hechas` (`id_usuario`, `id_excursion`) VALUES
+(5, 1),
+(5, 2),
+(5, 4),
+(6, 2),
+(6, 3),
+(6, 4),
+(6, 5),
+(6, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sessions`
+--
+
+CREATE TABLE `sessions` (
+  `session_id` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `expires` int(11) UNSIGNED NOT NULL,
+  `data` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `sessions`
+--
+
+INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
+('FXKEMt61fD1ONfmApLT97e0B3F9Gd3Hi', 1674751745, '{\"cookie\":{\"originalMaxAge\":5183999999,\"expires\":\"2023-01-26T12:50:16.692Z\",\"secure\":false,\"httpOnly\":true,\"path\":\"/\"},\"user\":{\"id\":5,\"nombre\":\"IÑIGO\",\"email\":\"inigo@gmail.com\",\"rol\":\"usuario\"}}');
 
 -- --------------------------------------------------------
 
@@ -128,6 +196,26 @@ ALTER TABLE `excursiones`
   ADD PRIMARY KEY (`id_excursion`);
 
 --
+-- Indices de la tabla `excursiones_guardadas`
+--
+ALTER TABLE `excursiones_guardadas`
+  ADD KEY `INDEX ID_EXCURSION` (`id_usuario`,`id_excursion`),
+  ADD KEY `FOREIGN EXCURSION` (`id_excursion`);
+
+--
+-- Indices de la tabla `excursiones_hechas`
+--
+ALTER TABLE `excursiones_hechas`
+  ADD KEY `FOREIGN KEY USUARIOS-EXCURSION` (`id_usuario`,`id_excursion`),
+  ADD KEY `FOREIGN KEY EXCURSION` (`id_excursion`);
+
+--
+-- Indices de la tabla `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`session_id`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -155,6 +243,24 @@ ALTER TABLE `excursiones`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `excursiones_guardadas`
+--
+ALTER TABLE `excursiones_guardadas`
+  ADD CONSTRAINT `FOREIGN EXCURSION` FOREIGN KEY (`id_excursion`) REFERENCES `excursiones` (`id_excursion`),
+  ADD CONSTRAINT `FOREIGN USUARIO` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
+
+--
+-- Filtros para la tabla `excursiones_hechas`
+--
+ALTER TABLE `excursiones_hechas`
+  ADD CONSTRAINT `FOREIGN KEY EXCURSION` FOREIGN KEY (`id_excursion`) REFERENCES `excursiones` (`id_excursion`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FOREIGN KEY USUARIO` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -9,12 +9,26 @@ const app = express();
 const port = 2000;
 const dbcon = db.connect();
 
+var MySQLStore = require('express-mysql-session')(session);
+
+var options = {
+	host: 'localhost',
+	port: 3306,
+	user: 'root',
+	password: '',
+	database: 'excursiones-ibice'
+};
+
+var sessionStore = new MySQLStore(options);
+
 app.use(
   session({
     secret: "keyboard cat",
     resave: false,
-    saveUninitialized: true,
-    cookie: { secure: false },
+    saveUninitialized: false,
+    store: sessionStore,
+    //60 diasx24hx60minx60secsx1000miliseg 
+    cookie: { secure: false, maxAge: 60*24*60*60*1000},
   })
 );
 
@@ -269,6 +283,110 @@ app.get("/api/desconectarse", (req, res) => {
     .status(200)
     .send({});
 });
+
+//usuario
+app.get("/api/current-user", (req, res) => {  
+  console.log(req.session.user)
+  var query = `SELECT * FROM usuarios WHERE  id_usuario=${req.session.user.id}`;
+  dbcon.query(query, function(err, result, fields){
+    if (err) throw err;
+    if (result.length === 0) return res.status(401).send({})
+    res.status(200).send(result[0]);
+  })
+});
+
+//MG Y HECHAS
+
+app.post("/api/usuario/excursiones-guardadas", (req, res) => {
+  const id_usuario = req.session.user.id
+  const {id_excursion} = req.body
+  var query = `INSERT INTO excursiones_guardadas (id_usuario, id_excursion) VALUES (${id_usuario},${id_excursion})`;
+  dbcon.query(query, function(err, result, fields){
+    if (err) throw err;
+
+    res.status(200).send({});
+  })
+})
+
+app.delete("/api/usuario/excursiones-guardadas", (req, res) => {
+  const id_usuario = req.session.user.id
+  const {id_excursion} = req.body
+  var query = `DELETE FROM excursiones_guardadas WHERE id_usuario=${id_usuario} AND id_excursion=${id_excursion} `;
+  dbcon.query(query, function(err, result, fields){
+    if (err) throw err;
+
+    res.status(200).send({});
+  })
+})
+
+app.get("/api/usuario/excursiones-guardadas", (req, res) => { 
+  const id_usuario = req.session.user.id  
+  var query = `SELECT * FROM excursiones_guardadas RIGHT JOIN excursiones ON excursiones_guardadas.id_excursion=excursiones.id_excursion WHERE id_usuario=${id_usuario} `;
+  dbcon.query(query, function(err, result, fields){
+    if (err) throw err;
+    res.status(200).send(result);
+  })
+});
+
+
+app.post("/api/usuario/excursiones-hechas", (req, res) => {
+  const id_usuario = req.session.user.id
+  const {id_excursion} = req.body
+  var query = `INSERT INTO excursiones_hechas (id_usuario, id_excursion) VALUES (${id_usuario},${id_excursion})`;
+  dbcon.query(query, function(err, result, fields){
+    if (err) throw err;
+
+    res.status(200).send({});
+  })
+})
+
+app.delete("/api/usuario/excursiones-hechas", (req, res) => {
+  const id_usuario = req.session.user.id
+  const {id_excursion} = req.body
+  var query = `DELETE FROM excursiones_hechas WHERE id_usuario=${id_usuario} AND id_excursion=${id_excursion} `;
+  dbcon.query(query, function(err, result, fields){
+    if (err) throw err;
+
+    res.status(200).send({});
+  })
+})
+
+
+app.get("/api/usuario/excursiones-hechas", (req, res) => { 
+  
+  const id_usuario = req.session.user.id  
+  var query = `SELECT * FROM excursiones_hechas RIGHT JOIN excursiones ON excursiones_hechas.id_excursion=excursiones.id_excursion WHERE id_usuario=${id_usuario}`;
+  dbcon.query(query, function(err, result, fields){
+    if (err) throw err;
+
+    res.status(200).send(result);
+  })
+});
+
+
+app.get("/api/usuario/excursiones/info", async (req, res) => {
+  console.log(req.session.user)
+  if(!req.session.user){ return res.status(200).send({hechas:[], guardadas:[]})}
+  hechas = await new Promise((resolve, reject) => {
+    dbcon.query(
+      `SELECT * FROM excursiones_hechas WHERE id_usuario = ${req.session.user.id}`,
+      function (err, result, fields) {
+        if (err) throw err;       
+        resolve(result);
+      }
+    );
+  });
+  guardadas = await new Promise((resolve, reject) => {
+    dbcon.query(
+      `SELECT * FROM excursiones_guardadas WHERE id_usuario = ${req.session.user.id}`,
+      function (err, result, fields) {
+        if (err) throw err;       
+        resolve(result);
+      }
+    );
+  });
+  res.status(200).send({guardadas:guardadas.map(a => a.id_excursion),hechas:hechas.map(a => a.id_excursion)})
+})
 
 //servir estaticamente el frontend
 app.use("/js", express.static("../frontend/js"));
