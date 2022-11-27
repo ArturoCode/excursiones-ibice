@@ -144,6 +144,14 @@
       <div id="populares" class="row excursiones-seleccionadas">  
         <!--FICHA EXCURSION-->      
         <div id="ficha" class="ficha">   <!--class="col-3 ficha"-->    
+          <div id="button-container">
+            <button id="boton-hecha" class="like-btn">
+              <i class="fas fa-user-tag"></i>
+            </button>
+            <button id="boton-guardar" class="like-btn">
+              <i class="far fa-thumbs-up"></i>
+            </button>
+          </div>
           <div>
             <a id="url-excursion" href="./excursiones/detalles_excursion.html"><!--conectado con la base de datos y mostrarlo en detalles excursion -->
               <div align="center"><img id="imagenf" alt="Camino de Santiago Excursiones Íbice"/></div>
@@ -163,17 +171,17 @@
             <div>              
               <i class="fa fa-arrow-circle-left"></i> 
               Hora de regreso:<div id="hora-regreso"></div>
+            </div>
+            <div>
+              <i class="fa fa-map-signs"></i>
+              Lugar de destino:<div id="destino"></div>
+            </div>
+            <div>
+              <i class="fas fa-money-bill-wave"></i>
+              Precio del viaje:<div id="precio"></div>           
+            </div> 
           </div>
-          <div>
-            <i class="fa fa-map-signs"></i>
-            Lugar de destino:<div id="destino"></div>
-          </div>
-          <div>
-            <i class="fas fa-money-bill-wave"></i>
-            Precio del viaje:<div id="precio"></div>           
-          </div> 
         </div>
-      </div>
     </div>
       <!--PROMOCIONES-->
       <div class="row promociones">
@@ -199,63 +207,74 @@
         </div>
       </div>
 
-      <!--OPINIONES-->
-      <h3 id="titulo">Opiniones destacadas</h3> 
-      <div id="carrusel-opiniones"><div class="d-flex align-items-center py-5 mh-100">    
-        <a class="carousel-control-prev1 text-decoration-none " href="#mycarousel" role="button" data-bs-slide="prev">
-            <div class="d-flex flex-column justify-content-center me-2 ms-auto left">ANTERIOR<span class="fas fa-arrow-left"></span> </div> <span class="sr-only">Previous</span>
-        </a>
-        <div class="container1">
-            <div id="mycarousel" class="carousel slide" data-bs-ride="carousel">
-                <!--<ol class="carousel-indicators1">
-                    <li data-bs-target="#mycarousel" data-bs-slide-to="0" class="active"></li>
-                    <li data-bs-target="#mycarousel" data-bs-slide-to="1"></li>
-                    <li data-bs-target="#mycarousel" data-bs-slide-to="2"></li>
-                </ol>-->
-                <div class="carousel-inner1">
-                    <div class="carousel-item active">
-                        <div class="row">
-                            <div class="col-lg-6 ">
-                                <img src="https://images.unsplash.com/photo-1567468219153-4b1dea5227ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="col-lg-6 ">
-                                <div class=" d-flex flex-column justify-content-center my-5 px-3">
-                                    <p class="review text-center">«No hace falta viajar fuera para conocer costumbres y lugares bonitos»</p>
-                                    <div class="name d-flex align-items-center justify-content-center">
-                                        <span class="fas fa-minus pe-1"></span>
-                                        <p class="m-0">Alejandra</p>
-                                    </div>
-                                    <p class="job text-center">Socio aventurero (desde 2021)</p>
-                                </div>
-                            </div>
+      <!--QUE SEA UN CARRUSEL DE OPINIONES????-->
 
+      <!--OPINIONES-->
+      <h3 id="titulo" style="margin-bottom: -10px;">Opiniones destacadas</h3> 
+      <div id="opinionCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#opinionCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#opinionCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#opinionCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="row">
+                    <div class="col-md-6 div-l">
+                        <div class="carousel-img" style="background-image: url(https://cdn.pixabay.com/photo/2016/11/19/14/00/code-1839406_960_720.jpg);">
+                            <h1 class="carousel-title">Tecnologia</h1>
                         </div>
                     </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <div class="col-lg-6 ">
-                                <img src="https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" class="d-block w-100" alt="...">
-                            </div>
-                            <div class="col-lg-6 ">
-                                <div class=" d-flex flex-column justify-content-center my-5 px-3">
-                                    <p class="review text-center">«Adoro la playa y he conocido zonas maravillosas y españolas»</p>
-                                    <div class="name d-flex align-items-center justify-content-center">
-                                        <span class="fas fa-minus pe-1"></span>
-                                        <p class="m-0">Daniel</p>
-                                    </div>
-                                    <p class="job text-center">Socio aventurero (desde 2022)</p>
-                                </div>
-                            </div>
+                    <div class="col-md-6 div-r">
+                        <h3>Subtitulo 1</h3>
+                        <hr>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A tenetur officiis voluptatem vel blanditiis. Nam enim quidem debitis aliquid maxime perferendis repudiandae similique, explicabo, quam minus tenetur cupiditate maiores ea.</p>
+                        <button class="btn btn-primary">Presiona el boton</button>
+                    </div>
+                </div>                                
+            </div>
 
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-6 div-l">
+                        <div class="carousel-img" style="background-image: url(https://cdn.pixabay.com/photo/2017/11/10/15/04/steak-2936531_960_720.jpg);">
+                            <h1 class="carousel-title">Gastronomia</h1>
                         </div>
+                    </div>
+                    <div class="col-md-6 div-r">
+                        <h3>Subtitulo 2</h3>
+                        <hr>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A tenetur officiis voluptatem vel blanditiis. Nam enim quidem debitis aliquid maxime perferendis repudiandae similique, explicabo, quam minus tenetur cupiditate maiores ea.</p>
+                        <button class="btn btn-primary">Presiona otro boton</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-item">
+                <div class="row">
+                    <div class="col-md-6 div-l">
+                        <div class="carousel-img" style="background-image: url(https://cdn.pixabay.com/photo/2016/01/22/16/42/eiffel-tower-1156146_960_720.jpg);">
+                            <h1 class="carousel-title">Cultura</h1>
+                        </div>
+                    </div>
+                    <div class="col-md-6 div-r">
+                        <h3>Subtitulo 2</h3>
+                        <hr>
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. A tenetur officiis voluptatem vel blanditiis. Nam enim quidem debitis aliquid maxime perferendis repudiandae similique, explicabo, quam minus tenetur cupiditate maiores ea.</p>
+                        <button class="btn btn-primary">Presiona otro boton</button>
                     </div>
                 </div>
             </div>
         </div>
-        <a class="carousel-control-next1 text-decoration-none " href="#mycarousel" role="button" data-bs-slide="next">
-            <div class="d-flex flex-column justify-content-center right ms-2 me-auto"> SIGUIENTE <span class="fas fa-arrow-right"></span> </div> <span class="sr-only">Next</span>
-        </a>
-    </div></div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#opinionCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#opinionCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
 
 
       <!--PRESENTACION IBICE-->

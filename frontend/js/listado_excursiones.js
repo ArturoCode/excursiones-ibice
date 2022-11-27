@@ -12,18 +12,47 @@ var opciones = {
     var mes = urlParams.get("mes")
     var destino = urlParams.get("destino")
     var url = `${config.urlBackend}/excursiones?`;
-
+    const infoUsuarioExcursiones = fetch(
+      `${config.urlBackend}/usuario/excursiones/info`
+    );
     if(mes) url+=`&mes=${mes}`
     if(destino) url+=`&destino=${destino}`
 
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
+    const infoExcursiones = fetch(url);
+    Promise.all([infoExcursiones, infoUsuarioExcursiones])
+    .then((res) => Promise.all([res[0].json(), res[1].json()]))
+      .then((res) => {
+        var data = res[0];
+        var infoUsuario = res[1];
         var fichaDOM = document.getElementById("ficha");
         var excursiones = document.getElementById("excursiones");
         //iterar por todas las excursiones y rellenar la plantilla con lla informacion de cada excursiom
-        for(var excursion of data){
+        for(var excursion of data){          
             var fichaTemp = fichaDOM.cloneNode(true);
+            var botonContainer = fichaTemp.querySelector("#button-container")
+            if(localStorage.getItem("user")){
+              var botonHecha = fichaTemp.querySelector("#boton-hecha")
+              var botonGuardar = fichaTemp.querySelector("#boton-guardar")
+              botonHecha.id = "botonHecha_"+excursion.id_excursion
+              botonGuardar.id = "botonGuardar_"+excursion.id_excursion
+            
+            if (infoUsuario.hechas.includes(excursion.id_excursion)) {          
+              botonHecha.onclick = eliminarExcursionHecha(excursion.id_excursion, botonHecha.id);          
+              botonHecha.style.backgroundColor = "#41ff33"
+            } else {          
+              botonHecha.onclick = añadirExcursionHecha(excursion.id_excursion, botonHecha.id);       
+              botonHecha.style.backgroundColor = "inherit"
+            }       
+            if (infoUsuario.guardadas.includes(excursion.id_excursion)) {          
+              botonGuardar.onclick = eliminarExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
+              botonGuardar.style.backgroundColor = "#41ff33"
+            } else {          
+              botonGuardar.onclick = añadirExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
+              botonHecha.style.backgroundColor = "inherit"
+            }
+            }else{
+              botonContainer.remove()
+            }  
             fichaTemp.querySelector("#imagenf").src = excursion.url_imagen_principal;
             fichaTemp.querySelector("#url-excursion").href = `./excursiones/detalles_excursion.html?id=${excursion.id_excursion}`;
             fichaTemp.querySelector("#nombre-excursion").innerHTML = excursion.nombre_excursion;
@@ -47,4 +76,80 @@ var opciones = {
       
     });
   }
+  //funcion que se repite en todas las pags con excursiones para q se de mg o hechas
+  function eliminarExcursionGuardada(id,idBoton) {
+    return function()
+    {var url = `${config.urlBackend}/usuario/excursiones-guardadas`;
+    fetch(url, {
+      method: "DELETE",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ id_excursion: id }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        var boton = document.getElementById(idBoton)     
+        boton.style.backgroundColor = "inherit";
+        boton.onclick =  añadirExcursionGuardada(id, boton.id);
+          
+        
+      });}
+  }
+  function añadirExcursionGuardada(id, idBoton) {
+    return function()
+    {var url = `${config.urlBackend}/usuario/excursiones-guardadas`;
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ id_excursion: id }),
+    })
+      .then((response) => response.json())
+      .then((data) => {      
+        var boton = document.getElementById(idBoton)      
+        boton.style.backgroundColor = "#41ff33";
+        boton.onclick = 
+          eliminarExcursionGuardada(id, boton.id);
+          
+        
+      });}
+  }
+  function añadirExcursionHecha(id, idBoton) {
+    return function()
+    {var url = `${config.urlBackend}/usuario/excursiones-hechas`;
+    fetch(url, {
+      method: "POST",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ id_excursion: id }),
+    })
+      .then((response) => response.json())    
+      .then((data) => {
+        var boton = document.getElementById(idBoton)      
+        boton.style.backgroundColor = "#41ff33";
+        boton.onclick = 
+          eliminarExcursionHecha(id, boton.id);
+          
+        
+      });
+    }
+  }
+  function eliminarExcursionHecha(id, idBoton) {
+    return function()
+    {var url = `${config.urlBackend}/usuario/excursiones-hechas`;
+    fetch(url, {
+      method: "DELETE",
+      headers: { "Content-type": "application/json" },
+      body: JSON.stringify({ id_excursion: id }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        var boton = document.getElementById(idBoton)      
+        boton.style.backgroundColor = "inherit";
+        boton.onclick = 
+          añadirExcursionHecha(id, boton.id);
+          
+      
+      });}
+  }
+
+
+
   
