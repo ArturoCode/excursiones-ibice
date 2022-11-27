@@ -2,8 +2,8 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2022 a las 17:52:21
+-- Servidor: localhost
+-- Tiempo de generación: 27-11-2022 a las 23:31:07
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -88,74 +88,6 @@ INSERT INTO `excursiones` (`id_excursion`, `nombre_excursion`, `url_imagen_princ
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `excursiones_guardadas`
---
-
-CREATE TABLE `excursiones_guardadas` (
-  `id_usuario` int(11) NOT NULL,
-  `id_excursion` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `excursiones_guardadas`
---
-
-INSERT INTO `excursiones_guardadas` (`id_usuario`, `id_excursion`) VALUES
-(5, 3),
-(5, 5),
-(6, 2),
-(6, 3),
-(6, 4),
-(6, 5),
-(6, 6);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `excursiones_hechas`
---
-
-CREATE TABLE `excursiones_hechas` (
-  `id_usuario` int(11) NOT NULL,
-  `id_excursion` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `excursiones_hechas`
---
-
-INSERT INTO `excursiones_hechas` (`id_usuario`, `id_excursion`) VALUES
-(5, 1),
-(5, 2),
-(5, 4),
-(6, 2),
-(6, 3),
-(6, 4),
-(6, 5),
-(6, 6);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `sessions`
---
-
-CREATE TABLE `sessions` (
-  `session_id` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
-  `expires` int(11) UNSIGNED NOT NULL,
-  `data` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Volcado de datos para la tabla `sessions`
---
-
-INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
-('FXKEMt61fD1ONfmApLT97e0B3F9Gd3Hi', 1674751745, '{\"cookie\":{\"originalMaxAge\":5183999999,\"expires\":\"2023-01-26T12:50:16.692Z\",\"secure\":false,\"httpOnly\":true,\"path\":\"/\"},\"user\":{\"id\":5,\"nombre\":\"IÑIGO\",\"email\":\"inigo@gmail.com\",\"rol\":\"usuario\"}}');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -177,7 +109,8 @@ INSERT INTO `usuarios` (`id_usuario`, `email`, `password`, `nombre_usuario`, `me
 (2, 'usuario@excursionesibice.com', 'holamundo', 'usuarioprueba', 'usuario', 'usuario'),
 (4, 'rober@gmail.com', '$2b$12$ofivKJ.Qv4NOEWK8g5WADunYgO38cfIUJqOjqgMmSMVz6UnN.b/cy', 'rober', 'usuario', 'usuario'),
 (5, 'inigo@gmail.com', '$2b$12$K8O3g516pYDI46ezVL/49.HR8WgA1cEVNoQbruLSHhON27EjGD4ue', 'IÑIGO', 'usuario', 'usuario'),
-(6, 'alex@gmail.com', '$2b$12$RFtGOd8j6sGXs/iFac0w.u5B2okENj9.KCPWmCJIpFTXOTzJGp/ha', 'alex', 'usuario', 'usuario');
+(6, 'alex@gmail.com', '$2b$12$RFtGOd8j6sGXs/iFac0w.u5B2okENj9.KCPWmCJIpFTXOTzJGp/ha', 'alex', 'usuario', 'usuario'),
+(7, 'arturocodedev@gmail.com', '$2b$12$Y0bQR/dpaO.pRkVXTwD3Ku9/Nmmzi9J.Bb3EINqJ658ABneLI0Z8C', 'arturo', 'usuario', 'usuario');
 
 --
 -- Índices para tablas volcadas
@@ -194,26 +127,6 @@ ALTER TABLE `blog`
 --
 ALTER TABLE `excursiones`
   ADD PRIMARY KEY (`id_excursion`);
-
---
--- Indices de la tabla `excursiones_guardadas`
---
-ALTER TABLE `excursiones_guardadas`
-  ADD KEY `INDEX ID_EXCURSION` (`id_usuario`,`id_excursion`),
-  ADD KEY `FOREIGN EXCURSION` (`id_excursion`);
-
---
--- Indices de la tabla `excursiones_hechas`
---
-ALTER TABLE `excursiones_hechas`
-  ADD KEY `FOREIGN KEY USUARIOS-EXCURSION` (`id_usuario`,`id_excursion`),
-  ADD KEY `FOREIGN KEY EXCURSION` (`id_excursion`);
-
---
--- Indices de la tabla `sessions`
---
-ALTER TABLE `sessions`
-  ADD PRIMARY KEY (`session_id`);
 
 --
 -- Indices de la tabla `usuarios`
@@ -242,25 +155,7 @@ ALTER TABLE `excursiones`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
-
---
--- Restricciones para tablas volcadas
---
-
---
--- Filtros para la tabla `excursiones_guardadas`
---
-ALTER TABLE `excursiones_guardadas`
-  ADD CONSTRAINT `FOREIGN EXCURSION` FOREIGN KEY (`id_excursion`) REFERENCES `excursiones` (`id_excursion`),
-  ADD CONSTRAINT `FOREIGN USUARIO` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`);
-
---
--- Filtros para la tabla `excursiones_hechas`
---
-ALTER TABLE `excursiones_hechas`
-  ADD CONSTRAINT `FOREIGN KEY EXCURSION` FOREIGN KEY (`id_excursion`) REFERENCES `excursiones` (`id_excursion`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `FOREIGN KEY USUARIO` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+  MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
