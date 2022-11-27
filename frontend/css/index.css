@@ -35,7 +35,7 @@ body {
 }
 #header div.dropdown-menu a {
   color: black;
-  margin: 10px 0;
+  
 }
 
 .dropdown-menu {
@@ -49,16 +49,18 @@ a.btn{
   padding: 0;
   
 }
+.dropdown-menu[data-bs-popper] {
+  top:65%;
+  
+}
 
 .navbar-nav{
   width: 100%;
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block;
-  margin: 0;
-  padding:0;
-  left:auto;
+  display: block; 
+  left:auto;  
 
 }
 
@@ -69,6 +71,9 @@ a.btn{
 
 #perfil,#cerrar-sesion,#header-nombre-usuario,#barra2,#barra3{
   display: none;
+}
+#header-nombre-usuario{
+  display:inline-block!important;
 }
 
 #menu {
@@ -156,6 +161,7 @@ a.btn{
 
 /*FICHA EXCURSION Y PROMOCIONES*/
 
+#button-container{}
 .datosFicha div{
   display: -webkit-inline-box;
   margin-top:10px;
@@ -236,82 +242,17 @@ a.btn{
 }
 
 /*OPINIONES*/
-
-/*
 #opiniones{
   display: flex;
   align-items: center;
   justify-content: center;
   height: 250px;
   text-align: center;
+  /*border: 1px solid black;*/
 }
 #imagenop{
   width: 50%;  
 }
-*/
-
-#carrusel-opiniones{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.container1{
-  max-width: 800px;
-  background-color: white;
-  padding: 0;
-}
-.review{
-  font-size: 30px;
-  font-weight: 600;
-  padding: 30px 0 ;
-}
-.name{
-  font-size: 18px;
-  color: #c1e718;
-  margin: 0;
-}
-.job{
-  color: #c8c8c8;
-  font-size: 14px;
-}
-.carousel-inner1{
-  max-width: 800px;
-}
-.fa-minus {
-  font-size: 14px;
-}
-.carousel-indicators1 {
-  bottom: -20px;
-  right: 0;
-  margin: 0;
-}
-
-.carousel-indicators1 [data-bs-target ] {
-  height: 10px;
-  border: 2px solid black;
-  width: 10px;
-  background-color: inherit;
-  border-radius: 50%;
-}
-.carousel-indicators1 .active{
-  border: 2px solid transparent;
-  background-color:#c1e718;
-}
-.left{
-  color: rgb(20, 20, 20);
-  font-weight: 600;
-}
-.right{
-  color: rgb(12, 12, 12);
-  font-weight: 600;
-}
-.carousel-control-next1, .carousel-control-prev1 {
-  position: relative;
-
-}
-
-
 /*PRESENTACION IBICE*/
 #presentacion-ibice{
   display: flex;
@@ -321,10 +262,63 @@ a.btn{
   /*border: 1px solid black;*/
 }
 
+#MiCarousel {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  -webkit-box-shadow: 10px 10px 38px -13px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 10px 10px 38px -13px rgba(0, 0, 0, 0.75);
+  box-shadow: 10px 10px 38px -13px rgba(0, 0, 0, 0.75);
+}
+
+.carousel-img {
+  background-color: #000;
+  color: #fff;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  -webkit-clip-path: polygon(0 0, 96% 0, 100% 100%, 0% 100%);
+  clip-path: polygon(0 0, 90% 0, 100% 100%, 0% 100%);
+  opacity: 0.8;
+}
+
+.div-r{
+  padding: 40px;
+  z-index: 2;
+}
+
+.carousel-title{
+  font-size: 80px;
+  font-weight: bold;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+.carousel-pagination{
+  background-color: #000 !important;
+  width: 15px !important;
+  height: 15px !important;
+  border-radius: 100%;
+  position: relative;
+  bottom: -50px;
+  opacity: 0.5;
+}
+
+.carousel-pagination.active{
+  opacity: 1;
+}
+
+/*ahora el carrousel funciona pero sigue viendose raro
+es del css en carousel-img pero no veo como tocarlo
+*/
 
 footer {
   padding: 30px 0;
 }
+
+
 
 
 @media (max-width: 990px) {
@@ -351,6 +345,7 @@ footer {
   
   }
   
+  
   .btn{
     padding: 0;
   }
@@ -375,11 +370,13 @@ footer {
     
   }
 
-  .dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0; 
-
+  .dropdown-menu {    
+    transform:none;
   }
+  .dropdown-menu {    
+    transform:none!important;
+  }
+  
   
 }
 
@@ -405,36 +402,6 @@ a.text-reset{
 
 #contacto a{
   margin:10px;
-}
-
-@media (max-width:560px) {
-  .review{
-      font-size: 14px;
-      font-weight: 600;
-  }
-  .name{
-      font-size: 13px;
-  }
-  .job{
-      font-size: 10px;
-  }
-  .right{
-      font-size: 12px;
-  }
-  .left{
-      font-size: 12px;
-  }
-  .carousel-indicators1 [data-bs-target ] {
-      height: 8px;
-      border: 1px solid black;
-      width: 8px;
-      background-color: inherit;
-      border-radius: 50%;
-  }
-  .carousel-indicators1 .active{
-      border: 1px solid transparent;
-      background-color:#c1e718;
-  }
 }
 
 
