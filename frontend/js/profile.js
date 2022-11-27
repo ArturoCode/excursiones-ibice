@@ -10,8 +10,10 @@ var opciones = {
 
   window.addEventListener("load",() => {
     getUsuarioLoggeado();
-    getExcursionesGuardadas();
     getExcursionesHechas();
+    getExcursionesGuardadas();
+    checkInputs();
+    
   })
 
   function getUsuarioLoggeado() {
@@ -26,6 +28,47 @@ var opciones = {
         });
     }
 
+    function checkInputs() {
+      // trim to remove the whitespaces
+        var error = false;
+      const usernameValue = username.value.trim();
+      const emailValue = email.value.trim(); 
+      
+      if(usernameValue === '') {
+        setErrorFor(username, 'El usuario no puede estar en blanco');
+            error = true
+      } else {
+        setSuccessFor(username);
+      }
+      
+      if(emailValue === '') {
+        setErrorFor(email, 'El email no puede estar en blanco');
+            error = true
+      } else if (!isEmail(emailValue)) {
+        setErrorFor(email, 'Email no válido');
+            error = true
+      } else {
+        setSuccessFor(email);
+      }  
+       
+        return error
+    }
+    
+    function setErrorFor(input, message) {
+      const formControl = input.parentElement;
+      const small = formControl.querySelector('small');
+      formControl.className = 'form-control-input error';
+      small.innerText = message;
+    }
+    
+    function setSuccessFor(input) {
+      const formControl = input.parentElement;
+      formControl.className = 'form-control-input success';
+    }
+      
+    function isEmail(email) {
+      return /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+    }    
 function getExcursionesHechas(){
     
     var url = `${config.urlBackend}/usuario/excursiones-hechas`;
@@ -49,13 +92,14 @@ function getExcursionesHechas(){
             if(localStorage.getItem("user")){
               var botonHecha = fichaTemp.querySelector("#boton-hecha")
               var botonGuardar = fichaTemp.querySelector("#boton-guardar")
-              botonHecha.id = "botonHecha_"+excursion.id_excursion
-              botonGuardar.id = "botonGuardar_"+excursion.id_excursion
-            
+              botonHecha.id = "botonHecha_1_"+excursion.id_excursion
+              botonGuardar.id = "botonGuardar_1_"+excursion.id_excursion
+             
             if (infoUsuario.hechas.includes(excursion.id_excursion)) {          
               botonHecha.onclick = eliminarExcursionHecha(excursion.id_excursion, botonHecha.id);          
               botonHecha.style.backgroundColor = "#41ff33"
-            } else {          
+              console.log("a")
+            } else { 
               botonHecha.onclick = añadirExcursionHecha(excursion.id_excursion, botonHecha.id);       
               botonHecha.style.backgroundColor = "inherit"
             }       
@@ -64,7 +108,7 @@ function getExcursionesHechas(){
               botonGuardar.style.backgroundColor = "#41ff33"
             } else {          
               botonGuardar.onclick = añadirExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
-              botonHecha.style.backgroundColor = "inherit"
+              botonGuardar.style.backgroundColor = "inherit"
             }
             }else{
               botonContainer.remove()
@@ -107,9 +151,9 @@ function getExcursionesGuardadas(){
           if(localStorage.getItem("user")){
             var botonHecha = fichaTemp.querySelector("#boton-hecha")
             var botonGuardar = fichaTemp.querySelector("#boton-guardar")
-            botonHecha.id = "botonHecha_"+excursion.id_excursion
-            botonGuardar.id = "botonGuardar_"+excursion.id_excursion
-          
+            botonHecha.id = "botonHecha_2_"+excursion.id_excursion
+            botonGuardar.id = "botonGuardar_2_"+excursion.id_excursion
+            
           if (infoUsuario.hechas.includes(excursion.id_excursion)) {          
             botonHecha.onclick = eliminarExcursionHecha(excursion.id_excursion, botonHecha.id);          
             botonHecha.style.backgroundColor = "#41ff33"
@@ -122,7 +166,7 @@ function getExcursionesGuardadas(){
             botonGuardar.style.backgroundColor = "#41ff33"
           } else {          
             botonGuardar.onclick = añadirExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
-            botonHecha.style.backgroundColor = "inherit"
+            botonGuardar.style.backgroundColor = "inherit"
           }
           }else{
             botonContainer.remove()

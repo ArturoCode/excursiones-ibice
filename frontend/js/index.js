@@ -47,7 +47,7 @@ function getExcursiones() {
               botonGuardar.style.backgroundColor = "#41ff33"
             } else {          
               botonGuardar.onclick = añadirExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
-              botonHecha.style.backgroundColor = "inherit"
+              botonGuardar.style.backgroundColor = "inherit"
             }
             }else{
               botonContainer.remove()
