@@ -129,122 +129,57 @@
         <!--INFO-->
         <div class="col-7" id="info">
           <h3 id="titulo">Información básica</h3>         
-          <p><b>Nombre de usuario:</b> arturourbanos</p>
-          <p><b>Email:</b> arturo@excursionesibice.com</p>
-          <p><b>Membresia:</b> Socio aventurero</p>
-          <p><a href="#">Editar datos de usuario</a></p>
+          <b>Nombre de usuario:</b><div id="nombre-usuario"></div>
+          <b>Email:</b> <div id="email"></div>
+          <b>Membresia:</b><div id="membresia"></div>
+          <a href="#">Editar datos de usuario</a>
         </div>
       </div>
 
     <!--EXCURSIONES SELECCIONADAS-->      
     <h3 id="titulo" style="margin-top:80px">Viajes realizados</h3>      
-    <div class="row excursiones-seleccionadas">  
+    <div id="excursiones-hechas" class="row excursiones-seleccionadas">  
       <!--FICHA EXCURSION-->      
-      <div class="col-4 ficha">          
+      <div id="ficha" class="ficha">   <!--class="col-3 ficha"-->    
         <div>
-          <a href="./excursiones/detalles_excursion.html"><!--conectado con la base de datos y mostrarlo en detalles excursion -->
-            <img id="imagenf" src="https://cristalderoca.com/senderismo/wp-content/uploads/2018/11/camino-santiago-cristalderoca-home-500x325.jpg" alt="Camino de Santiago Excursiones Íbice">
+          <a id="url-excursion" href="./excursiones/detalles_excursion.html"><!--conectado con la base de datos y mostrarlo en detalles excursion -->
+            <div align="center"><img id="imagenf" alt="Camino de Santiago Excursiones Íbice"/></div>
           </a>
         </div>
         <div class="datosFicha">
           <h5>
-            <a href="#">
-            CAMINO DE SANTIAGO EN GRUPO *XACOBEO 2022*
-            </a>
+            <a id="nombre-excursion" href="./excursiones/detalles_excursion.html"></a>
           </h5>
           <div>
-            <p>Fechas de salidas 2022 en interior</p>
+            <p id="fecha"></p>              
           </div>
           <div>             
               <i class="fa fa-arrow-circle-right" ></i>
-              Hora de salida: 16:00h
+              Hora de salida:<div id="hora-salida"></div>
           </div>
           <div>              
-              <i class="fa fa-arrow-circle-left"></i> 
-              Hora de regreso: 22:00h
+            <i class="fa fa-arrow-circle-left"></i> 
+            Hora de regreso:<div id="hora-regreso"></div>
           </div>
           <div>
             <i class="fa fa-map-signs"></i>
-            Destino: Lugo/ A Coruña
+            Lugar de destino:<div id="destino"></div>
           </div>
-          <hr>
           <div>
-           Precio Viaje 6 dias: 555€ <br> Precio Viaje 5 dias: 465€
-          </div>           
-        </div> 
+            <i class="fas fa-money-bill-wave"></i>
+            Precio del viaje:<div id="precio"></div>           
+          </div> 
+        </div>
+        <div id="button-container">
+          <button id="boton-hecha" class="like-btn">
+            <i class="fas fa-plane"></i>
+          </button>
+          <button id="boton-guardar" class="like-btn">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
       </div>
-      <div class="col-4 ficha">          
-        <div>
-          <a href=""><!--conectado con la base de datos y mostrarlo en detalles excursion -->
-            <img id="imagenf" src="https://cristalderoca.com/senderismo/wp-content/uploads/2018/11/camino-santiago-cristalderoca-home-500x325.jpg" alt="Camino de Santiago Excursiones Íbice">
-          </a>
-        </div>
-        <div class="datosFicha">
-          <h5>
-            <a href="#">
-            CAMINO DE SANTIAGO EN GRUPO *XACOBEO 2022*
-            </a>
-          </h5>
-          <div>
-            <p>Fechas de salidas 2022 en interior</p>
-          </div>
-          <div>             
-              <i class="fa fa-arrow-circle-right" ></i>
-              Hora de salida: 16:00h
-          </div>
-          <div >
-            <span class="head">
-              <i class="fa fa-arrow-circle-left"></i> 
-              Hora de regreso: 
-            </span>
-            22:00h
-          </div>
-          <div>
-            <i class="fa fa-map-signs"></i>
-            Destino: Lugo/ A Coruña
-          </div>
-          <hr>
-          <div>
-           Precio Viaje 6 dias: 555€ <br> Precio Viaje 5 dias: 465€
-          </div>           
-        </div> 
-      </div> 
-      <div class="col-4 ficha">          
-        <div>
-          <a href="#"><!--conectado con la base de datos y mostrarlo en detalles excursion -->
-            <img id="imagenf" src="https://cristalderoca.com/senderismo/wp-content/uploads/2018/11/camino-santiago-cristalderoca-home-500x325.jpg" alt="Camino de Santiago Excursiones Íbice">
-          </a>
-        </div>
-        <div class="datosFicha">
-          <h5>
-            <a href="#">
-            CAMINO DE SANTIAGO EN GRUPO *XACOBEO 2022*
-            </a>
-          </h5>
-          <div>
-            <p>Fechas de salidas 2022 en interior</p>
-          </div>
-          <div>             
-              <i class="fa fa-arrow-circle-right" ></i>
-              Hora de salida: 16:00h
-          </div>
-          <div >
-            <span class="head">
-              <i class="fa fa-arrow-circle-left"></i> 
-              Hora de regreso: 
-            </span>
-            22:00h
-          </div>
-          <div>
-            <i class="fa fa-map-signs"></i>
-            Destino: Lugo/ A Coruña
-          </div>
-          <hr>
-          <div>
-           Precio Viaje 6 dias: 555€ <br> Precio Viaje 5 dias: 465€
-          </div>           
-        </div> 
-      </div>      
+          
     </div>
 
     <!--PROMOCIONES-->
@@ -260,117 +195,51 @@
 
     <!--EXCURSIONES SELECCIONADAS-->      
     <h3 id="titulo" style="margin-top:80px">Lista de deseos</h3>      
-    <div class="row excursiones-seleccionadas">  
+    <div id="excursiones-guardadas" class="row excursiones-seleccionadas">  
       <!--FICHA EXCURSION-->      
-      <div class="col-4 ficha">          
+      <div id="ficha" class="ficha">   <!--class="col-3 ficha"-->     
         <div>
-          <a href="./excursiones/detalles_excursion.html"><!--conectado con la base de datos y mostrarlo en detalles excursion -->
-            <img id="imagenf" src="https://cristalderoca.com/senderismo/wp-content/uploads/2018/11/camino-santiago-cristalderoca-home-500x325.jpg" alt="Camino de Santiago Excursiones Íbice">
+          <a id="url-excursion" href="./excursiones/detalles_excursion.html"><!--conectado con la base de datos y mostrarlo en detalles excursion -->
+            <div align="center"><img id="imagenf" alt="Camino de Santiago Excursiones Íbice"/></div>
           </a>
         </div>
         <div class="datosFicha">
           <h5>
-            <a href="#">
-            CAMINO DE SANTIAGO EN GRUPO *XACOBEO 2022*
-            </a>
+            <a id="nombre-excursion" href="./excursiones/detalles_excursion.html"></a>
           </h5>
           <div>
-            <p>Fechas de salidas 2022 en interior</p>
+            <p id="fecha"></p>              
           </div>
           <div>             
               <i class="fa fa-arrow-circle-right" ></i>
-              Hora de salida: 16:00h
+              Hora de salida:<div id="hora-salida"></div>
           </div>
           <div>              
-              <i class="fa fa-arrow-circle-left"></i> 
-              Hora de regreso: 22:00h
+            <i class="fa fa-arrow-circle-left"></i> 
+            Hora de regreso:<div id="hora-regreso"></div>
           </div>
           <div>
             <i class="fa fa-map-signs"></i>
-            Destino: Lugo/ A Coruña
+            Lugar de destino:<div id="destino"></div>
           </div>
-          <hr>
           <div>
-           Precio Viaje 6 dias: 555€ <br> Precio Viaje 5 dias: 465€
-          </div>           
-        </div> 
-      </div>
-      <div class="col-4 ficha">          
-        <div>
-          <a href=""><!--conectado con la base de datos y mostrarlo en detalles excursion -->
-            <img id="imagenf" src="https://cristalderoca.com/senderismo/wp-content/uploads/2018/11/camino-santiago-cristalderoca-home-500x325.jpg" alt="Camino de Santiago Excursiones Íbice">
-          </a>
+            <i class="fas fa-money-bill-wave"></i>
+            Precio del viaje:<div id="precio"></div>           
+          </div> 
         </div>
-        <div class="datosFicha">
-          <h5>
-            <a href="#">
-            CAMINO DE SANTIAGO EN GRUPO *XACOBEO 2022*
-            </a>
-          </h5>
-          <div>
-            <p>Fechas de salidas 2022 en interior</p>
-          </div>
-          <div>             
-              <i class="fa fa-arrow-circle-right" ></i>
-              Hora de salida: 16:00h
-          </div>
-          <div >
-            <span class="head">
-              <i class="fa fa-arrow-circle-left"></i> 
-              Hora de regreso: 
-            </span>
-            22:00h
-          </div>
-          <div>
-            <i class="fa fa-map-signs"></i>
-            Destino: Lugo/ A Coruña
-          </div>
-          <hr>
-          <div>
-           Precio Viaje 6 dias: 555€ <br> Precio Viaje 5 dias: 465€
-          </div>           
-        </div> 
+        <div id="button-container">
+          <button id="boton-hecha" class="like-btn">
+            <i class="fas fa-plane"></i>
+          </button>
+          <button id="boton-guardar" class="like-btn">
+            <i class="fas fa-heart"></i>
+          </button>
+        </div>
       </div> 
-      <div class="col-4 ficha">          
-        <div>
-          <a href="#"><!--conectado con la base de datos y mostrarlo en detalles excursion -->
-            <img id="imagenf" src="https://cristalderoca.com/senderismo/wp-content/uploads/2018/11/camino-santiago-cristalderoca-home-500x325.jpg" alt="Camino de Santiago Excursiones Íbice">
-          </a>
-        </div>
-        <div class="datosFicha">
-          <h5>
-            <a href="#">
-            CAMINO DE SANTIAGO EN GRUPO *XACOBEO 2022*
-            </a>
-          </h5>
-          <div>
-            <p>Fechas de salidas 2022 en interior</p>
-          </div>
-          <div>             
-              <i class="fa fa-arrow-circle-right" ></i>
-              Hora de salida: 16:00h
-          </div>
-          <div >
-            <span class="head">
-              <i class="fa fa-arrow-circle-left"></i> 
-              Hora de regreso: 
-            </span>
-            22:00h
-          </div>
-          <div>
-            <i class="fa fa-map-signs"></i>
-            Destino: Lugo/ A Coruña
-          </div>
-          <hr>
-          <div>
-           Precio Viaje 6 dias: 555€ <br> Precio Viaje 5 dias: 465€
-          </div>           
-        </div> 
-      </div>      
     </div>
 
-</div>
-</div>
+  </div>
+
 
 
     <!--FOOTER-->
@@ -413,6 +282,7 @@
     </div>
   </div>
 </footer>
+<script src="../../js/profile.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"

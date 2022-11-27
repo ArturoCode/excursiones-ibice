@@ -85,6 +85,7 @@ a.btn{
 
 #imagen-principal{
   border-radius: 5%;
+  width: 100% !important;
 }
 
 .entrada {
@@ -101,6 +102,7 @@ a.btn{
   text-align: justify;
   align-items: center;
 }
+
 
 .entrada:hover {
   transform: translateY(-15px);
@@ -175,6 +177,15 @@ footer {
     display: block;
     width: fit-content;
   }
+
+  #col-imagen{
+    max-width: 100%;
+  }
+
+  #descripcion-entrada{
+    max-width: 100%;
+  }
+  
   
 }
 

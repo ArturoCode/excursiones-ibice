@@ -176,6 +176,20 @@ footer {
   .info,.img{
     max-width: 100%;
   }
+  #seccion1{
+    display: block;
+  }
+
+  #seccion2{
+    
+    display: block;
+  }
+  .texto{
+    max-width: 100%;
+    margin-top:15px;
+  }
+
+  /*
 
   #seccion1{
     display: block;
@@ -199,13 +213,15 @@ footer {
     margin-bottom: 20px;
     float: left;
   }
-
+  
   #seccion2 p{
     position: absolute;
     top: -540px;
     width: 200%;
     text-align: justify;
   }
+
+  */
 
 }
 
@@ -216,8 +232,7 @@ footer {
   }
   #logo-footer{
     width:100%;
-  }
-
+  }  
   
 }
 

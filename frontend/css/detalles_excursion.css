@@ -200,34 +200,41 @@ footer {
     max-width: 100%;
   }
 
-  #descripcion1{
+  #descripcion1,#descripcion2{
     display: block;
   }
+  .texto{
+    max-width: 100%;
+    margin-top:15px;
+  }
+  .img{
+    margin-top:15px;
+  }
+  /*
+    #descripcion1 img{
+      margin-bottom: 20px;
+    }
 
-  #descripcion1 img{
-    margin-bottom: 20px;
-  }
+    #descripciones p{
+      width: 220%;
+      text-align: justify;
+    }
+    
+    #descripcion2{
+      display: block;
+    }
 
-  #descripciones p{
-    width: 220%;
-    text-align: justify;
-  }
-  
-  #descripcion2{
-    display: block;
-  }
+    #descripcion2 img{
+      margin-top: 200px;
+      margin-bottom: 20px;
+      float: left;
+    }
 
-  #descripcion2 img{
-    margin-top: 200px;
-    margin-bottom: 20px;
-    float: left;
-  }
-
-  #descripcion2 p{
-    position: absolute;
-    top: -540px;
-    width: 200%;
-  }
+    #descripcion2 p{
+      position: absolute;
+      top: -540px;
+      width: 200%;
+    }*/
 }
 
 @media (max-width: 630px) {

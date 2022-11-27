@@ -122,6 +122,14 @@ input[type=submit]:hover {
   justify-content: center;
 }
 
+#button-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:10px;
+
+}
+
 .datosFicha div{
   display: -webkit-inline-box;
   margin-top:10px;

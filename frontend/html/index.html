@@ -42,10 +42,10 @@
               <ul class="navbar-nav  justify-content-around">         
                 <a href="./index.html"><img id="logo" src="../media/logo.png" /></a>          
                 <li class="nav-item">
-                  <a class="nav-link" href="./index.html" >INICIO</a>
+                  <a  id="inicio" class="nav-link" href="./index.html" >INICIO</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a  class="btn excursiones" href="./listado_excursiones.html">EXCURSIONES</a>
+                  <a  id="excursiones" class="btn excursiones" href="./listado_excursiones.html">EXCURSIONES</a>
                   <button 
                     type="button" 
                     class="btn dropdown-toggle dropdown-toggle-split" 
@@ -66,10 +66,10 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./blog.html" >BLOG</a>
+                  <a id="blog"class="nav-link" href="./blog.html" >BLOG</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a  class="btn conocenos" href="./about-us.html">CONÓCENOS</a>
+                  <a  id="conocenos"class="btn conocenos" href="./about-us.html">CONÓCENOS</a>
                   <button 
                     type="button" 
                     class="btn dropdown-toggle dropdown-toggle-split" 
@@ -83,10 +83,10 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="./contact.html" >CONTACTO</a>
+                  <a id="contacto"class="nav-link" href="./contact.html" >CONTACTO</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a  class="btn user" href="./user/login.html"><i class="fa fa-fw fa-user fa-lg"></i></a>
+                  <a  class="btn user" href="./user/login.html"><i id="icono-usuario"class="fa fa-fw fa-user fa-lg"></i></a>
                   <div id="header-nombre-usuario"></div>
                   <button 
                     type="button" 
@@ -143,7 +143,7 @@
       <h3 id="titulo">Los más populares</h3>      
       <div id="populares" class="row excursiones-seleccionadas">  
         <!--FICHA EXCURSION-->      
-        <div id="ficha" class="ficha">   <!--class="col-3 ficha"-->    
+        <div id="ficha" class="ficha">   <!--class="col-3 ficha"-->         
           <div>
             <a id="url-excursion" href="./excursiones/detalles_excursion.html"><!--conectado con la base de datos y mostrarlo en detalles excursion -->
               <div align="center"><img id="imagenf" alt="Camino de Santiago Excursiones Íbice"/></div>
@@ -163,17 +163,25 @@
             <div>              
               <i class="fa fa-arrow-circle-left"></i> 
               Hora de regreso:<div id="hora-regreso"></div>
+            </div>
+            <div>
+              <i class="fa fa-map-signs"></i>
+              Lugar de destino:<div id="destino"></div>
+            </div>
+            <div>
+              <i class="fas fa-money-bill-wave"></i>
+              Precio del viaje:<div id="precio"></div>           
+            </div> 
           </div>
-          <div>
-            <i class="fa fa-map-signs"></i>
-            Lugar de destino:<div id="destino"></div>
+          <div id="button-container">
+            <button id="boton-hecha" class="like-btn">
+              <i class="fas fa-plane"></i>
+            </button>
+            <button id="boton-guardar" class="like-btn">
+              <i class="fas fa-heart"></i>
+            </button>
           </div>
-          <div>
-            <i class="fas fa-money-bill-wave"></i>
-            Precio del viaje:<div id="precio"></div>           
-          </div> 
         </div>
-      </div>
     </div>
       <!--PROMOCIONES-->
       <div class="row promociones">
@@ -199,22 +207,63 @@
         </div>
       </div>
 
-      <!--QUE SEA UN CARRUSEL DE OPINIONES????-->
-
       <!--OPINIONES-->
-      <h3 id="titulo" style="margin-bottom: -10px;">Opiniones destacadas</h3> 
-      <div class="row" id="opiniones">
-        <!--FOTO-->
-        <div class="col-5" id="contenedor-foto-opinion">
-          <div>
-            <img id="img-promo" src="../media/opinion_usuario.png" alt="Camino de Santiago Excursiones Íbice">
-          </div>
+      <h3 id="titulo">Opiniones destacadas</h3> 
+      <div id="carrusel-opiniones"><div class="d-flex align-items-center py-5 mh-100">    
+        <a class="carousel-control-prev1 text-decoration-none " href="#mycarousel" role="button" data-bs-slide="prev">
+            <div class="d-flex flex-column justify-content-center me-2 ms-auto left">ANTERIOR<span class="fas fa-arrow-left"></span> </div> <span class="sr-only">Previous</span>
+        </a>
+        <div class="container1">
+            <div id="mycarousel" class="carousel slide" data-bs-ride="carousel">
+                <!--<ol class="carousel-indicators1">
+                    <li data-bs-target="#mycarousel" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#mycarousel" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#mycarousel" data-bs-slide-to="2"></li>
+                </ol>-->
+                <div class="carousel-inner1">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-lg-6 ">
+                                <img src="https://images.unsplash.com/photo-1567468219153-4b1dea5227ea?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="col-lg-6 ">
+                                <div class=" d-flex flex-column justify-content-center my-5 px-3">
+                                    <p class="review text-center">«No hace falta viajar fuera para conocer costumbres y lugares bonitos»</p>
+                                    <div class="name d-flex align-items-center justify-content-center">
+                                        <span class="fas fa-minus pe-1"></span>
+                                        <p class="m-0">Alejandra</p>
+                                    </div>
+                                    <p class="job text-center">Socio aventurero (desde 2021)</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-lg-6 ">
+                                <img src="https://images.unsplash.com/photo-1548372290-8d01b6c8e78c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1169&q=80" class="d-block w-100" alt="...">
+                            </div>
+                            <div class="col-lg-6 ">
+                                <div class=" d-flex flex-column justify-content-center my-5 px-3">
+                                    <p class="review text-center">«Adoro la playa y he conocido zonas maravillosas y españolas»</p>
+                                    <div class="name d-flex align-items-center justify-content-center">
+                                        <span class="fas fa-minus pe-1"></span>
+                                        <p class="m-0">Daniel</p>
+                                    </div>
+                                    <p class="job text-center">Socio aventurero (desde 2022)</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <!--OPINION-->
-        <div class="col-7" id="opinion">
-          <p><b><i>«Llevo más de un año viajando por España con Excursiones Íbice y os lo recomiendo muchísimo, su trato es muy profesional. No hace falta viajar fuera de nuestro país para ver lugares bonitos y conocer nuevas costumbres».</b></i></p>
-        </div>
-      </div>
+        <a class="carousel-control-next1 text-decoration-none " href="#mycarousel" role="button" data-bs-slide="next">
+            <div class="d-flex flex-column justify-content-center right ms-2 me-auto"> SIGUIENTE <span class="fas fa-arrow-right"></span> </div> <span class="sr-only">Next</span>
+        </a>
+    </div></div>
 
 
       <!--PRESENTACION IBICE-->
