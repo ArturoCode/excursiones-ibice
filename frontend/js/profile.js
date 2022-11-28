@@ -7,12 +7,15 @@ var opciones = {
 };
 
 window.addEventListener("load", () => {
+  removeFormExcursion();
   getUsuarioLoggeado();
   const user = JSON.parse(localStorage.getItem("user"));
   if (user && user.rol === "admin") {
-    document.getElementById("excursiones-guardadas").remove();
-    document.getElementById("excursiones-hechas").remove();
+    document.getElementById("viajes-realizados").remove();
+    document.getElementById("lista-deseos").remove();
     document.getElementById("promociones").remove();
+    //BORRAR EL FOOTER DE LOS USUARIOS PARA TENER EL DE PERFIL ADMIN
+    //document.getElementById("footer-usuario").remove();
     getExcursiones();
     document
       .getElementById("update-excursion")
@@ -20,6 +23,13 @@ window.addEventListener("load", () => {
         event.preventDefault();
 
         updateExcursion(event);
+      });
+      document
+      .getElementById("add-excursion")
+      .addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        addExcursion(event);
       });
     document
       .getElementById("eliminar-excursion")
@@ -52,6 +62,7 @@ function eliminarExcursion() {
     var url = `${config.urlBackend}/excursiones?id_excursion=${currentExcursion.id_excursion}`;
     fetch(url, { method: "delete" }).then((res) => {});
   }
+  document.getElementById("mensaje-delete").innerHTML="Se ha eliminado la excursión"
 }
 
 function updateExcursion(event) {
@@ -83,6 +94,41 @@ function updateExcursion(event) {
     },
     body: JSON.stringify(body),
   }).then((res) => {});
+
+  document.getElementById("mensaje-update").innerHTML="Se ha actualizado la excursión"
+}
+
+function addExcursion(event) {
+  var url = `${config.urlBackend}/excursiones`;
+  var body = {
+    id_excursion: currentExcursion.id_excursion,
+    nombre_excursion: event.currentTarget.nombre_excursion.value,
+    url_imagen_principal: event.currentTarget.url_imagen_principal.value,
+    fecha_inicio: event.currentTarget.fecha_inicio.value,
+    fecha_fin: event.currentTarget.fecha_fin.value,
+    nivel: event.currentTarget.nivel.value,
+    transporte: event.currentTarget.transporte.value,
+    destino: event.currentTarget.destino.value,
+    hora_salida: event.currentTarget.hora_salida.value,
+    hora_regreso: event.currentTarget.hora_regreso.value,
+    lugar_salida: event.currentTarget.lugar_salida.value,
+    precio: event.currentTarget.precio.value,
+    descripcion: event.currentTarget.descripcion.value,
+    material: event.currentTarget.material.value,
+    tiempo_atmosferico: event.currentTarget.tiempo_atmosferico.value,
+    detalles: event.currentTarget.detalles.value,
+    url_imagen: event.currentTarget.url_imagen.value,
+  };
+
+  fetch(url, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  }).then((res) => {});
+
+  document.getElementById("mensaje-add").innerHTML="Se ha añadido la excursión"
 }
 
 var excursionesMap = {};
@@ -139,6 +185,26 @@ function removeFormExcursion() {
   formExcursion.querySelector("#tiempo_atmosferico").value = "";
   formExcursion.querySelector("#detalles").value = "";
   formExcursion.querySelector("#url_imagen").value = "";
+  
+  var formAñadir = document.getElementById("add-excursion");
+
+  formAñadir.querySelector("#url_imagen_principal").value = "";
+  formAñadir.querySelector("#nombre_excursion").value = "";
+  formAñadir.querySelector("#fecha_inicio").value = "";
+  formAñadir.querySelector("#fecha_fin").value = "";
+  formAñadir.querySelector("#nivel").value = "";
+  formAñadir.querySelector("#transporte").value = "";
+  formAñadir.querySelector("#destino").value = "";
+  formAñadir.querySelector("#hora_salida").value = "";
+  formAñadir.querySelector("#hora_regreso").value = "";
+  formAñadir.querySelector("#lugar_salida").value = "";
+  formAñadir.querySelector("#precio").value = "";
+  formAñadir.querySelector("#descripcion").value = "";
+  formAñadir.querySelector("#material").value = "";
+  formAñadir.querySelector("#tiempo_atmosferico").value = "";
+  formAñadir.querySelector("#detalles").value = "";
+  formAñadir.querySelector("#url_imagen").value = "";
+
 }
 
 function updateFormExcursion(excursion) {
@@ -481,3 +547,4 @@ function eliminarExcursionHecha(id, idBoton) {
       });
   };
 }
+

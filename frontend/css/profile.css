@@ -180,13 +180,13 @@ a.btn{
   margin-left: 10px;
 }
 
-#populares{
+#excursiones-hechas{
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-#excursion-otono{
+#excursiones-guardadas{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -333,6 +333,10 @@ footer {
     margin-top: 0; 
 
   }
+
+  .promo{
+    width: 100%;
+  }
   
 }
 
@@ -341,11 +345,10 @@ footer {
   footer p{
     font-size: 10px;
   }
-  #logo-footer{
-    width:100%;
-  }
+}
 
-  
+a.text-reset{
+  text-decoration: inherit;
 }
 
 #menu nav {

@@ -125,7 +125,7 @@
           <div>
             <a href="#"
               ><!--conectado con la base de datos y mostrarlo en detalles excursion -->
-              <img id="imagenop" src="../../media/dev_arturo.png" />
+              <img id="imagenop" src="../../media/icono_user.png" />
             </a>
           </div>
         </div>
@@ -167,8 +167,10 @@
       </div>
 
       <!--EXCURSIONES SELECCIONADAS-->
-      <h3 id="titulo" style="margin-top: 80px">Viajes realizados</h3>
+      <div id="viajes-realizados" style="margin-top: 150px">
+      <h3 id="titulo">Viajes realizados</h3>
       <div id="excursiones-hechas" class="row excursiones-seleccionadas">
+        
         <!--FICHA EXCURSION-->
         <div id="ficha" class="ficha">
           <!--class="col-3 ficha"-->
@@ -221,16 +223,16 @@
           </div>
         </div>
       </div>
+      <!--FIN DIV VIAJES-REALIZADOS-->
+    </div>
+      
 
       <!--PROMOCIONES-->
           <div id="promociones">
             <h3 id="titulo" style="margin-bottom: -10px">Cupones y descuentos</h3>
             <div class="row promociones">
-              <div class="col-6 promo">
-                <a href=""><img id="img-promo" src="../../media/promo1.png" /></a>
-              </div>
-              <div class="col-6 promo">
-                <a href=""><img id="img-promo" src="../../media/promo2.png" /></a>
+              <div class="col-12 promo">
+                <a href=""><img id="img-promo" src="../../media/cupon-ibice.png" /></a>
               </div>
             </div>
           </div>
@@ -238,8 +240,9 @@
 
       <!--EXCURSIONES SELECCIONADAS-->
       
+      <div id="lista-deseos">
+      <h3 id="titulo" style="margin-top: 80px">Lista de deseos</h3>
       <div id="excursiones-guardadas" class="row excursiones-seleccionadas">
-        <h3 id="titulo" style="margin-top: 80px">Lista de deseos</h3>
         <!--FICHA EXCURSION-->
         <div id="ficha" class="ficha">
           <!--class="col-3 ficha"-->
@@ -292,108 +295,118 @@
           </div>
         </div>
       </div>
-      <div id="admin">
-        <div>
-          <h2>Excursiones</h2>
-          <select name="" id="select-excursiones"></select><button id="eliminar-excursion">Eliminar</button>
-
-          <form id="update-excursion">
-            <div>nombre_excursion <input id="nombre_excursion" type="text" name="nombre_excursion"></div>
-            <div>url_imagen_principal <input id="url_imagen_principal"  type="text" name="url_imagen_principal"></div>
-            <div>fecha_inicio <input id="fecha_inicio"  type="text" name="fecha_inicio"></div>
-            <div>fecha_fin <input id="fecha_fin" type="text" name="fecha_fin"></div>
-            <div>nivel <input id="nivel" type="text" name="nivel"></div>
-            <div>transporte <input id="transporte"  type="text" name="transporte"></div>
-            <div>destino <input id="destino"  type="text" name="destino"></div>
-            <div>hora_salida <input id="hora_salida" type="text" name="hora_salida"></div>
-            <div>hora_regreso <input id="hora_regreso" type="text" name="hora_regreso"></div>
-            <div>lugar_salida <input id="lugar_salida" type="text" name="lugar_salida"></div>
-            <div>precio <input id="precio" type="text" name="precio"></div>
-            <div>descripcion <textarea id="descripcion" type="text" name="descripcion"></textarea></div>
-            <div>material <textarea id="material" type="text" name="material"></textarea></div>
-            <div>tiempo_atmosferico <input id="tiempo_atmosferico"  type="text" name="tiempo_atmosferico"></div>
-            <div>detalles <textarea id="detalles" type="text" name="detalles"></textarea></div>
-            <div>url_imagen <input id="url_imagen"  type="text" name="url_imagen">
-              
-            <input type="submit" value="Guardar">
-          </form>
-          <div class="row">
-            
-          </div>
-          <div id="listado-excursiones">
-            <div id="excursion" class="row">
-              <div  class="column"></div>
-              <div class="column"></div>
-              <div  class="column"></div>
-              <div  class="column"></div>
-              <div  class="column"></div>
-              <div  class="column"></div>
-              <div  class="column"></div>
-              <div  class="column"></div>
-              <div  class="column"></div>
-              <div  class="column"></div>
-              <div  class="column"></div>
-              <div  class="column"></div>
-              <div  class="column"></div>
-              <div class="column"></div>
-              <div class="column"></div>
-              <div  class="column"></div>
-              <div  class="column"></div>
-             
-            </div>
-          </div>
-        </div>
-      </div>
+      <!--FIN DIV LISTA-DESEOS-->
     </div>
+      
+      <div id="admin">
+        <div class="row" style="margin-top:150px">
+          <div class="col-6">
+            <h2>Actualizar/Eliminar Excursión</h2>
+            <select name="" id="select-excursiones"></select><button id="eliminar-excursion">Eliminar</button>
+            <div id="mensaje-delete"></div>
+
+            <h5>Actualizar Excursion</h5>
+            <form id="update-excursion">
+              <div>nombre_excursion <input id="nombre_excursion" type="text" name="nombre_excursion"></div>
+              <div>url_imagen_principal <input id="url_imagen_principal"  type="text" name="url_imagen_principal"></div>
+              <div>fecha_inicio <input id="fecha_inicio"  type="text" name="fecha_inicio"></div>
+              <div>fecha_fin <input id="fecha_fin" type="text" name="fecha_fin"></div>
+              <div>nivel <input id="nivel" type="text" name="nivel"></div>
+              <div>transporte <input id="transporte"  type="text" name="transporte"></div>
+              <div>destino <input id="destino"  type="text" name="destino"></div>
+              <div>hora_salida <input id="hora_salida" type="text" name="hora_salida"></div>
+              <div>hora_regreso <input id="hora_regreso" type="text" name="hora_regreso"></div>
+              <div>lugar_salida <input id="lugar_salida" type="text" name="lugar_salida"></div>
+              <div>precio <input id="precio" type="text" name="precio"></div>
+              <div>descripcion <textarea id="descripcion" type="text" name="descripcion"></textarea></div>
+              <div>material <textarea id="material" type="text" name="material"></textarea></div>
+              <div>tiempo_atmosferico <input id="tiempo_atmosferico"  type="text" name="tiempo_atmosferico"></div>
+              <div>detalles <textarea id="detalles" type="text" name="detalles"></textarea></div>
+              <div>url_imagen <input id="url_imagen"  type="text" name="url_imagen">
+                
+              <input type="submit" value="Guardar">
+            </form>
+            <div id="mensaje-update"></div>
+          </div>
+          <div class="col-6">
+            <h2>Añadir</h2>
+            <form id="add-excursion">
+              <div>nombre_excursion <input id="nombre_excursion" type="text" name="nombre_excursion"></div>
+              <div>url_imagen_principal <input id="url_imagen_principal"  type="text" name="url_imagen_principal"></div>
+              <div>fecha_inicio <input id="fecha_inicio"  type="text" name="fecha_inicio"></div>
+              <div>fecha_fin <input id="fecha_fin" type="text" name="fecha_fin"></div>
+              <div>nivel <input id="nivel" type="text" name="nivel"></div>
+              <div>transporte <input id="transporte"  type="text" name="transporte"></div>
+              <div>destino <input id="destino"  type="text" name="destino"></div>
+              <div>hora_salida <input id="hora_salida" type="text" name="hora_salida"></div>
+              <div>hora_regreso <input id="hora_regreso" type="text" name="hora_regreso"></div>
+              <div>lugar_salida <input id="lugar_salida" type="text" name="lugar_salida"></div>
+              <div>precio <input id="precio" type="text" name="precio"></div>
+              <div>descripcion <textarea id="descripcion" type="text" name="descripcion"></textarea></div>
+              <div>material <textarea id="material" type="text" name="material"></textarea></div>
+              <div>tiempo_atmosferico <input id="tiempo_atmosferico"  type="text" name="tiempo_atmosferico"></div>
+              <div>detalles <textarea id="detalles" type="text" name="detalles"></textarea></div>
+              <div>url_imagen <input id="url_imagen"  type="text" name="url_imagen">
+                
+              <input type="submit" value="Guardar">
+            </form>
+            <div id="mensaje-add"></div>
+          </div>
+        </div> 
+      </div>
+
+<!--DIV DEL CONTAINER????-->
+    </div>
+<!--DIV DEL CONTAINER????-->
+
+  <!--REVISAR ESTOS DIVS PORQUE CON ELLOS NO HACE FALTA DUPLICAR EL FOOTER, O SEA, QUE ESTÁN BIEN AHÍ-->
+  </div>
+</div>
+<!--REVISAR ESTOS DIVS PORQUE CON ELLOS NO HACE FALTA DUPLICAR EL FOOTER, O SEA, QUE ESTÁN BIEN AHÍ-->
+
 
     <!--FOOTER-->
     <footer class="text-center text-muted bg-light mt-5">
       <div class="row">
         <div class="col-4">
-          <img id="logo-footer" src="../../media/logo_body.png" width="20%" />
+          <img id="logo-footer" src="../media/logo_body.png" width="30%"/>
           <p class="text-center p-3">Excursiones Íbice ©2022</p>
         </div>
-
-        <div class="col-4">
+    
+        <div id="secciones" class="col-4">
           <h5 class="text-uppercase fw-bold mb-4">Secciones</h5>
           <p>
-            <a href="../index.html" class="text-reset">Inicio</a>
+            <a href="./index.html" class="text-reset">Inicio</a>
           </p>
           <p>
-            <a href="../listado_excursiones.html" class="text-reset"
-              >Excursiones</a
-            >
+            <a href="./listado_excursiones.html" class="text-reset">Excursiones</a>
           </p>
           <p>
-            <a href="../blog.html" class="text-reset">Blog</a>
+            <a href="./blog.html" class="text-reset">Blog</a>
           </p>
           <p>
-            <a href="../about-us.html" class="text-reset">Conócenos</a>
+            <a href="./about-us.html" class="text-reset">Conócenos</a>
           </p>
         </div>
-
+    
         <div class="col-4" id="contacto">
-          <h5 class="text-uppercase mb-4">Contacto</h5>
-          <p><a href="../contact.html">hola@excursionesibice.com</a></p>
+          <h5 class="text-uppercase fw-bold mb-4">Contacto</h5></a>
+          <!-- hola@excursionesibice.com< -->
+          <p><a href="contact.html">excursionesibice@gmail.com</a></p>          
           <p>+34 666 666 666</p>
           <a href="#" target="_blank">
-            <i
-              class="fab fa-twitter fa-2x margin-top-20px margin-right-20px"
-            ></i>
-          </a>
+            <i class="fab fa-twitter fa-2x margin-top-20px margin-right-20px"></i>
+          </a>      
           <a href="#" target="_blank">
-            <i
-              class="fab fa-instagram fa-2x margin-top-20px margin-right-20px"
-            ></i>
-          </a>
+            <i class="fab fa-instagram fa-2x margin-top-20px margin-right-20px"></i>
+          </a>      
           <a href="#" target="_blank">
-            <i
-              class="fab fa-facebook fa-2x margin-top-20px margin-right-20px"
-            ></i>
+              <i class="fab fa-facebook fa-2x margin-top-20px margin-right-20px"></i>
           </a>
         </div>
       </div>
     </footer>
+
     <script src="../../js/profile.js"></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
