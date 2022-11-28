@@ -273,6 +273,124 @@ a.btn{
   width: 100%;
 }
 
+/* BOTONES EXCURSIONES */
+
+.botones-excursiones .col-12{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botones-excursiones{
+  margin-top: 200px;
+}
+
+#actualizar-excursiones{
+  margin-right: 10px;
+  border: 2px solid #4f565c;
+  border-radius: 4px;
+  background-color:#6c757d;
+  color:white;
+  padding: 10px;
+  transition-duration: 0.4s;
+}
+
+#añadir-excursiones{
+  border: 2px solid #4f565c;
+  border-radius: 4px;
+  background-color:#6c757d;
+  color:white;
+  padding: 10px;
+  transition-duration: 0.4s;
+}
+
+#actualizar-excursiones:hover, #añadir-excursiones:hover {
+  background-color: white;
+  color: #6c757d;
+}
+
+/* CAMPOS */
+
+#select-excursiones {
+    padding: 13px;  
+    margin: 3px;
+    margin-top: 20px;
+    margin-bottom:20px;
+    border: 1px solid black;
+    border-radius: 5px;  
+    /*width:250px;*/
+    width: 100%;
+}
+
+#opcion-actualizar input, textarea {
+  width: 100%;
+}
+
+#eliminar-excursion, #opcion-actualizar input[type=submit] {
+  width: 100%;
+  border: 1px solid black;
+  margin-top:15px;
+  margin-bottom:10px;
+}
+
+#opcion-añadir {
+  margin-top: 86px;
+}
+
+#opcion-añadir input, textarea {
+  width: 100%;
+}
+
+#opcion-añadir input[type=submit] {
+  width: 100%;
+  border: 1px solid black;
+  margin-top:15px;
+  margin-bottom:10px;
+}
+
+/* BOTONES BLOG */
+
+.botones-blog .col-12{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.botones-blog{
+  margin-top: 70px;
+}
+
+#actualizar-blog{
+  margin-right: 10px;
+  border: 2px solid #4f565c;
+  border-radius: 4px;
+  background-color:#6c757d;
+  color:white;
+  padding: 10px;
+  transition-duration: 0.4s;
+}
+
+#añadir-blog{
+  border: 2px solid #4f565c;
+  border-radius: 4px;
+  background-color:#6c757d;
+  color:white;
+  padding: 10px;
+  transition-duration: 0.4s;
+}
+
+#actualizar-blog:hover, #añadir-blog:hover {
+  background-color: white;
+  color: #6c757d;
+}
+
+#mensaje-delete, #mensaje-update, #mensaje-add {
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #2ecc71;
+}
+
 .no-display{
   display: none;
 }
