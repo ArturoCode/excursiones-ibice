@@ -510,6 +510,67 @@ app.delete("/api/excursiones", (req, res) => {
   });
 });
 
+//PERFIL BLOG
+
+app.put("/api/blog", (req, res) => {
+  let {
+    id_entrada,
+    titulo_entrada,
+    url_imagen_principal,    
+    descripcion_entrada,    
+    url_imagen,
+    texto_entrada
+  } = req.body;
+
+  var query = `UPDATE blog SET    
+      titulo_entrada='${titulo_entrada}',
+      url_imagen_principal='${url_imagen_principal}',      
+      descripcion_entrada='${descripcion_entrada}',      
+      url_imagen='${url_imagen}',
+      texto_entrada='${texto_entrada}'
+      WHERE id_entrada=${id_entrada}
+  `;
+
+  dbcon.query(query, function (err, result, fields) {
+    if (err) throw err;
+
+    res.status(200).send({});
+  });
+});
+
+app.post("/api/blog", (req, res) => {
+  let {
+    id_entrada,
+    titulo_entrada,
+    url_imagen_principal,    
+    descripcion_entrada,    
+    url_imagen,
+    texto_entrada
+  } = req.body;
+
+  var query = `INSERT INTO blog SET       
+      titulo_entrada='${titulo_entrada}',
+      url_imagen_principal='${url_imagen_principal}',      
+      descripcion_entrada='${descripcion_entrada}',      
+      url_imagen='${url_imagen}',
+      texto_entrada='${texto_entrada}'      
+  `;
+
+  dbcon.query(query, function (err, result, fields) {
+    if (err) throw err;
+
+    res.status(200).send({});
+  });
+});
+app.delete("/api/blog", (req, res) => {
+  const id = req.query["id_entrada"];
+  const query = `DELETE FROM blog WHERE id_entrada=${id}`;
+  dbcon.query(query, function (err, result, fields) {
+    if (err) throw err;
+
+    res.status(200).send({});
+  });
+});
 //servir estaticamente el frontend
 app.use("/js", express.static("../frontend/js"));
 app.use("/css", express.static("../frontend/css"));
