@@ -194,6 +194,10 @@ footer {
     max-width: 100%;
     text-align: justify;
   }
+
+  #tipos-excursiones{
+    margin-top: 250px;
+  }
   
 }
 
@@ -204,6 +208,10 @@ footer {
   }
   #logo-footer{
     width:100%;
+  }
+
+  #tipos-excursiones{
+    margin-top: 340px;
   }
 
   

@@ -11,6 +11,8 @@ function getExcursiones() {
   const infoUsuarioExcursiones = fetch(
     `${config.urlBackend}/usuario/excursiones/info`
   );
+  
+
   const infoExcursiones = fetch(url);
   Promise.all([infoExcursiones, infoUsuarioExcursiones])
     .then((res) => Promise.all([res[0].json(), res[1].json()]))
@@ -29,6 +31,7 @@ function getExcursiones() {
         var fichaTemp = fichaDOM.cloneNode(true);
             //logica botones
             var botonContainer = fichaTemp.querySelector("#button-container")
+            
             if(localStorage.getItem("user")){
               var botonHecha = fichaTemp.querySelector("#boton-hecha")
               var botonGuardar = fichaTemp.querySelector("#boton-guardar")

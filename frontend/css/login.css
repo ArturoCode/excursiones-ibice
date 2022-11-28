@@ -191,6 +191,20 @@ a.btn{
 	width: 100%;
 }
 
+#recordar-pass{
+  background-color: #6c757d;
+	border: 2px solid #4f565c;
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+  text-align: center;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
+}
+
 
 footer {
   padding: 30px 0;

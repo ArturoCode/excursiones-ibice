@@ -8,6 +8,7 @@ var opciones = {
 
 window.addEventListener("load", () => {
   removeFormExcursion();
+  removeFormBlog();
   getUsuarioLoggeado();
   const user = JSON.parse(localStorage.getItem("user"));
   if (user && user.rol === "admin") {
@@ -17,6 +18,8 @@ window.addEventListener("load", () => {
     //BORRAR EL FOOTER DE LOS USUARIOS PARA TENER EL DE PERFIL ADMIN
     //document.getElementById("footer-usuario").remove();
     getExcursiones();
+    getBlog();
+
     document
       .getElementById("update-excursion")
       .addEventListener("submit", (event) => {
@@ -36,6 +39,25 @@ window.addEventListener("load", () => {
       .addEventListener("click", () => {
         eliminarExcursion();
       });
+      document
+      .getElementById("update-blog")
+      .addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        updateBlog(event);
+      });
+      document
+      .getElementById("add-blog")
+      .addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        addBlog(event);
+      });
+    document
+      .getElementById("eliminar-blog")
+      .addEventListener("click", () => {
+        eliminarBlog();
+      });
   } else {
     document.getElementById("admin").remove();
     getExcursionesHechas();
@@ -44,6 +66,23 @@ window.addEventListener("load", () => {
 
   document.getElementById("editar-usuario").addEventListener("click", () => {
     mostrarUpdate();
+  });
+  document.getElementById("actualizar-excursiones").addEventListener("click", () => {
+    mostrarActualizarExcursiones();
+   
+  });
+  document.getElementById("añadir-excursiones").addEventListener("click", () => {
+    mostrarAñadirExcursiones();
+   
+  }); 
+  
+  document.getElementById("actualizar-blog").addEventListener("click", () => {
+    mostrarActualizarBlog();
+  
+  });
+  document.getElementById("añadir-blog").addEventListener("click", () => {
+    mostrarAñadirBlog();
+   
   });
   document.getElementById("boton-cancelar").addEventListener("click", () => {
     cancelarUpdate();
@@ -54,6 +93,8 @@ window.addEventListener("load", () => {
       updateUsario();
     }
   });
+  
+ 
 });
 
 function eliminarExcursion() {
@@ -64,6 +105,7 @@ function eliminarExcursion() {
   }
   document.getElementById("mensaje-delete").innerHTML="Se ha eliminado la excursión"
 }
+
 
 function updateExcursion(event) {
   var url = `${config.urlBackend}/excursiones`;
@@ -230,6 +272,165 @@ function updateFormExcursion(excursion) {
   formExcursion.querySelector("#detalles").value = excursion.detalles;
   formExcursion.querySelector("#url_imagen").value = excursion.url_imagen;
 }
+function mostrarAñadirExcursiones(){   
+  document.getElementById("opcion-añadir").classList.remove("no-display");
+ 
+}
+function mostrarActualizarExcursiones(){     
+    document.getElementById("opcion-actualizar").classList.remove("no-display");
+    
+}
+function mostrarUpdate() {
+  const elements = document.querySelectorAll("#info > .form-control-input");
+  for (const element of elements) {
+    element.classList.remove("no-display");
+  }
+  document.getElementById("boton-cambiar").classList.remove("no-display");
+  document.getElementById("boton-cancelar").classList.remove("no-display");
+  document.getElementById("nombre-usuario").classList.add("no-display");
+  document.getElementById("email").classList.add("no-display");
+  document.getElementById("editar-usuario").classList.add("no-display");
+}
+function cancelarUpdate() {
+  const elements = document.querySelectorAll("#info > .form-control-input");
+  for (const element of elements) {
+    element.classList.add("no-display");
+  }
+  document.getElementById("boton-cambiar").classList.add("no-display");
+  document.getElementById("boton-cancelar").classList.add("no-display");
+  document.getElementById("nombre-usuario").classList.remove("no-display");
+  document.getElementById("email").classList.remove("no-display");
+  document.getElementById("editar-usuario").classList.remove("no-display");
+}
+
+
+
+//BLOG
+function eliminarBlog() {
+  var select = document.getElementById("select-blog");
+  if (select.value !== "-1") {
+    var url = `${config.urlBackend}/blog?id_entrada=${currentBlog.id_entrada}`;
+    fetch(url, { method: "delete" }).then((res) => {});
+  }
+  document.getElementById("mensaje-delete-blog").innerHTML="Se ha eliminado la entrada del blog"
+}
+
+
+function updateBlog(event) {
+  var url = `${config.urlBackend}/blog`;
+  var body = {
+    id_entrada: currentBlog.id_entrada,
+    titulo_entrada: event.currentTarget.titulo_entrada.value,
+    url_imagen_principal: event.currentTarget.url_imagen_principal.value,    
+    descripcion_entrada: event.currentTarget.descripcion_entrada.value,    
+    url_imagen: event.currentTarget.url_imagen.value,
+    texto_entrada: event.currentTarget.texto_entrada.value,
+  };
+
+  fetch(url, {
+    method: "put",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  }).then((res) => {});
+
+  document.getElementById("mensaje-update-blog").innerHTML="Se ha actualizado la entrada del blog"
+}
+
+function addBlog(event) {
+  var url = `${config.urlBackend}/blog`;
+  var body = {
+    id_entrada: currentBlog.id_entrada,
+    titulo_entrada: event.currentTarget.titulo_entrada.value,
+    url_imagen_principal: event.currentTarget.url_imagen_principal.value,    
+    descripcion_entrada: event.currentTarget.descripcion_entrada.value,    
+    url_imagen: event.currentTarget.url_imagen.value,
+    texto_entrada: event.currentTarget.texto_entrada.value,
+  };
+
+  fetch(url, {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(body),
+  }).then((res) => {});
+
+  document.getElementById("mensaje-add-blog").innerHTML="Se ha añadido la entrada del blog"
+}
+
+var blogMap = {};
+var currentBlog;
+function getBlog() {
+  var url = `${config.urlBackend}/blog`;
+  fetch(url)
+    .then((res) => res.json())
+    .then((data) => {
+      var select = document.getElementById("select-blog");
+      select.selectedIndex = 0;
+
+      const optionDefault = document.createElement("option");
+      optionDefault.value = "-1";
+      optionDefault.innerHTML = "Selecciona una entrada de blog";
+      select.appendChild(optionDefault);
+
+      for (var entrada of data) {
+        blogMap[entrada.id_entrada] = entrada;
+        const option = document.createElement("option");
+        option.value = entrada.id_entrada;
+        option.innerHTML = `${entrada.id_entrada} - ${entrada.titulo_entrada}`;
+        select.appendChild(option);
+      }
+
+      select.addEventListener("change", () => {
+        if (select.value !== "-1") {
+          currentBlog = blogMap[select.value];
+          updateFormBlog(currentBlog);
+        } else {
+          currentBlog = {};
+          removeFormBlog();
+        }
+      });
+    });
+}
+
+function removeFormBlog() {
+  var formBlog = document.getElementById("update-blog");
+  formBlog.querySelector("#titulo_entrada").value = "";
+  formBlog.querySelector("#url_imagen_principal").value = "";  
+  formBlog.querySelector("#descripcion_entrada").value = "";  
+  formBlog.querySelector("#url_imagen").value = "";
+  formBlog.querySelector("#texto_entrada").value = "";
+  
+  var formAñadir = document.getElementById("add-blog");
+
+  formAñadir.querySelector("#titulo_entrada").value = "";
+  formAñadir.querySelector("#url_imagen_principal").value = "";  
+  formAñadir.querySelector("#descripcion_entrada").value = "";  
+  formAñadir.querySelector("#url_imagen").value = "";
+  formAñadir.querySelector("#texto_entrada").value = "";
+
+}
+
+function updateFormBlog(entrada) {
+  var formBlog = document.getElementById("update-blog");
+  formBlog.querySelector("#titulo_entrada").value =
+  entrada.titulo_entrada;
+  formBlog.querySelector("#url_imagen_principal").value =
+    entrada.url_imagen_principal; 
+  formBlog.querySelector("#descripcion_entrada").value = entrada.descripcion_entrada;  
+  formBlog.querySelector("#url_imagen").value = entrada.url_imagen;
+  formBlog.querySelector("#texto_entrada").value = entrada.texto_entrada;
+}
+function mostrarAñadirBlog(){   
+  document.getElementById("opcion-añadir-blog").classList.remove("no-display");
+ 
+}
+function mostrarActualizarBlog(){     
+    document.getElementById("opcion-actualizar-blog").classList.remove("no-display");
+    
+}
 
 function mostrarUpdate() {
   const elements = document.querySelectorAll("#info > .form-control-input");
@@ -253,6 +454,13 @@ function cancelarUpdate() {
   document.getElementById("email").classList.remove("no-display");
   document.getElementById("editar-usuario").classList.remove("no-display");
 }
+
+
+
+
+
+
+
 function updateUsario() {
   const body = {
     nombre_usuario: document.getElementById("username").value,
@@ -547,4 +755,6 @@ function eliminarExcursionHecha(id, idBoton) {
       });
   };
 }
+
+
 

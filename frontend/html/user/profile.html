@@ -299,74 +299,104 @@
     </div>
       
       <div id="admin">
-        <div class="row" style="margin-top:150px">
-          <div class="col-6">
-            <h2>Actualizar/Eliminar Excursión</h2>
-            <select name="" id="select-excursiones"></select><button id="eliminar-excursion">Eliminar</button>
-            <div id="mensaje-delete"></div>
-
+        <div class="botones-excursiones row">
+          <div class="col-12"><button id="actualizar-excursiones">Actualizar/Eliminar Excursión</button><button id="añadir-excursiones">Añadir excursión</button></div> 
+                 
+          <div id="opcion-actualizar" class="col-6 no-display ">              
+            <select id="select-excursiones"></select>
             <h5>Actualizar Excursion</h5>
             <form id="update-excursion">
-              <div>nombre_excursion <input id="nombre_excursion" type="text" name="nombre_excursion"></div>
-              <div>url_imagen_principal <input id="url_imagen_principal"  type="text" name="url_imagen_principal"></div>
-              <div>fecha_inicio <input id="fecha_inicio"  type="text" name="fecha_inicio"></div>
-              <div>fecha_fin <input id="fecha_fin" type="text" name="fecha_fin"></div>
-              <div>nivel <input id="nivel" type="text" name="nivel"></div>
-              <div>transporte <input id="transporte"  type="text" name="transporte"></div>
-              <div>destino <input id="destino"  type="text" name="destino"></div>
-              <div>hora_salida <input id="hora_salida" type="text" name="hora_salida"></div>
-              <div>hora_regreso <input id="hora_regreso" type="text" name="hora_regreso"></div>
-              <div>lugar_salida <input id="lugar_salida" type="text" name="lugar_salida"></div>
-              <div>precio <input id="precio" type="text" name="precio"></div>
-              <div>descripcion <textarea id="descripcion" type="text" name="descripcion"></textarea></div>
-              <div>material <textarea id="material" type="text" name="material"></textarea></div>
-              <div>tiempo_atmosferico <input id="tiempo_atmosferico"  type="text" name="tiempo_atmosferico"></div>
-              <div>detalles <textarea id="detalles" type="text" name="detalles"></textarea></div>
-              <div>url_imagen <input id="url_imagen"  type="text" name="url_imagen">
-                
-              <input type="submit" value="Guardar">
+              <div><b>nombre_excursion </b><input id="nombre_excursion" type="text" name="nombre_excursion"></div>
+              <div><b>url_imagen_principal </b><input id="url_imagen_principal"  type="text" name="url_imagen_principal"></div>
+              <div><b>fecha_inicio </b><input id="fecha_inicio"  type="text" name="fecha_inicio"></div>
+              <div><b>fecha_fin </b><input id="fecha_fin" type="text" name="fecha_fin"></div>
+              <div><b>nivel </b><input id="nivel" type="text" name="nivel"></div>
+              <div><b>transporte </b><input id="transporte"  type="text" name="transporte"></div>
+              <div><b>destino </b><input id="destino"  type="text" name="destino"></div>
+              <div><b>hora_salida </b><input id="hora_salida" type="text" name="hora_salida"></div>
+              <div><b>hora_regreso </b><input id="hora_regreso" type="text" name="hora_regreso"></div>
+              <div><b>lugar_salida </b><input id="lugar_salida" type="text" name="lugar_salida"></div>
+              <div><b>precio </b><input id="precio" type="text" name="precio"></div>
+              <div><b>descripcion </b><textarea id="descripcion" type="text" name="descripcion"></textarea></div>
+              <div><b>material </b><textarea id="material" type="text" name="material"></textarea></div>
+              <div><b>tiempo_atmosferico </b><input id="tiempo_atmosferico"  type="text" name="tiempo_atmosferico"></div>
+              <div><b>detalles </b><textarea id="detalles" type="text" name="detalles"></textarea></div>
+              <div><b>url_imagen </b><input id="url_imagen"  type="text" name="url_imagen"></div>          
+              <button id="eliminar-excursion">Eliminar</button>      
+              <input type="submit" value="Actualizar">
             </form>
+            <div id="mensaje-delete"></div>
             <div id="mensaje-update"></div>
           </div>
-          <div class="col-6">
-            <h2>Añadir</h2>
+          <div id="opcion-añadir"class="col-6 no-display">
+            <h5>Añadir excursion</h5>
             <form id="add-excursion">
-              <div>nombre_excursion <input id="nombre_excursion" type="text" name="nombre_excursion"></div>
-              <div>url_imagen_principal <input id="url_imagen_principal"  type="text" name="url_imagen_principal"></div>
-              <div>fecha_inicio <input id="fecha_inicio"  type="text" name="fecha_inicio"></div>
-              <div>fecha_fin <input id="fecha_fin" type="text" name="fecha_fin"></div>
-              <div>nivel <input id="nivel" type="text" name="nivel"></div>
-              <div>transporte <input id="transporte"  type="text" name="transporte"></div>
-              <div>destino <input id="destino"  type="text" name="destino"></div>
-              <div>hora_salida <input id="hora_salida" type="text" name="hora_salida"></div>
-              <div>hora_regreso <input id="hora_regreso" type="text" name="hora_regreso"></div>
-              <div>lugar_salida <input id="lugar_salida" type="text" name="lugar_salida"></div>
-              <div>precio <input id="precio" type="text" name="precio"></div>
-              <div>descripcion <textarea id="descripcion" type="text" name="descripcion"></textarea></div>
-              <div>material <textarea id="material" type="text" name="material"></textarea></div>
-              <div>tiempo_atmosferico <input id="tiempo_atmosferico"  type="text" name="tiempo_atmosferico"></div>
-              <div>detalles <textarea id="detalles" type="text" name="detalles"></textarea></div>
-              <div>url_imagen <input id="url_imagen"  type="text" name="url_imagen">
+              <div><b>nombre_excursion </b><input id="nombre_excursion" type="text" name="nombre_excursion"></div>
+              <div><b>url_imagen_principal </b><input id="url_imagen_principal"  type="text" name="url_imagen_principal"></div>
+              <div><b>fecha_inicio </b><input id="fecha_inicio"  type="text" name="fecha_inicio"></div>
+              <div><b>fecha_fin </b><input id="fecha_fin" type="text" name="fecha_fin"></div>
+              <div><b>nivel </b><input id="nivel" type="text" name="nivel"></div>
+              <div><b>transporte </b><input id="transporte"  type="text" name="transporte"></div>
+              <div><b>destino </b><input id="destino"  type="text" name="destino"></div>
+              <div><b>hora_salida </b><input id="hora_salida" type="text" name="hora_salida"></div>
+              <div><b>hora_regreso </b><input id="hora_regreso" type="text" name="hora_regreso"></div>
+              <div><b>lugar_salida </b><input id="lugar_salida" type="text" name="lugar_salida"></div>
+              <div><b>precio </b><input id="precio" type="text" name="precio"></div>
+              <div><b>descripcion </b><textarea id="descripcion" type="text" name="descripcion"></textarea></div>
+              <div><b>material </b><textarea id="material" type="text" name="material"></textarea></div>
+              <div><b>tiempo_atmosferico </b><input id="tiempo_atmosferico"  type="text" name="tiempo_atmosferico"></div>
+              <div><b>detalles </b><textarea id="detalles" type="text" name="detalles"></textarea></div>
+              <div><b>url_imagen </b><input id="url_imagen"  type="text" name="url_imagen"></div>
                 
-              <input type="submit" value="Guardar">
+              <input type="submit" value="Añadir">
             </form>
             <div id="mensaje-add"></div>
           </div>
-        </div> 
+        </div>
+        <div class="botones-blog row">
+          <div class="col-12"><button id="actualizar-blog">Actualizar/Eliminar blog</button><button id="añadir-blog">Añadir blog</button></div>                 
+          <div id="opcion-actualizar-blog" class="col-6 no-display ">              
+            <select id="select-blog"></select>
+            <h5>Actualizar Blog</h5>
+            <form id="update-blog">
+              <div><b>titulo_entrada </b><input id="titulo_entrada" type="text" name="titulo_entrada"></div>
+              <div><b>url_imagen_principal </b><input id="url_imagen_principal"  type="text" name="url_imagen_principal"></div>              
+              <div><b>descripcion_entrada </b><textarea id="descripcion_entrada" type="text" name="descripcion_entrada"></textarea></div>           
+              <div><b>url_imagen </b><input id="url_imagen"  type="text" name="url_imagen"></div> 
+              <div><b>text_entrada </b><textarea id="texto_entrada" type="text" name="texto_entrada"></textarea></div>                      
+              <button id="eliminar-blog">Eliminar</button>      
+              <input type="submit" value="Actualizar">
+            </form>
+            <div id="mensaje-delete-blog"></div>
+            <div id="mensaje-update-blog"></div>
+          </div>
+          <div id="opcion-añadir-blog" class="col-6 no-display">
+            <h5>Añadir blog</h5>
+            <form id="add-blog">
+              <div><b>titulo_entrada </b><input id="titulo_entrada" type="text" name="titulo_entrada"></div>
+              <div><b>url_imagen_principal </b><input id="url_imagen_principal"  type="text" name="url_imagen_principal"></div>              
+              <div><b>descripcion_entrada </b><textarea id="descripcion_entrada" type="text" name="descripcion_entrada"></textarea></div>           
+              <div><b>url_imagen </b><input id="url_imagen"  type="text" name="url_imagen"></div> 
+              <div><b>text_entrada </b><textarea id="texto_entrada" type="text" name="texto_entrada"></textarea></div>                 
+              <input type="submit" value="Añadir">
+            </form>
+            <div id="mensaje-add-blog"></div>
+          </div>
+        </div>  
       </div>
+    </div>
 
 <!--DIV DEL CONTAINER????-->
-    </div>
+   
 <!--DIV DEL CONTAINER????-->
 
   <!--REVISAR ESTOS DIVS PORQUE CON ELLOS NO HACE FALTA DUPLICAR EL FOOTER, O SEA, QUE ESTÁN BIEN AHÍ-->
-  </div>
-</div>
+
 <!--REVISAR ESTOS DIVS PORQUE CON ELLOS NO HACE FALTA DUPLICAR EL FOOTER, O SEA, QUE ESTÁN BIEN AHÍ-->
 
 
     <!--FOOTER-->
-    <footer class="text-center text-muted bg-light mt-5">
+    <div class="text-center text-muted bg-light mt-5"><footer>
       <div class="row">
         <div class="col-4">
           <img id="logo-footer" src="../media/logo_body.png" width="30%"/>
@@ -405,7 +435,7 @@
           </a>
         </div>
       </div>
-    </footer>
+    </footer></div>
 
     <script src="../../js/profile.js"></script>
     <script
@@ -415,3 +445,4 @@
     ></script>
   </body>
 </html>
+
