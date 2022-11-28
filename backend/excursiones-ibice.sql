@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost
--- Tiempo de generación: 28-11-2022 a las 16:36:01
+-- Tiempo de generación: 28-11-2022 a las 19:08:21
 -- Versión del servidor: 10.4.25-MariaDB
 -- Versión de PHP: 8.1.10
 
@@ -85,7 +85,84 @@ INSERT INTO `excursiones` (`id_excursion`, `nombre_excursion`, `url_imagen_princ
 (6, 'SIERRA DE CAZORLA', 'http://localhost:2000/images/cazorla1.jpeg', '2022-11-20', '2022-11-20', 'Intermedio', 'Bus', 'Jaén', '08:15:00', '20:00:00', 'Madrid', 185, 'Pocos sitios hay en España como la Sierra de Cazorla en los que tengas tantas cosas que hacer en plena naturaleza. Y es que este parque natural de Andalucía tiene una diversidad impresionante.(fin-parrafo)Estamos hablando nada mas y nada menos que del parque natural más grande de España y el segundo de Europa. La unión de las Sierras de Cazorla, Segura y Las Villas conforman un auténtico santuario ecológico donde se pueden ver multitud de especies animales, sobre todo aves rapaces y grandes mamíferos. Pero además de naturaleza, sus pueblos han tenido gran importancia histórica.', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', 'Puede variar, recomendamos llevar equipamiento adecuado', 'INCLUYE: Transporte desde Madrid y regreso. Alojamiento en Hoteles en habitación con baño propio. Desayunos y cenas. Seguro de accidentes. Guía acompañante', 'http://localhost:2000/images/cazorla1.jpeg,http://localhost:2000/images/cazorla2.jpeg'),
 (7, 'BARDENAS REALES', 'http://localhost:2000/images/bardenas1.jpeg', '2022-12-04', '2022-12-06', 'Básico', 'Bus', 'Navarra', '08:15:00', '20:00:00', 'Madrid', 120, 'Sus formas le han convertido en uno de los desiertos mas bonitos del norte de España. Tras entrar en el parque lo primero que nos encontramos es una base militar con una enorme antena militar. Momento en el que se termina la pista asfaltada y desde aquí será todo tierra hasta el final. Desde este punto ya comenzamos a ver las siluetas de las montañas arenosas del desierto de las Bardenas.(fin-parrafo)Se puede entrar a las Bardenas Reales desde muchos lugares diferentes pero quizás desde la localidad de Arguedas sea la mejor opción, además de estar el centro de interpretación en la carretera de entrada al parque. La mejor época del año para visitar las Bardenas Reales comienza desde Octubre hasta Junio, evitando los meses más calurosos.', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', 'Puede variar, recomendamos llevar equipamiento adecuado', 'INCLUYE: Transporte desde Madrid y regreso. Alojamiento en Hoteles en habitación con baño propio. Desayunos y cenas. Seguro de accidentes. Guía acompañante', 'http://localhost:2000/images/bardenas1.jpeg, http://localhost:2000/images/bardenas2.jpeg'),
 (8, 'CATEDRAL DEL SALVADOR', 'http://localhost:2000/images/salvador1.jpg', '2022-09-08', '2022-09-10', 'Básico', 'Bus', 'Ávila', '08:15:00', '20:00:00', 'Madrid', 80, 'La catedral de Cristo Salvador es un templo de culto católico de la ciudad española de Ávila, sede episcopal del mismo nombre, en Castilla y León. Fue proyectada como templo y fortaleza, siendo su ábside uno de los cubos de la muralla de la ciudad. Está considerada como la primera catedral gótica de España. La planta posee influencias francesas y cierta semejanza con la basílica de Saint-Denis, la primera iglesia gótica.(fin-parrafo)Está rodeada de varias casas o palacios señoriales, siendo los más importantes el de los Velada, el del Rey Niño y el de Valderrábanos, los cuales tenían asignada la defensa de La Puerta de los Leales o del Peso de la Harina. Se cree que Fruchel construyó la parte más antigua de la catedral, la correspondiente a la cabecera, mientras que el cuerpo de naves, las capillas adyacentes y el remate de las torres, serían fruto de las sucesivas obras entre los siglos XIII y XVI. ', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', 'Puede variar, recomendamos llevar equipamiento adecuado', 'INCLUYE: Transporte desde Madrid y regreso. Alojamiento en Hoteles en habitación con baño propio. Desayunos y cenas. Seguro de accidentes. Guía acompañante', 'http://localhost:2000/images/salvador1.jpg,http://localhost:2000/images/salvador2.jpg'),
-(13, 'CATEDRAL MODIFICADA', 'http://localhost:2000/images/salvador1.jpg', '2022-09-06', '2022-09-08', 'Básico', 'Bus', 'Ávila', '08:15:00', '20:00:00', 'Madrid', 80, 'La catedral de Cristo Salvador es un templo de culto católico de la ciudad española de Ávila, sede episcopal del mismo nombre, en Castilla y León. Fue proyectada como templo y fortaleza, siendo su ábside uno de los cubos de la muralla de la ciudad. Está considerada como la primera catedral gótica de España. La planta posee influencias francesas y cierta semejanza con la basílica de Saint-Denis, la primera iglesia gótica.(fin-parrafo)Está rodeada de varias casas o palacios señoriales, siendo los más importantes el de los Velada, el del Rey Niño y el de Valderrábanos, los cuales tenían asignada la defensa de La Puerta de los Leales o del Peso de la Harina. Se cree que Fruchel construyó la parte más antigua de la catedral, la correspondiente a la cabecera, mientras que el cuerpo de naves, las capillas adyacentes y el remate de las torres, serían fruto de las sucesivas obras entre los siglos XIII y XVI. ', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', 'Puede variar, recomendamos llevar equipamiento adecuado', 'INCLUYE: Transporte desde Madrid y regreso. Alojamiento en Hoteles en habitación con baño propio. Desayunos y cenas. Seguro de accidentes. Guía acompañante', 'http://localhost:2000/images/salvador1.jpg,http://localhost:2000/images/salvador2.jpg');
+(13, 'CATEDRAL MODIFICADA', 'http://localhost:2000/images/salvador1.jpg', '2022-09-04', '2022-09-06', 'Básico', 'Bus', 'Ávila', '08:15:00', '20:00:00', 'Madrid', 80, 'La catedral de Cristo Salvador es un templo de culto católico de la ciudad española de Ávila, sede episcopal del mismo nombre, en Castilla y León. Fue proyectada como templo y fortaleza, siendo su ábside uno de los cubos de la muralla de la ciudad. Está considerada como la primera catedral gótica de España. La planta posee influencias francesas y cierta semejanza con la basílica de Saint-Denis, la primera iglesia gótica.(fin-parrafo)Está rodeada de varias casas o palacios señoriales, siendo los más importantes el de los Velada, el del Rey Niño y el de Valderrábanos, los cuales tenían asignada la defensa de La Puerta de los Leales o del Peso de la Harina. Se cree que Fruchel construyó la parte más antigua de la catedral, la correspondiente a la cabecera, mientras que el cuerpo de naves, las capillas adyacentes y el remate de las torres, serían fruto de las sucesivas obras entre los siglos XIII y XVI. ', 'Llevar mochila y calzado de senderismo, chubasquero o capa de agua.', 'Puede variar, recomendamos llevar equipamiento adecuado', 'INCLUYE: Transporte desde Madrid y regreso. Alojamiento en Hoteles en habitación con baño propio. Desayunos y cenas. Seguro de accidentes. Guía acompañante', 'http://localhost:2000/images/salvador1.jpg,http://localhost:2000/images/salvador2.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `excursiones_guardadas`
+--
+
+CREATE TABLE `excursiones_guardadas` (
+  `id_usuario` int(11) NOT NULL,
+  `id_excursion` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `excursiones_guardadas`
+--
+
+INSERT INTO `excursiones_guardadas` (`id_usuario`, `id_excursion`) VALUES
+(5, 3),
+(5, 5),
+(6, 2),
+(6, 3),
+(6, 4),
+(6, 5),
+(6, 6),
+(7, 2),
+(7, 4),
+(7, 6);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `excursiones_hechas`
+--
+
+CREATE TABLE `excursiones_hechas` (
+  `id_usuario` int(11) NOT NULL,
+  `id_excursion` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `excursiones_hechas`
+--
+
+INSERT INTO `excursiones_hechas` (`id_usuario`, `id_excursion`) VALUES
+(5, 1),
+(5, 2),
+(5, 4),
+(6, 2),
+(6, 3),
+(6, 4),
+(6, 5),
+(6, 6),
+(7, 1),
+(7, 3),
+(7, 5);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `sessions`
+--
+
+CREATE TABLE `sessions` (
+  `session_id` varchar(128) CHARACTER SET utf8mb4 COLLATE utf8mb4_bin NOT NULL,
+  `expires` int(11) UNSIGNED NOT NULL,
+  `data` mediumtext CHARACTER SET utf8mb4 COLLATE utf8mb4_bin DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `sessions`
+--
+
+INSERT INTO `sessions` (`session_id`, `expires`, `data`) VALUES
+('FXKEMt61fD1ONfmApLT97e0B3F9Gd3Hi', 1674751745, '{\"cookie\":{\"originalMaxAge\":5183999999,\"expires\":\"2023-01-26T12:50:16.692Z\",\"secure\":false,\"httpOnly\":true,\"path\":\"/\"},\"user\":{\"id\":5,\"nombre\":\"IÑIGO\",\"email\":\"inigo@gmail.com\",\"rol\":\"usuario\"}}'),
+('XNOnSfHjPNvU2bKTYwfYScZUvA0d4TYX', 1674839020, '{\"cookie\":{\"originalMaxAge\":5184000000,\"expires\":\"2023-01-27T15:48:21.082Z\",\"secure\":false,\"httpOnly\":true,\"path\":\"/\"},\"user\":{\"id\":8,\"nombre\":\"ibice\",\"email\":\"hola@excursionesibice.com\",\"rol\":\"admin\"}}'),
+('u_Lv2sB9aAsB0_tDFJs8psvO7-5Qcwoy', 1674834506, '{\"cookie\":{\"originalMaxAge\":5184000000,\"expires\":\"2023-01-27T15:22:13.866Z\",\"secure\":false,\"httpOnly\":true,\"path\":\"/\"},\"user\":{\"id\":7,\"nombre\":\"arturo\",\"email\":\"arturocodedev@gmail.com\",\"rol\":\"usuario\"}}'),
+('wsI741boYHhFAehnrovOwFaFaD9PtUIw', 1674758096, '{\"cookie\":{\"originalMaxAge\":5184000000,\"expires\":\"2023-01-26T18:31:40.644Z\",\"secure\":false,\"httpOnly\":true,\"path\":\"/\"},\"user\":{\"id\":7,\"nombre\":\"arturourbanos\",\"email\":\"arturocodedev@gmail.com\",\"rol\":\"usuario\"}}');
 
 -- --------------------------------------------------------
 
@@ -132,6 +209,26 @@ ALTER TABLE `excursiones`
   ADD PRIMARY KEY (`id_excursion`);
 
 --
+-- Indices de la tabla `excursiones_guardadas`
+--
+ALTER TABLE `excursiones_guardadas`
+  ADD KEY `INDEX ID_EXCURSION` (`id_usuario`,`id_excursion`),
+  ADD KEY `FOREIGN EXCURSION` (`id_excursion`);
+
+--
+-- Indices de la tabla `excursiones_hechas`
+--
+ALTER TABLE `excursiones_hechas`
+  ADD KEY `FOREIGN KEY USUARIOS-EXCURSION` (`id_usuario`,`id_excursion`),
+  ADD KEY `FOREIGN KEY EXCURSION` (`id_excursion`);
+
+--
+-- Indices de la tabla `sessions`
+--
+ALTER TABLE `sessions`
+  ADD PRIMARY KEY (`session_id`);
+
+--
 -- Indices de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
@@ -159,6 +256,24 @@ ALTER TABLE `excursiones`
 --
 ALTER TABLE `usuarios`
   MODIFY `id_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Restricciones para tablas volcadas
+--
+
+--
+-- Filtros para la tabla `excursiones_guardadas`
+--
+ALTER TABLE `excursiones_guardadas`
+  ADD CONSTRAINT `FOREIGN EXCURSION` FOREIGN KEY (`id_excursion`) REFERENCES `excursiones` (`id_excursion`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FOREIGN USUARIO` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `excursiones_hechas`
+--
+ALTER TABLE `excursiones_hechas`
+  ADD CONSTRAINT `FOREIGN KEY EXCURSION` FOREIGN KEY (`id_excursion`) REFERENCES `excursiones` (`id_excursion`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `FOREIGN KEY USUARIO` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
