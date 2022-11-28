@@ -399,7 +399,7 @@ app.get("/api/usuario/excursiones/info", async (req, res) => {
 });
 
 app.put("/api/excursiones", (req, res) => {
-  const {
+  let {
     id_excursion,
     nombre_excursion,
     url_imagen_principal,
@@ -418,11 +418,15 @@ app.put("/api/excursiones", (req, res) => {
     detalles,
     url_imagen,
   } = req.body;
+
+  fecha_inicio = fecha_inicio.replace("Z", "")
+  fecha_fin = fecha_fin.replace("Z", "")
+
   var query = `UPDATE excursiones SET 
       nombre_excursion='${nombre_excursion}',
       url_imagen_principal='${url_imagen_principal}',
-      fecha_inicio='${fecha_inicio}',
-      fecha_fin='${fecha_fin}',
+      fecha_inicio=DATE('${fecha_inicio}'),
+      fecha_fin=DATE('${fecha_fin}'),
       nivel='${nivel}',
       transporte='${transporte}',
       destino='${destino}',
@@ -437,6 +441,56 @@ app.put("/api/excursiones", (req, res) => {
       url_imagen='${url_imagen}'
 
       WHERE id_excursion=${id_excursion}
+  `;
+
+  dbcon.query(query, function (err, result, fields) {
+    if (err) throw err;
+
+    res.status(200).send({});
+  });
+});
+
+app.post("/api/excursiones", (req, res) => {
+  let {
+    id_excursion,
+    nombre_excursion,
+    url_imagen_principal,
+    fecha_inicio,
+    fecha_fin,
+    nivel,
+    transporte,
+    destino,
+    hora_salida,
+    hora_regreso,
+    lugar_salida,
+    precio,
+    descripcion,
+    material,
+    tiempo_atmosferico,
+    detalles,
+    url_imagen,
+  } = req.body;
+  
+  fecha_inicio = fecha_inicio.replace("Z", "")
+  fecha_fin = fecha_fin.replace("Z", "")
+
+  var query = `INSERT INTO excursiones SET 
+      nombre_excursion='${nombre_excursion}',
+      url_imagen_principal='${url_imagen_principal}',
+      fecha_inicio=DATE('${fecha_inicio}'),
+      fecha_fin=DATE('${fecha_fin}'),
+      nivel='${nivel}',
+      transporte='${transporte}',
+      destino='${destino}',
+      hora_salida='${hora_salida}',
+      hora_regreso='${hora_regreso}',
+      lugar_salida='${lugar_salida}',
+      precio=${precio},
+      descripcion='${descripcion}',
+      material='${material}',
+      tiempo_atmosferico='${tiempo_atmosferico}',            
+      detalles='${detalles}',
+      url_imagen='${url_imagen}'
   `;
 
   dbcon.query(query, function (err, result, fields) {
@@ -465,3 +519,4 @@ app.use("/", express.static("../frontend/html"));
 app.listen(port, () => {
   console.log(`App escuchando en el puerto ${port}`);
 });
+
