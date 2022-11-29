@@ -187,8 +187,8 @@ app.post("/api/recordar-contrasena", (req, res) => {
       console.log("Usuario y mail no encontrados")
     }
     //res.json(result);
-    console.log("Esto es la variable result:");
-    console.log(result)
+    //console.log("Esto es la variable result:");
+    //console.log(result)
 
     console.log("Esto es la contraseña hasheada:");
     console.log(result[0].password)
@@ -197,7 +197,7 @@ app.post("/api/recordar-contrasena", (req, res) => {
     var contrasena = "";
 
    if (bcrypt.compare(hashedPassword, result[0].password)){
-    return console.log("Comprobación de contraseña - hecha");
+    return console.log("Comprobación de contraseña -- HECHA");
    }else{
     return console.log("No se pudo comprobar la contraseña");
    }
