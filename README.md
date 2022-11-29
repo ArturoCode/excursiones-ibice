@@ -12,7 +12,7 @@ Frontend -> JavaScript<br/>
 Backend -> Node.js y Express<br/>
 BBDD -> MySQL<br/>
 Lenguaje de Marcas & Diseño -> HTML, CSS, SASS, Bootstrap<br/>
-Despliegue -> Docker <br/>
+Despliegue -> Railway <br/>
 
 ## Secciones de la página
 
