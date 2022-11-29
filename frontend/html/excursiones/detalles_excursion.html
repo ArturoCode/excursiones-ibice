@@ -17,7 +17,7 @@
         referrerpolicy="no-referrer"
         />
 
-    <title>Detalles Excursión </title>
+    <title>Detalles de la excursión - Excursiones Íbice</title>
   </head>  
   <body onload="getExcursion()">
     <!--CABECERA con imagen-->
@@ -113,20 +113,13 @@
       </div>             
     </header>
 
-     <!-- !!!!!!!! Arreglar el CSS y pulir el contenido-->   
-
-      <!-- !!!!!!!! Por ejemplo la imagen de la excursión debería reducirse al reducir ventana-->   
-
-    <!--CONTENIDO-->
+    <!--CAJA CON DETALLES DE LA EXCURSION-->
     <div class="container"  id="contenido"> 
       <h1 id="titulo">Detalles de la excursión</h1> 
       <div class="row detalles-excursion"> 
-          <!-- !!!!!!!! Deberíamos coger la imagen de la BBDD-->  
           <div class="col-12" id="nombre-excursion"></div>               
           <div class="col-6 img "><img id="imagenf" alt="Camino de Santiago Excursiones Íbice"></div>
           <div class="col-6 info">
-            <!-- !!!!!!!! Deberíamos coger EL NOMBRE DE LA BBDD porque esta tambien se muestra en el formato pequeño, la necesitamos coger-->   
-            
             <div>
               <i class="fa fa-calendar" ></i>
               <span class="span">Fecha inicio: </span><div class="d-inline-block" id="fecha-inicio"></div>
@@ -164,6 +157,8 @@
             <div class="d-inline-block" id="precio"></div>
           </div>         
       </div>
+
+      <!--ENTRADA DE LA EXCURSION-->
       <h1 id="titulo">Descripción del viaje</h1>
       <div id="descripciones">
         <div id="descripcion1" class="row">        
@@ -200,8 +195,6 @@
       
     </div>
 
-
-
     <!--FOOTER-->
     <footer class="text-center text-muted bg-light mt-5">
   <div class="row">
@@ -228,7 +221,6 @@
 
     <div class="col-4" id="contacto">
       <h5 class="text-uppercase fw-bold mb-4">Contacto</h5></a>
-      <!-- hola@excursionesibice.com< -->
       <p><a href="../contact.html">excursionesibice@gmail.com</a></p>          
       <p>+34 666 666 666</p>
       <a href="#" target="_blank">

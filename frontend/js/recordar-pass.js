@@ -70,7 +70,7 @@ function checkInputsReset() {
 }
 
 function checkInputs() {
-  // trim to remove the whitespaces
+  // trim para borrar los espacios en blanco
   var error = false;
   const emailValue = email.value.trim();
 

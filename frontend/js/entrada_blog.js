@@ -25,14 +25,11 @@ function getEntrada() {
           textoTemporal.getElementsByTagName("p")[0].innerHTML =
           textoArray[i];
           textoTemporal.getElementsByTagName("img")[0].src =
-            imagesArray[i];
-          
+            imagesArray[i];          
           secciones.appendChild(textoTemporal);
-        }
-  
+        }  
         seccion1.remove();
-        seccion2.remove();
-  
+        seccion2.remove();  
       });
   }
   

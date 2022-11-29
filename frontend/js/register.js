@@ -31,7 +31,7 @@ form.addEventListener('submit', e => {
 });
 
 function checkInputs() {
-	// trim to remove the whitespaces
+	// trim para borrar los espacios en blanco
     var error = false;
 	const usernameValue = username.value.trim();
 	const emailValue = email.value.trim();
