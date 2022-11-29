@@ -31,30 +31,37 @@ function getExcursiones() {
         var fichaTemp = fichaDOM.cloneNode(true);
             //logica botones
             var botonContainer = fichaTemp.querySelector("#button-container")
-            
-            if(localStorage.getItem("user")){
+            const user = JSON.parse(localStorage.getItem("user"));
+            //if(localStorage.getItem("user") && (user.rol === "user")){
+
+              if(localStorage.getItem("user") && (user.rol === "usuario")){
+              
               var botonHecha = fichaTemp.querySelector("#boton-hecha")
               var botonGuardar = fichaTemp.querySelector("#boton-guardar")
               botonHecha.id = "botonHecha_"+excursion.id_excursion
               botonGuardar.id = "botonGuardar_"+excursion.id_excursion
             
-            if (infoUsuario.hechas.includes(excursion.id_excursion)) {          
-              botonHecha.onclick = eliminarExcursionHecha(excursion.id_excursion, botonHecha.id);          
-              botonHecha.style.backgroundColor = "#41ff33"
-            } else {          
-              botonHecha.onclick = añadirExcursionHecha(excursion.id_excursion, botonHecha.id);       
-              botonHecha.style.backgroundColor = "inherit"
-            }       
-            if (infoUsuario.guardadas.includes(excursion.id_excursion)) {          
-              botonGuardar.onclick = eliminarExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
-              botonGuardar.style.backgroundColor = "#FF0000"
-            } else {          
-              botonGuardar.onclick = añadirExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
-              botonGuardar.style.backgroundColor = "inherit"
-            }
-            }else{
+              if (infoUsuario.hechas.includes(excursion.id_excursion)) {          
+                botonHecha.onclick = eliminarExcursionHecha(excursion.id_excursion, botonHecha.id);          
+                botonHecha.style.backgroundColor = "#41ff33"
+              } else {          
+                botonHecha.onclick = añadirExcursionHecha(excursion.id_excursion, botonHecha.id);       
+                botonHecha.style.backgroundColor = "inherit"
+              }       
+              if (infoUsuario.guardadas.includes(excursion.id_excursion)) {          
+                botonGuardar.onclick = eliminarExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
+                botonGuardar.style.backgroundColor = "#FF0000"
+              } else {          
+                botonGuardar.onclick = añadirExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
+                botonGuardar.style.backgroundColor = "inherit"
+              }
+            }else {
+              console.log(user.rol)
+              //if(JSON.parse(localStorage.getItem("user")) && JSON.parse(localStorage.getItem("user")) === "admin")
+              //document.getElementById("button-container").remove();
               botonContainer.remove()
-            }      
+              }             
+            
         fichaTemp.querySelector("#imagenf").src =
           excursion.url_imagen_principal;
         fichaTemp.querySelector(

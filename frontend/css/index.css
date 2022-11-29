@@ -1,11 +1,4 @@
 /*PROYECTO */
-
-/*
-* {
-  border:2px red solid;
-}
-*/
-
 body {
   background-color: #ffffff;
 }
@@ -15,7 +8,6 @@ body {
   height: 65px;
   margin-top: -10px;
 }
-
 
 #header {
   background-image: url("../media/header.jpg");
@@ -54,8 +46,6 @@ a.btn{
   
 }
 
-
-
 .nav:link:hover a{
   color: white;
 }
@@ -74,6 +64,7 @@ a.btn:hover{
 #excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
   padding:7px;
 }
+
 #header-nombre-usuario:hover,#inicio:hover,#excursiones:hover,#blog:hover,#conocenos:hover,#contact:hover{
   background-color: #343434;
   color: white;  
@@ -84,24 +75,20 @@ a.btn:hover{
   color: white;
   opacity: .5;
 }
+
 .navbar-nav{
   width: 100%;
 }
 
 .dropdown:hover .dropdown-menu {
   display: block; 
-  left:auto;  
-
+  left:auto; 
 }
 
 #cerrar-sesion{
   cursor: pointer;
 }
 
-/*.nav-item.dropdown{
-  margin-top:1px;
-}
-*/
 #perfil,#cerrar-sesion,#header-nombre-usuario,#barra2,#barra3{
   display: none;
 }
@@ -207,11 +194,10 @@ a.btn:hover{
 
 .datosFicha div{
   display: inline-block;
-  margin-top:10px;
+  margin-top:5px;
 }
 
-.datosFicha div div{
-  
+.datosFicha div div{  
   margin-left: 10px;
 }
 
@@ -245,7 +231,8 @@ a.btn:hover{
 	overflow: hidden;
   margin-right: 30px;
   margin: 10px;
-  padding-top: 10px;
+  padding-left: 0;
+  padding-right: 0;
   transition: 0.3s;
 
 }
@@ -275,9 +262,10 @@ a.btn:hover{
 */
 
 #imagenf{
-  width: 90%;
+  width: 100%;
   border-radius: 5%;
   margin-bottom: 10px;
+  height: 240px;
 }
 
 

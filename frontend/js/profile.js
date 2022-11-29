@@ -10,6 +10,7 @@ window.addEventListener("load", () => {
   removeFormExcursion();
   removeFormBlog();
   getUsuarioLoggeado();
+  
   const user = JSON.parse(localStorage.getItem("user"));
   if (user && user.rol === "admin") {
     document.getElementById("viajes-realizados").remove();
@@ -104,6 +105,8 @@ function eliminarExcursion() {
     fetch(url, { method: "delete" }).then((res) => {});
   }
   document.getElementById("mensaje-delete").innerHTML="Se ha eliminado la excursión"
+
+  //location.reload();
 }
 
 
@@ -138,6 +141,8 @@ function updateExcursion(event) {
   }).then((res) => {});
 
   document.getElementById("mensaje-update").innerHTML="Se ha actualizado la excursión"
+
+  //location.reload();
 }
 
 function addExcursion(event) {
@@ -171,6 +176,9 @@ function addExcursion(event) {
   }).then((res) => {});
 
   document.getElementById("mensaje-add").innerHTML="Se ha añadido la excursión"
+
+  //no puedo hacer un location.reload() porque necesita más tiempo para que se haga el fetch
+
 }
 
 var excursionesMap = {};
@@ -313,6 +321,8 @@ function eliminarBlog() {
     fetch(url, { method: "delete" }).then((res) => {});
   }
   document.getElementById("mensaje-delete-blog").innerHTML="Se ha eliminado la entrada del blog"
+
+  //location.reload();
 }
 
 
@@ -336,6 +346,8 @@ function updateBlog(event) {
   }).then((res) => {});
 
   document.getElementById("mensaje-update-blog").innerHTML="Se ha actualizado la entrada del blog"
+
+  //location.reload();
 }
 
 function addBlog(event) {
@@ -358,6 +370,7 @@ function addBlog(event) {
   }).then((res) => {});
 
   document.getElementById("mensaje-add-blog").innerHTML="Se ha añadido la entrada del blog"
+  //no puedo hacer un location.reload() porque necesita más tiempo para que se haga el fetch
 }
 
 var blogMap = {};

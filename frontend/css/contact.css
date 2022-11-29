@@ -89,6 +89,10 @@ p {
 #mensaje-ok{
   display: none;
   text-align: center;
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #2ecc71;
 }
 
 #contactar {
@@ -276,6 +280,9 @@ footer {
   }
   
 }
+  
+
+
 
 @media (max-width: 630px) {
 

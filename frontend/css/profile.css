@@ -282,7 +282,7 @@ a.btn{
 }
 
 .botones-excursiones{
-  margin-top: 200px;
+  margin-top: 250px;
 }
 
 #actualizar-excursiones{
@@ -384,7 +384,57 @@ a.btn{
   color: #6c757d;
 }
 
+/*CAMPOS*/
+
+#select-blog {
+  padding: 13px;  
+  margin: 3px;
+  margin-top: 20px;
+  margin-bottom:20px;
+  border: 1px solid black;
+  border-radius: 5px;  
+  /*width:250px;*/
+  width: 100%;
+}
+
+#opcion-actualizar-blog input, textarea {
+  width: 100%;
+}
+
+#eliminar-blog, #opcion-actualizar-blog input[type=submit] {
+  width: 100%;
+  border: 1px solid black;
+  margin-top:15px;
+  margin-bottom:10px;
+}
+
+#opcion-añadir-blog {
+  margin-top: 86px;
+}
+
+#opcion-añadir-blog input, textarea {
+  width: 100%;
+}
+
+#opcion-añadir-blog input[type=submit] {
+  width: 100%;
+  border: 1px solid black;
+  margin-top:15px;
+  margin-bottom:10px;
+}
+
+/**/
+
+
+
 #mensaje-delete, #mensaje-update, #mensaje-add {
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #2ecc71;
+}
+
+#mensaje-delete-blog, #mensaje-update-blog, #mensaje-add-blog {
   color: white;
   margin-bottom: 10px;
   border-radius: 4px;
