@@ -17,7 +17,7 @@ body {
 #logo {
   width: 200px;
   height: 65px;
-  margin-top: -15px;
+  margin-top: -10px;
 }
 
 #header {
@@ -25,19 +25,12 @@ body {
   background-size: cover;
   height: 380px;
 }
-#header li{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
+
 #header li:first-of-type {
   margin-left: 60px;
 }
 
-#header a {
-  margin: 20px;
-  margin-right: 5px;
- 
+#header a { 
   justify-content: center;
   align-items: center;
   color:black;
@@ -45,12 +38,53 @@ body {
 }
 #header div.dropdown-menu a {
   color: black;
-  margin: 10px 0;
+  
+}
+
+.dropdown-menu {
+  left: 50% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
 }
 
 a.btn{
   padding: 0;
   
+}
+.dropdown-menu[data-bs-popper] {
+  top:65%;
+  
+}
+
+.nav:link:hover a{
+  color: white;
+}
+
+a.btn:hover{
+  background-color: #343434;
+  color: white;
+ 
+}
+
+#header-nombre-usuario,#inicio,#excursiones,#blog,#conocenos,#contact{
+    border-radius: 10px;
+  
+}
+
+#excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
+  padding:7px;
+}
+
+#header-nombre-usuario:hover,#inicio:hover,#excursiones:hover,#blog:hover,#conocenos:hover,#contact:hover{
+  background-color: #343434;
+  color: white;  
+}
+
+#icono-usuario:hover{
+  background-color: #343434;
+  color: white;
+  opacity: .5;
 }
 
 .navbar-nav{
@@ -58,15 +92,25 @@ a.btn{
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block;
-  margin-top: 0; 
+  display: block; 
+  left:auto; 
+}
 
+#cerrar-sesion{
+  cursor: pointer;
+}
+
+#perfil,#cerrar-sesion,#header-nombre-usuario,#barra2,#barra3{
+  display: none;
+}
+#header-nombre-usuario{
+  display:inline-block!important;
 }
 
 #menu {
   /*Cambiar el fixed por un boton que suba al inicio de la pagina/*
   /*position: fixed;*/
-
+  padding: 20px;
   width: 100%;
   /*padding-bottom: 10px;*/
 }
@@ -85,7 +129,6 @@ a.btn{
 .span{
   font-weight: bold;
 }
-
 
 
 .container {
@@ -205,7 +248,9 @@ a.btn{
 	width: 100%;
 }
 
-
+#logo-footer{
+  width:30%;
+}
 footer {
   padding: 30px 0;
 }
@@ -226,17 +271,29 @@ footer {
   
   #header li{
     display:inline-block;
-    background-color: lightgray;
+    background-color: #343434;
     
   }
   #header a{
     margin:0;
+    color:white;
   
+  }
+  
+  #header-nombre-usuario,#inicio,#excursione,#blog,#conocenos,#contact{   
+    color: white;  
+  }
+  #header-nombre-usuario:hover,#inicio:hover,#excursiones:hover,#blog:hover,#conocenos:hover,#contact:hover{
+     color: white;  
+  }
+  #excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
+    padding:0;
   }
   
   .btn{
     padding: 0;
   }
+
   #header div.dropdown-menu a {
    margin:0;
    padding-left:10px;
@@ -250,20 +307,29 @@ footer {
     width: 250px;
 
   }
-  #header ul {
-
-    padding-top:5px;
+  #header ul {   
     padding-left: 20px;
     padding-bottom: 10px;
     
   }
-
-  .dropdown:hover .dropdown-menu {
-    display: block;
-    margin-top: 0; 
-
+  .nav-item.dropdown{
+    margin-top:0;
   }
-  
+  .dropdown-menu {    
+    transform:none;
+  }
+  .dropdown-menu {    
+    transform:none!important;
+  }
+  .container {    
+    max-width: 90%;
+  }
+  #contacto a{
+    margin: 0!important;
+  }
+  #logo-footer{
+    width: 70%;
+  }
 }
 
 @media (max-width: 630px) {
@@ -271,13 +337,13 @@ footer {
   footer p{
     font-size: 10px;
   }
-  #logo-footer{
-    width:100%;
-  }
+ 
 
   
 }
-
+a.text-reset{
+  text-decoration: inherit;
+}
 #menu nav {
   padding: 0.5rem 0;
 }

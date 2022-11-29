@@ -14,7 +14,7 @@ function getEntrada() {
         var textoArray = data.texto_entrada.split("(fin-parrafo)");
         var imagesArray = data.url_imagen.split(",");
         
-        var secciones = document.getElementById("secciones");
+        var secciones = document.getElementById("secciones-blog");
         var seccion1 = document.getElementById("seccion1");
         var seccion2 = document.getElementById("seccion2");
         //poner texto izq o derecha 

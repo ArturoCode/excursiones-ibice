@@ -4,12 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  
     <link rel="stylesheet" href="../../css/detalles_excursion.css" />
     <script src="../../js/config.js"></script>
     <script src="../../js/detalles_excursion.js"></script>
@@ -21,12 +17,8 @@
         referrerpolicy="no-referrer"
         />
 
-    <title>Excursión - Excursiones Íbice</title>
-  </head>
-  <!--VALE, AQUÍ ESTÁS PONIENDO LA UNO POR DEFECTO. NO LE PUEDES PASAR LA ID DE LA EXCURSION DE LA URL????-->
-  <!--Porque así tendríamos que crear html por excursion que haya aunque solo cambiemos la funcion de getExcursion-->
-  
-  <!-- Y claro, que hariamos para listar las excursiones cuando son varias. Tanto en el index, profile como en el listado general y las de cada mes-->
+    <title>Detalles Excursión </title>
+  </head>  
   <body onload="getExcursion()">
     <!--CABECERA con imagen-->
     <header>
@@ -47,12 +39,12 @@
             </button>                      
             <div class="collapse navbar-collapse" id="navbarSupportedContent">              
               <ul class="navbar-nav  justify-content-around">         
-                <a href="../index.html"><img id="logo" src="../../media/logo.png" /></a>          
+                <a href="../index.html"><img id="logo" src="../media/logo.png"/></a>          
                 <li class="nav-item">
-                  <a class="nav-link" href="../index.html" >INICIO</a>
+                  <a  id="inicio" class="nav-link" href="../index.html" >INICIO</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a  class="btn excursiones" href="../listado_excursiones.html">EXCURSIONES</a>
+                  <a  id="excursiones" class="btn excursiones" href="../listado_excursiones.html">EXCURSIONES</a>
                   <button 
                     type="button" 
                     class="btn dropdown-toggle dropdown-toggle-split" 
@@ -63,20 +55,20 @@
                   
                   </button>
                   <div class="dropdown-menu">
-                    <a class="dropdown-item" href="#">SEPTIEMBRE 2022</a>
+                    <a class="dropdown-item" href="../listado_excursiones.html?mes=septiembre">SEPTIEMBRE 2022</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">OCTUBRE 2022</a>
+                    <a class="dropdown-item" href="../listado_excursiones.html?mes=octubre">OCTUBRE 2022</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">NOVIEMBRE 2022</a>
+                    <a class="dropdown-item" href="../listado_excursiones.html?mes=noviembre">NOVIEMBRE 2022</a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="#">DICIEMBRE 2022</a>
+                    <a class="dropdown-item" href="../listado_excursiones.html?mes=diciembre">DICIEMBRE 2022</a>
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../blog.html" >BLOG</a>
+                  <a id="blog"class="nav-link" href="../blog.html" >BLOG</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a  class="btn conocenos" href="../about-us.html">CONÓCENOS</a>
+                  <a  id="conocenos"class="btn conocenos" href="../about-us.html">CONÓCENOS</a>
                   <button 
                     type="button" 
                     class="btn dropdown-toggle dropdown-toggle-split" 
@@ -90,10 +82,11 @@
                   </div>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="../contact.html" >CONTACTO</a>
+                  <a id="contact"class="nav-link" href="../contact.html" >CONTACTO</a>
                 </li>
                 <li class="nav-item dropdown">
-                  <a  class="btn user" href="../user/login.html"><i class="fa fa-fw fa-user fa-lg"></i></a>
+                  <a  class="btn user" href="../user/login.html"><i id="icono-usuario"class="fa fa-fw fa-user fa-lg"></i></a>
+                  <div id="header-nombre-usuario"></div>
                   <button 
                     type="button" 
                     class="btn dropdown-toggle dropdown-toggle-split" 
@@ -104,20 +97,20 @@
                   </button>                 
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="../user/login.html">INICIAR SESIÓN</a>
-                    <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" href="../user/register.html">REGISTRARSE</a>
-                    <!--  <a class="dropdown-item" href="./user/profile.html">PERFIL</a>  -->
-                    <!--  <a class="dropdown-item" href="#">CERRAR SESION</a>  -->
+                    <a id="iniciar-sesion" class="dropdown-item" href="../user/login.html">INICIAR SESIÓN</a>
+                    <div id="barra1"class="dropdown-divider"></div>
+                    <a id="registrarse" class="dropdown-item" href="../user/register.html">REGISTRARSE</a>
+                    <div id="barra2"class="dropdown-divider"></div>
+                    <a id="perfil" class="dropdown-item" href="../user/profile.html">PERFIL</a>
+                    <div id="barra3" class="dropdown-divider"></div>  
+                    <a id="cerrar-sesion" class="dropdown-item" onclick="cerrarSesion()">CERRAR SESIÓN</a>
                   </div>
                 </li>
               </ul>
             </div>
           </nav>
-        </div>            
-      </div>
-      
-            
+        </div> 
+      </div>             
     </header>
 
      <!-- !!!!!!!! Arreglar el CSS y pulir el contenido-->   
@@ -171,7 +164,7 @@
             <div class="d-inline-block" id="precio"></div>
           </div>         
       </div>
-      <h1 id="titulo">Descripcion del viaje</h1>
+      <h1 id="titulo">Descripción del viaje</h1>
       <div id="descripciones">
         <div id="descripcion1" class="row">        
           <div class="col-6 texto">
@@ -191,15 +184,15 @@
         </div>
       </div>
       <div id="informacion">
-        <h1>Tipos de material</h1>
+        <h3 class="titulo-inferior">Tipos de material</h3>
         <div id="info-material" class="col-12">
           <p></p>
         </div>
-        <h1>Tiempo atmosferico</h1>
+        <h3 class="titulo-inferior">Tiempo atmosférico</h3>
         <div id="info-atmosferico" class="col-12">
           <p></p>
         </div>
-        <h1>Otros detalles</h1>
+        <h3 class="titulo-inferior">Otros detalles</h3>
         <div id="info-detalles" class="col-12">
           <p></p>
         </div>
@@ -211,20 +204,20 @@
 
     <!--FOOTER-->
     <footer class="text-center text-muted bg-light mt-5">
-      <div class="row">
-        <div class="col-4">
-          <img id="logo-footer" src="../../media/logo_body.png" width="20%"/>
-          <p class="text-center p-3">Excursiones Íbice ©2022</p>
-        </div>
-    
-        <div class="col-4">
-          <h5 class="text-uppercase fw-bold mb-4">Secciones</h5>
-          <p>
-            <a href="../index.html" class="text-reset">Inicio</a>
-          </p>
-          <p>
-            <a href="../listado_excursiones.html" class="text-reset">Excursiones</a>
-          </p>
+  <div class="row">
+    <div class="col-4">
+      <img id="logo-footer" src="../../media/logo_body.png" width="30%"/>
+      <p class="text-center p-3">Excursiones Íbice ©2022</p>
+    </div>
+
+    <div id="secciones" class="col-4">
+      <h5 class="text-uppercase fw-bold mb-4">Secciones</h5>
+      <p>
+        <a href="../index.html" class="text-reset">Inicio</a>
+      </p>
+      <p>
+        <a href="../listado_excursiones.html" class="text-reset">Excursiones</a>
+      </p>
       <p>
         <a href="../blog.html" class="text-reset">Blog</a>
       </p>
@@ -234,8 +227,9 @@
     </div>
 
     <div class="col-4" id="contacto">
-      <h5 class="text-uppercase mb-4">Contacto</h5></a>
-      <p><a href="../contact.html">hola@excursionesibice.com</a></p>          
+      <h5 class="text-uppercase fw-bold mb-4">Contacto</h5></a>
+      <!-- hola@excursionesibice.com< -->
+      <p><a href="../contact.html">excursionesibice@gmail.com</a></p>          
       <p>+34 666 666 666</p>
       <a href="#" target="_blank">
         <i class="fab fa-twitter fa-2x margin-top-20px margin-right-20px"></i>
@@ -249,6 +243,7 @@
     </div>
   </div>
 </footer>
+<script src="../../js/header.js"></script>
 <script
   src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
   integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"

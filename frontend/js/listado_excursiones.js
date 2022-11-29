@@ -25,12 +25,14 @@ var opciones = {
         var data = res[0];
         var infoUsuario = res[1];
         var fichaDOM = document.getElementById("ficha");
-        var excursiones = document.getElementById("excursiones");
+        var excursiones = document.getElementById("listado-excursiones");
         //iterar por todas las excursiones y rellenar la plantilla con lla informacion de cada excursiom
         for(var excursion of data){          
             var fichaTemp = fichaDOM.cloneNode(true);
             var botonContainer = fichaTemp.querySelector("#button-container")
-            if(localStorage.getItem("user")){
+            const user = JSON.parse(localStorage.getItem("user"));     
+
+            if(localStorage.getItem("user") && (user.rol === "usuario")){
               var botonHecha = fichaTemp.querySelector("#boton-hecha")
               var botonGuardar = fichaTemp.querySelector("#boton-guardar")
               botonHecha.id = "botonHecha_"+excursion.id_excursion

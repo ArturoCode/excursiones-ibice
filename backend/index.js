@@ -1,12 +1,15 @@
 var db = require("./sqlconnector.js");
 var session = require("express-session");
+var crypto = require("crypto");
 
 const validator = require("validator");
 const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const app = express();
-const port = 2000;
+//EN CONFIG.JS
+const port = process.env.PORT || 2000;
+//import {port} from './config.js'
 const dbcon = db.connect();
 
 var MySQLStore = require("express-mysql-session")(session);
@@ -18,6 +21,16 @@ var options = {
   password: "",
   database: "excursiones-ibice",
 };
+var nodemailer = require("nodemailer");
+var transporter = nodemailer.createTransport({
+  service: "gmail",
+  //autenticacion gmail
+  auth: {
+    user: "excursionesibice@gmail.com",
+    //
+    pass: "pkglddfmgmiwolot",
+  },
+});
 
 var sessionStore = new MySQLStore(options);
 
@@ -107,21 +120,12 @@ app.get("/api/blog", (req, res) => {
 
 //CONTACTO
 
-var nodemailer = require("nodemailer");
+
 const bodyParser = require("body-parser");
 
 app.post("/api/contacto", (req, res) => {
   const { nombre, email, asunto, mensaje } = req.body;
   var emailIntroducido = email;
-
-  var transporter = nodemailer.createTransport({
-    service: "gmail",
-    //autenticacion gmail
-    auth: {
-      user: "excursionesibice@gmail.com",
-      pass: "pkglddfmgmiwolot",
-    },
-  });
 
   var mailOptions = {
     from: `excursionesibice@gmail.com`,
@@ -147,12 +151,145 @@ app.post("/api/contacto", (req, res) => {
   var mailOptionsUsuario = {
     from: `excursionesibice@gmail.com`,
     to: emailIntroducido,
-    subject: "Solicitud de contacto Excursiones Íbice",
+    subject: "Solicitud de contacto - Excursiones Íbice",
     text:
-      "Un resumen de tu solicitud: Asunto: " +
+      "Un resumen de la solicitud: Asunto: " +
       asunto +
       " Con este mensaje: " +
       mensaje,
+  };
+
+  transporter.sendMail(mailOptionsUsuario, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+  return res.status(200).send("OK");
+});
+//resetea la contraseña dependiendo del token que se le envie. primero mira si el token existe en la bbdd, y si existe hassea la nueva contraseña del usuario
+//y hace un update en la base de datos de la contraseña al usuario con el reset token mandado. y quita el reset token para que no se pueda volver a utilizar
+app.put("/api/usuario/reset-password", (req, res) => {
+  const { token, password } = req.body;
+
+  const query = `SELECT * FROM usuarios where reset_password_token="${token}"`;
+  dbcon.query(query, function (err, result, fields) {
+    if (err) throw err;
+
+    if (result.length === 0) {
+      return res.status(400).send({ message: "Token invalido" });
+    }
+
+    const hashedPassword = bcrypt.hashSync(password,12);
+
+    const queryUpdate = `UPDATE usuarios SET password="${hashedPassword}" WHERE reset_password_token="${token}"`;
+    dbcon.query(queryUpdate, function (err, result, fields) {
+      if (err) throw err;
+
+      const queryUpdateToken = `UPDATE usuarios SET reset_password_token="" WHERE reset_password_token="${token}"`;
+      dbcon.query(queryUpdateToken, function (err, result, fields) {
+        if (err) throw err;
+      })
+
+      return res.status(200).send({ message: "Contraseña cambiada" });
+    });
+  });
+});
+// restear contraseña. instalar modulo crypto,  crear un campo en la base de datos llamado rest_password_token. coge email, ve si existe, si existe, genera un uuid como 
+// identificador para resetear la contraseña y le pone al usuario con ese email la propiedad restpasswordotoken con el uuid generado, y manda un correo con el link a la pagina 
+// de reset contraseña con el token 
+app.post("/api/usuario/reset-password", (req, res) => {
+  const { email } = req.body;
+
+  const query = `SELECT * FROM usuarios where email="${email}"`;
+  dbcon.query(query, function (err, result, fields) {
+    if (err) throw err;
+    if (result.length === 0) {
+      return res.status(400).send({ message: "Email no encontrado" });
+    }
+
+    const token = crypto.randomUUID();
+
+    const queryUpdate = `UPDATE usuarios SET reset_password_token="${token}" WHERE email="${email}"`;
+    dbcon.query(queryUpdate, function (err, result, fields) {
+      var mailOptions = {
+        from: `excursionesibice@gmail.com`,
+        to: email,
+        subject: "Solicitud cambio contraseña - Excursiones Íbice",
+        text:
+          "Accede a este enlace para cambiar la contraseña: http://localhost:2000/user/recordar-pass.html?token=" +
+          token,
+      };
+      transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+          console.log(error);
+        } else {
+          console.log("Email sent: " + info.response);
+          return res.status(200).send({ message: "Email reseteo enviado" });
+        }
+      });
+    });
+  });
+});
+
+//RECORDAR CONTRASEÑA
+
+//No se puede desencriptar un hash
+
+//La unica manera es mandar un enlace personalizado a un update de la contraseña con dos campos formulario cuando el id es tal?
+//Mirar como se hace el update de los datos_usuario y hacer una pagina que sea añadir nuevas contraseña como el de recordar contraseña
+
+app.post("/api/recordar-contrasena", (req, res) => {
+  const { nombre_usuario, email } = req.body;
+  var emailIntroducido = email;
+
+  const query = `SELECT * FROM usuarios WHERE nombre_usuario='${nombre_usuario}' AND email='${email}'`;
+
+  dbcon.query(query, function (err, result, fields) {
+    if (err) throw err;
+    if (result.length === 0) {
+      console.log("Usuario y mail no encontrados");
+    }
+    //res.json(result);
+    //console.log("Esto es la variable result:");
+    //console.log(result)
+
+    console.log("Esto es la contraseña hasheada:");
+    console.log(result[0].password);
+
+    const hashedPassword = bcrypt.hashSync("holamundo", 12);
+    var contrasena = "";
+
+    if (bcrypt.compare(hashedPassword, result[0].password)) {
+      return console.log("Comprobación de contraseña -- HECHA");
+    } else {
+      return console.log("No se pudo comprobar la contraseña");
+    }
+  });
+
+  contrasena = "holamundo";
+
+  var mailOptions = {
+    from: `excursionesibice@gmail.com`,
+    to: emailIntroducido,
+    subject: "Recuerda tu contraseña",
+    text: "Tu contraseña es: " + contrasena + ".",
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+
+  var mailOptionsUsuario = {
+    from: `excursionesibice@gmail.com`,
+    to: `excursionesibice@gmail.com`,
+    subject: "Solicitud de contraseña - Excursiones Íbice",
+    text: "Un resumen de la solicitud: Contraseña: " + contrasena + ".",
   };
 
   transporter.sendMail(mailOptionsUsuario, function (error, info) {
@@ -261,7 +398,7 @@ app.post("/api/register", async (req, res) => {
 
   const hashedPassword = bcrypt.hashSync(password, 12);
 
-  var query = `INSERT INTO usuarios (email, password, nombre_usuario, membresia, tipo_usuario) VALUES ('${email}','${hashedPassword}','${nombre_usuario}','usuario','usuario')`;
+  var query = `INSERT INTO usuarios (email, password, nombre_usuario, membresia, tipo_usuario, reset_password_token) VALUES ('${email}','${hashedPassword}','${nombre_usuario}','usuario','usuario','token')`;
   dbcon.query(query, function (err, result, fields) {
     if (err) throw err;
 
@@ -399,6 +536,9 @@ app.get("/api/usuario/excursiones/info", async (req, res) => {
 });
 
 app.put("/api/excursiones", (req, res) => {
+  if (!req.session.user || req.session.user.rol !== "admin") {
+    return res.status(403).send({ message: "no autorizado" });
+  }
   let {
     id_excursion,
     nombre_excursion,
@@ -419,8 +559,8 @@ app.put("/api/excursiones", (req, res) => {
     url_imagen,
   } = req.body;
 
-  fecha_inicio = fecha_inicio.replace("Z", "")
-  fecha_fin = fecha_fin.replace("Z", "")
+  fecha_inicio = fecha_inicio.replace("Z", "");
+  fecha_fin = fecha_fin.replace("Z", "");
 
   var query = `UPDATE excursiones SET 
       nombre_excursion='${nombre_excursion}',
@@ -451,6 +591,9 @@ app.put("/api/excursiones", (req, res) => {
 });
 
 app.post("/api/excursiones", (req, res) => {
+  if (!req.session.user || req.session.user.rol !== "admin") {
+    return res.status(403).send({ message: "no autorizado" });
+  }
   let {
     id_excursion,
     nombre_excursion,
@@ -470,9 +613,9 @@ app.post("/api/excursiones", (req, res) => {
     detalles,
     url_imagen,
   } = req.body;
-  
-  fecha_inicio = fecha_inicio.replace("Z", "")
-  fecha_fin = fecha_fin.replace("Z", "")
+
+  fecha_inicio = fecha_inicio.replace("Z", "");
+  fecha_fin = fecha_fin.replace("Z", "");
 
   var query = `INSERT INTO excursiones SET 
       nombre_excursion='${nombre_excursion}',
@@ -501,6 +644,9 @@ app.post("/api/excursiones", (req, res) => {
 });
 
 app.delete("/api/excursiones", (req, res) => {
+  if (!req.session.user || req.session.user.rol !== "admin") {
+    return res.status(403).send({ message: "no autorizado" });
+  }
   const id = req.query["id_excursion"];
   const query = `DELETE FROM excursiones WHERE id_excursion=${id}`;
   dbcon.query(query, function (err, result, fields) {
@@ -513,13 +659,16 @@ app.delete("/api/excursiones", (req, res) => {
 //PERFIL BLOG
 
 app.put("/api/blog", (req, res) => {
+  if (!req.session.user || req.session.user.rol !== "admin") {
+    return res.status(403).send({ message: "no autorizado" });
+  }
   let {
     id_entrada,
     titulo_entrada,
-    url_imagen_principal,    
-    descripcion_entrada,    
+    url_imagen_principal,
+    descripcion_entrada,
     url_imagen,
-    texto_entrada
+    texto_entrada,
   } = req.body;
 
   var query = `UPDATE blog SET    
@@ -539,13 +688,16 @@ app.put("/api/blog", (req, res) => {
 });
 
 app.post("/api/blog", (req, res) => {
+  if (!req.session.user || req.session.user.rol !== "admin") {
+    return res.status(403).send({ message: "no autorizado" });
+  }
   let {
     id_entrada,
     titulo_entrada,
-    url_imagen_principal,    
-    descripcion_entrada,    
+    url_imagen_principal,
+    descripcion_entrada,
     url_imagen,
-    texto_entrada
+    texto_entrada,
   } = req.body;
 
   var query = `INSERT INTO blog SET       
@@ -563,6 +715,9 @@ app.post("/api/blog", (req, res) => {
   });
 });
 app.delete("/api/blog", (req, res) => {
+  if (!req.session.user || req.session.user.rol !== "admin") {
+    return res.status(403).send({ message: "no autorizado" });
+  }
   const id = req.query["id_entrada"];
   const query = `DELETE FROM blog WHERE id_entrada=${id}`;
   dbcon.query(query, function (err, result, fields) {
@@ -580,4 +735,3 @@ app.use("/", express.static("../frontend/html"));
 app.listen(port, () => {
   console.log(`App escuchando en el puerto ${port}`);
 });
-

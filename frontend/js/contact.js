@@ -15,7 +15,6 @@ async function enviarMailContacto(event){
     if(res.status === 200) document.getElementById("mensaje-ok").style.display = "block"
 
     return false
-
 }
 
 const form = document.getElementById('form');
@@ -25,6 +24,7 @@ const asunto = document.getElementById('asunto');
 const mensaje = document.getElementById('mensaje');
 
 form.addEventListener('submit', e => {
+
 	e.preventDefault();	
 	
     var isError = checkInputs();
@@ -33,7 +33,7 @@ form.addEventListener('submit', e => {
 });
 
 function checkInputs() {
-	// trim to remove the whitespaces
+		
     var error = false;
 	const nameValue = nombreCompleto.value.trim();
 	const emailValue = email.value.trim();

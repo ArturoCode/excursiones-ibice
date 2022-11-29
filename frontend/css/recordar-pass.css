@@ -1,6 +1,17 @@
 /*PROYECTO */
+
+/*
+* {
+  border:2px red solid;
+}
+*/
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+
 body {
   background-color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
 }
 
 #logo {
@@ -104,18 +115,16 @@ a.btn:hover{
   /*padding-bottom: 10px;*/
 }
 
-.nav-item a {
-  color: black;
-}
 
 .row{
   /*Para que no tenga el margen por defecto de bootstrap*/
   margin:0;
 }
-/*.col-4,.col5,.col-6,.col-7{
-  border: 1px solid black;
 
-}*/
+p {
+
+  text-align: justify;
+}
 
 #titulo {
   margin-top: 30px;
@@ -123,63 +132,165 @@ a.btn:hover{
 }
 
 .span{
-  font-weight:bold;
-}
-.img { 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-weight: bold;
 }
 
-#img-blog{
-  width: 100%;
+#mensaje-ok{
+  display: none;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #2ecc71;
+}
+
+#mensaje-ok-reset{
+  display: none;
+  text-align: center;
+  color: white;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  background-color: #2ecc71;
+}
+
+
+
+body {
+	
+	font-family: 'Open Sans', sans-serif;
+
+	margin: 0;
+}
+
+.container {
+  margin-top: 20px;
+	background-color: #fff;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+	width: 700px;
+	max-width: 100%;  
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.titulo-registrarse {
+	border-bottom: 1px solid #f0f0f0;
+	background-color: #f7f7f7;
+	padding: 20px 40px;
   
 }
 
-#secciones-blog{
-  text-align: justify;
+.titulo-registrarse h2 {
+	margin: 0;
 }
 
-#seccion1 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.form {
+	padding: 30px 40px;	
 }
 
-#seccion2 {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.form-control-input {
+	margin-bottom: 10px;
+	padding-bottom: 20px;
+	position: relative;
 }
+
+.form-control-input label {
+	display: inline-block;
+	margin-bottom: 5px;
+}
+
+.form-control-input input {
+	border: 2px solid #f0f0f0;
+	border-radius: 4px;
+	display: block;
+	font-family: inherit;
+	font-size: 14px;
+	padding: 10px;
+	width: 100%;
+}
+
+
+.form-control-input input:focus {
+	outline: 0;
+	border-color: #777;
+}
+
+.form-control-input.success input {
+	border-color: #2ecc71;
+}
+
+.form-control-input.error input {
+	border-color: #e74c3c;
+}
+
+.form-control-input i {
+	visibility: hidden;
+	position: absolute;
+	top: 40px;
+	right: 10px;
+}
+
+.form-control-input.success i.fa-check-circle {
+	color: #2ecc71;
+	visibility: visible;
+}
+
+.form-control-input.error i.fa-exclamation-circle {
+	color: #e74c3c;
+	visibility: visible;
+}
+
+.form-control-input small {
+	color: #e74c3c;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	visibility: hidden;
+}
+
+.form-control-input.error small {
+	visibility: visible;
+}
+
+.form button {
+	background-color: #6c757d;
+	border: 2px solid #4f565c;
+	border-radius: 4px;
+	color: #fff;
+	display: block;
+	font-family: inherit;
+	font-size: 16px;
+	padding: 10px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+
+#logo-footer{
+  width:30%;
+}
+ footer p{
+  text-align: center;
+ }
 
 footer {
   padding: 30px 0;
 }
 
-#logo-footer{
-  width:30%;
-}
-
 @media (max-width: 990px) {
-  .img, .texto{
-    width: 100%;
-  }
+
   #menu-desplegable{
     background-color: none;
     border-radius: 15%;
     margin:  4px 10px 4px 4px;
   }
-  #logo{
+  #logo,#barra-busqueda{
     display: none;
   }  
   #header li:first-of-type {
     margin-left:0;
   }
-  
-  #header li:first-of-type {
-    margin-left:0;
-  }
- 
   
   #header li{
     display:inline-block;
@@ -233,75 +344,28 @@ footer {
   .dropdown-menu {    
     transform:none!important;
   }
-
-  .info,.img{
-    max-width: 100%;
-  }
-  #seccion1{
-    display: block;
-  }
-
-  #seccion2{
-    
-    display: block;
-  }
-  #logo-footer{
-    width: 70%;
-  }
-  .texto{
-    max-width: 100%;
-    margin-top:15px;
+  .container {    
+    max-width: 90%;
   }
   #contacto a{
     margin: 0!important;
   }
-  /*
-
-  #seccion1{
-    display: block;
-  }
-
-  #seccion1 img{
-    margin-bottom: 20px;
-  }
-
-  #seccion1 p{
-    width: 230%;
-    text-align: justify;
+  #logo-footer{
+    width: 70%;
   }
   
-  #seccion2{
-    display: block;
-  }
-
-  #seccion2 img{
-    margin-top: 200px;
-    margin-bottom: 20px;
-    float: left;
-  }
-  
-  #seccion2 p{
-    position: absolute;
-    top: -540px;
-    width: 200%;
-    text-align: justify;
-  }
-
-  */
-
 }
 
 @media (max-width: 630px) {
 
   footer p{
     font-size: 10px;
-  } 
-  
+  }  
 }
+
 a.text-reset{
   text-decoration: inherit;
 }
-
 #menu nav {
   padding: 0.5rem 0;
 }
