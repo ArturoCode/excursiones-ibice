@@ -3,8 +3,7 @@ var opciones = {
     year: "numeric",
     month: "long",
     day: "numeric",
-  };
-  
+  };  
 
   function getExcursiones() {
 
@@ -68,17 +67,13 @@ var opciones = {
             fichaTemp.querySelector("#precio").innerHTML = excursion.precio+" €";
 
             excursiones.appendChild(fichaTemp);
-
-
         }
         //elimar plantilla
-        fichaDOM.remove()
-
-        
+        fichaDOM.remove()    
       
     });
   }
-  //funcion que se repite en todas las pags con excursiones para q se de mg o hechas
+  //funcion que se repite en todas las pags con excursiones para q se de lista-deseos o viaje-realizado
   function eliminarExcursionGuardada(id,idBoton) {
     return function()
     {var url = `${config.urlBackend}/usuario/excursiones-guardadas`;
@@ -91,9 +86,7 @@ var opciones = {
       .then((data) => {
         var boton = document.getElementById(idBoton)     
         boton.style.backgroundColor = "inherit";
-        boton.onclick =  añadirExcursionGuardada(id, boton.id);
-          
-        
+        boton.onclick =  añadirExcursionGuardada(id, boton.id);       
       });}
   }
   function añadirExcursionGuardada(id, idBoton) {
@@ -107,11 +100,9 @@ var opciones = {
       .then((response) => response.json())
       .then((data) => {      
         var boton = document.getElementById(idBoton)      
-        boton.style.backgroundColor = "#41ff33";
+        boton.style.backgroundColor = "#FF0000";
         boton.onclick = 
-          eliminarExcursionGuardada(id, boton.id);
-          
-        
+          eliminarExcursionGuardada(id, boton.id);     
       });}
   }
   function añadirExcursionHecha(id, idBoton) {
@@ -127,9 +118,7 @@ var opciones = {
         var boton = document.getElementById(idBoton)      
         boton.style.backgroundColor = "#41ff33";
         boton.onclick = 
-          eliminarExcursionHecha(id, boton.id);
-          
-        
+          eliminarExcursionHecha(id, boton.id);       
       });
     }
   }
@@ -146,9 +135,7 @@ var opciones = {
         var boton = document.getElementById(idBoton)      
         boton.style.backgroundColor = "inherit";
         boton.onclick = 
-          añadirExcursionHecha(id, boton.id);
-          
-      
+          añadirExcursionHecha(id, boton.id);      
       });}
   }
 

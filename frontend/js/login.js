@@ -32,7 +32,6 @@ async function getSession() {
     });
 }
 
-
 const form = document.getElementById('form');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
@@ -46,7 +45,7 @@ form.addEventListener('submit', e => {
 });
 
 function checkInputs() {
-	// trim to remove the whitespaces
+	// trim para borrar los espacios en blanco que pueda haber
     var error = false;	
 	const emailValue = email.value.trim();
 	const passwordValue = password.value.trim();		

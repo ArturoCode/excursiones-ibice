@@ -1,7 +1,13 @@
-/*PROYECTO */
+/*IMPORTAR FUENTES*/
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
 body {
   background-color: #ffffff;
 }
+
+/*HEADER*/
 
 #logo {
   width: 200px;
@@ -25,6 +31,7 @@ body {
   color:black;
   font-weight: 400;
 }
+
 #header div.dropdown-menu a {
   color: black;
   
@@ -41,6 +48,7 @@ a.btn{
   padding: 0;
   
 }
+
 .dropdown-menu[data-bs-popper] {
   top:65%;
   
@@ -92,17 +100,17 @@ a.btn:hover{
 #perfil,#cerrar-sesion,#header-nombre-usuario,#barra2,#barra3{
   display: none;
 }
+
 #header-nombre-usuario{
   display:inline-block!important;
 }
 
 #menu {
-  /*Cambiar el fixed por un boton que suba al inicio de la pagina/*
-  /*position: fixed;*/
   padding: 20px;
   width: 100%;
-  /*padding-bottom: 10px;*/
 }
+
+/*CONTENIDO*/
 
 .row{
   /*Para que no tenga el margen por defecto de bootstrap*/
@@ -110,7 +118,6 @@ a.btn:hover{
 }
 
 p {
-
   text-align: justify;
 }
 
@@ -122,6 +129,8 @@ p {
 .span{
   font-weight: bold;
 }
+
+/*FORMULARIO DE CONTACTO*/
 
 #mensaje-ok{
   display: none;
@@ -143,6 +152,7 @@ p {
   padding-right: 0;
   padding-left: 0;
 }
+
 .titulo-contacto {
 	border-bottom: 1px solid #f0f0f0;
 	background-color: #f7f7f7;
@@ -178,6 +188,7 @@ p {
 	padding: 10px;
 	width: 100%;
 }
+
 .form-control-input textarea{
 	border: 2px solid #f0f0f0;
 	border-radius: 4px;
@@ -192,6 +203,7 @@ p {
 	outline: 0;
 	border-color: #777;
 }
+
 .form-control-input textarea:focus {
 	outline: 0;
 	border-color: #777;
@@ -200,6 +212,7 @@ p {
 .form-control-input.success input {
 	border-color: #2ecc71;
 }
+
 .form-control-input.success textarea {
 	border-color: #2ecc71;
 }
@@ -207,6 +220,7 @@ p {
 .form-control-input.error input {
 	border-color: #e74c3c;
 }
+
 .form-control-input.error textarea {
 	border-color: #e74c3c;
 }
@@ -223,7 +237,6 @@ p {
 	visibility: visible;
 }
 
-
 .form-control-input.error i.fa-exclamation-circle {
 	color: #e74c3c;
 	visibility: visible;
@@ -237,11 +250,9 @@ p {
 	visibility: hidden;
 }
 
-
 .form-control-input.error small {
 	visibility: visible;
 }
-
 
 .form button {
 	background-color: #6c757d;
@@ -268,6 +279,8 @@ footer {
   width:30%;
 }
 
+/*MEDIA QUERIES*/
+
 @media (max-width: 990px) {
 
   #menu-desplegable{
@@ -275,9 +288,11 @@ footer {
     border-radius: 15%;
     margin:  4px 10px 4px 4px;
   }
+
   #logo,#barra-busqueda{
     display: none;
   }  
+
   #header li:first-of-type {
     margin-left:0;
   }
@@ -285,20 +300,21 @@ footer {
   #header li{
     display:inline-block;
     background-color: #343434;
-    
   }
+
   #header a{
     margin:0;
     color:white;
-  
   }
   
   #header-nombre-usuario,#inicio,#excursione,#blog,#conocenos,#contact{   
     color: white;  
   }
+
   #header-nombre-usuario:hover,#inicio:hover,#excursiones:hover,#blog:hover,#conocenos:hover,#contact:hover{
      color: white;  
   }
+
   #excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
     padding:0;
   }
@@ -312,52 +328,53 @@ footer {
    padding-left:10px;
    
   } 
+
   .nav-item{
     padding: 10px;
   }
   
   .navbar-nav{
     width: 250px;
-
   }
+
   #header ul {   
     padding-left: 20px;
     padding-bottom: 10px;
-    
   }
+
   .nav-item.dropdown{
     margin-top:0;
   }
+
   .dropdown-menu {    
     transform:none;
   }
+
   .dropdown-menu {    
     transform:none!important;
   }
+
   #contacto a{
     margin: 0!important;
   }
+
   #logo-footer{
     width: 70%;
   }
   
 }
   
-
-
-
 @media (max-width: 630px) {
 
   footer p{
     font-size: 10px;
   }
-  
-
-  
 }
+
 a.text-reset{
   text-decoration: inherit;
 }
+
 #menu nav {
   padding: 0.5rem 0;
 }

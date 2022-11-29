@@ -1,7 +1,13 @@
-/*PROYECTO */
+/*IMPORTAR FUENTES*/
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
 body {
   background-color: #ffffff;
 }
+
+/*HEADER*/
 
 #logo {
   width: 200px;
@@ -25,9 +31,9 @@ body {
   color:black;
   font-weight: 400;
 }
+
 #header div.dropdown-menu a {
   color: black;
-  
 }
 
 .dropdown-menu {
@@ -39,11 +45,10 @@ body {
 
 a.btn{
   padding: 0;
-  
 }
+
 .dropdown-menu[data-bs-popper] {
-  top:65%;
-  
+  top:65%; 
 }
 
 .nav:link:hover a{
@@ -58,7 +63,6 @@ a.btn:hover{
 
 #header-nombre-usuario,#inicio,#excursiones,#blog,#conocenos,#contact{
     border-radius: 10px;
-  
 }
 
 #excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
@@ -97,12 +101,11 @@ a.btn:hover{
 }
 
 #menu {
-  /*Cambiar el fixed por un boton que suba al inicio de la pagina/*
-  /*position: fixed;*/
   padding: 20px;
   width: 100%;
-  /*padding-bottom: 10px;*/
 }
+
+/*CONTENIDO*/
 
 .row{
   /*Para que no tenga el margen por defecto de bootstrap*/
@@ -119,32 +122,38 @@ a.btn:hover{
   font-weight: bold;
 }
 
+/*LISTA DE EXCURSIONES*/
+
 .img {
   width:50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
 #img-exc, #imagenf{
   width: 100%;
 }
+
 .info{
   padding:20px;
  
 }
+
 .info div{
   margin:10px; 
 }
+
 .info div div.d-inline-block{
   margin:0;
   margin-left:5px;
 }
 
-
 #nombre-excursion{
   text-align: center;
   font-size: 1.70em;
 }
+
 .detalles-excursion {
   background-color: white;
   padding: 20px;
@@ -177,6 +186,8 @@ footer {
   width:30%;
 }
 
+/*MEDIA QUERIES*/
+
 @media (max-width: 990px) {
 
   #menu-desplegable{
@@ -184,31 +195,33 @@ footer {
     border-radius: 15%;
     margin:  4px 10px 4px 4px;
   }
+
   #logo{
     display: none;
   }  
+
   #header li:first-of-type {
     margin-left:0;
   }
  
-  
   #header li{
     display:inline-block;
     background-color: #343434;
-    
   }
+
   #header a{
     margin:0;
     color:white;
-  
   }
   
   #header-nombre-usuario,#inicio,#excursione,#blog,#conocenos,#contact{   
     color: white;  
   }
+
   #header-nombre-usuario:hover,#inicio:hover,#excursiones:hover,#blog:hover,#conocenos:hover,#contact:hover{
      color: white;  
   }
+
   #excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
     padding:0;
   }
@@ -220,35 +233,37 @@ footer {
   #header div.dropdown-menu a {
    margin:0;
    padding-left:10px;
-   
   } 
+
   .nav-item{
     padding: 10px;
   }
   
   .navbar-nav{
     width: 250px;
-
   }
+
   #header ul {   
     padding-left: 20px;
-    padding-bottom: 10px;
-    
+    padding-bottom: 10px; 
   }
+
   .nav-item.dropdown{
     margin-top:0;
   }
+
   .dropdown-menu {    
     transform:none;
   }
+
   .dropdown-menu {    
     transform:none!important;
   }
 
   .detalles-excursion{
     display:block;
-    
   }
+
   .info,.img{
     max-width: 100%;
   }
@@ -259,43 +274,20 @@ footer {
 
   #descripciones .img, #descripciones .texto{
     margin-top: 10px;
-    
   }
+
   .img,.info,.texto{
    width: 100%;
-
   }
+
   #contacto a{
     margin: 0!important;
   }
+
   #logo-footer{
     width: 70%;
   }
-  /*
-    #descripcion1 img{
-      margin-bottom: 20px;
-    }
 
-    #descripciones p{
-      width: 220%;
-      text-align: justify;
-    }
-    
-    #descripcion2{
-      display: block;
-    }
-
-    #descripcion2 img{
-      margin-top: 200px;
-      margin-bottom: 20px;
-      float: left;
-    }
-
-    #descripcion2 p{
-      position: absolute;
-      top: -540px;
-      width: 200%;
-    }*/
 }
 
 @media (max-width: 630px) {
@@ -303,6 +295,7 @@ footer {
   footer p{
     font-size: 10px;
   }  
+  
 }
 
 a.text-reset{

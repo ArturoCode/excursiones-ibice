@@ -7,7 +7,7 @@ function getEntradas() {
     .then((data) => {  
       var entradasDOM = document.getElementById("entradas");
       var entradaDOM = document.getElementById("entrada");        
-        //iterar por todas las entradas y rellenar la plantilla con la informacion de cada excursiom
+        //iterar por todas las entradas y rellenar la plantilla con la informacion de cada excursión
       for(var entrada of data){
         var entradaTemp = entradaDOM.cloneNode(true);
 
@@ -20,7 +20,7 @@ function getEntradas() {
         
         entradasDOM.appendChild(entradaTemp)
       }
-      //elimar plantilla
+      //eliminar plantilla
       entradaDOM.remove()
     });
 }

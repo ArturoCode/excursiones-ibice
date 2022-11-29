@@ -111,22 +111,22 @@
     </div>             
   </header>
 
-    <!--CONTENIDO-->
+    <!--INFORMACIÓN DEL USUARIO-->
     <div class="container" id="contenido">
       <h1 id="titulo" class="mb-5">Mi perfil</h1>
 
-      <!--FOTO-->
+      <!--PARTE DE FOTO-->
       <div class="row" id="foto">
         <!--LOGO-->
         <div class="col-5" id="contenedor-foto-opinion">
           <div>
             <a href="#"
-              ><!--conectado con la base de datos y mostrarlo en detalles excursion -->
+              >
               <img id="imagenop" src="../../media/icono_user.png" />
             </a>
           </div>
         </div>
-        <!--INFO-->
+        <!--PARTE DE INFO-->
         <div class="col-7" id="info">
           <h3 id="titulo">Información básica</h3>
           <label for="username"><b>Nombre de usuario:</b></label>
@@ -159,17 +159,18 @@
         </div>
       </div>
 
-      <!--EXCURSIONES SELECCIONADAS-->
-      <div id="viajes-realizados" style="margin-top: 150px">
+      <!--CONTENIDO DEL USUARIO SIN PRIVILEGIOS DE AMINISTRADOR-->
+
+      <!--VIAJES REALIZADOS-->
+      <div id="viajes-realizados">
       <h3 id="titulo">Viajes realizados</h3>
       <div id="excursiones-hechas" class="row excursiones-seleccionadas">
         
         <!--FICHA EXCURSION-->
         <div id="ficha" class="ficha">
-          <!--class="col-3 ficha"-->
           <div>
             <a id="url-excursion" href="./excursiones/detalles_excursion.html"
-              ><!--conectado con la base de datos y mostrarlo en detalles excursion -->
+              >
               <div align="center">
                 <img id="imagenf" alt="Camino de Santiago Excursiones Íbice" />
               </div>
@@ -222,7 +223,7 @@
 
       <!--PROMOCIONES-->
           <div id="promociones">
-            <h3 id="titulo" style="margin-bottom: -10px">Cupones y descuentos</h3>
+            <h3 id="titulo">Cupones y descuentos</h3>
             <div class="row promociones">
               <div class="col-12 promo">
                 <a href=""><img id="img-promo" src="../../media/cupon-ibice.png" /></a>
@@ -231,17 +232,16 @@
           </div>
       
 
-      <!--EXCURSIONES SELECCIONADAS-->
+      <!--LISTA DE DESEOS-->
       
       <div id="lista-deseos">
-      <h3 id="titulo" style="margin-top: 80px">Lista de deseos</h3>
+      <h3 id="titulo">Lista de deseos</h3>
       <div id="excursiones-guardadas" class="row excursiones-seleccionadas">
         <!--FICHA EXCURSION-->
         <div id="ficha" class="ficha">
-          <!--class="col-3 ficha"-->
           <div>
             <a id="url-excursion" href="./excursiones/detalles_excursion.html"
-              ><!--conectado con la base de datos y mostrarlo en detalles excursion -->
+              >
               <div align="center">
                 <img id="imagenf" alt="Camino de Santiago Excursiones Íbice" />
               </div>
@@ -290,8 +290,12 @@
       </div>
       <!--FIN DIV LISTA-DESEOS-->
     </div>
+
+    <!--CONTENIDO DEL USUARIO AMINISTRADOR-->
       
       <div id="admin">
+
+        <!--AÑADIR/EDITAR/ELIMINAR EXCURSIONES-->
         <div class="botones-excursiones row">
           <div class="col-12"><button id="actualizar-excursiones">Actualizar/Eliminar Excursión</button><button id="añadir-excursiones">Añadir excursión</button></div> 
                  
@@ -321,6 +325,7 @@
             <div id="mensaje-delete"></div>
             <div id="mensaje-update"></div>
           </div>
+
           <div id="opcion-añadir"class="col-6 no-display">
             <h5>Añadir excursion</h5>
             <form id="add-excursion">
@@ -346,8 +351,12 @@
             <div id="mensaje-add"></div>
           </div>
         </div>
+
+        <!--AÑADIR/EDITAR/ELIMINAR BLOG-->
+
         <div class="botones-blog row">
           <div class="col-12"><button id="actualizar-blog">Actualizar/Eliminar blog</button><button id="añadir-blog">Añadir blog</button></div>                 
+          
           <div id="opcion-actualizar-blog" class="col-6 no-display ">              
             <select id="select-blog"></select>
             <h5>Actualizar blog</h5>
@@ -363,6 +372,7 @@
             <div id="mensaje-delete-blog"></div>
             <div id="mensaje-update-blog"></div>
           </div>
+
           <div id="opcion-añadir-blog" class="col-6 no-display">
             <h5>Añadir blog</h5>
             <form id="add-blog">
@@ -379,14 +389,7 @@
       </div>
     </div>
 
-<!--DIV DEL CONTAINER????-->
-   
-<!--DIV DEL CONTAINER????-->
-
-  <!--REVISAR ESTOS DIVS PORQUE CON ELLOS NO HACE FALTA DUPLICAR EL FOOTER, O SEA, QUE ESTÁN BIEN AHÍ-->
-
-<!--REVISAR ESTOS DIVS PORQUE CON ELLOS NO HACE FALTA DUPLICAR EL FOOTER, O SEA, QUE ESTÁN BIEN AHÍ-->
-
+<!--FIN DEL CONTAINER-->
 
     <!--FOOTER-->
     <footer class="text-center text-muted bg-light mt-5">
@@ -414,7 +417,6 @@
     
         <div class="col-4" id="contacto">
           <h5 class="text-uppercase fw-bold mb-4">Contacto</h5></a>
-          <!-- hola@excursionesibice.com< -->
           <p><a href="../contact.html">excursionesibice@gmail.com</a></p>          
           <p>+34 666 666 666</p>
           <a href="#" target="_blank">

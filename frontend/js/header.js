@@ -23,8 +23,7 @@ function cerrarSesion() {
   var url = `${config.urlBackend}/desconectarse`;
   fetch(url)
     .then((res) => res.json())
-    .then((data) => {
-        console.log("aa")
+    .then((data) => {       
       localStorage.removeItem("user");
       window.location.href = `${config.url}/index.html`
     });
