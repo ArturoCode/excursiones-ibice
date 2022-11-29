@@ -6,7 +6,9 @@ const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const app = express();
-const port = 2000;
+//EN CONFIG.JS
+const port = process.env.PORT || 2000;
+//import {port} from './config.js'
 const dbcon = db.connect();
 
 var MySQLStore = require("express-mysql-session")(session);
@@ -119,6 +121,7 @@ app.post("/api/contacto", (req, res) => {
     //autenticacion gmail
     auth: {
       user: "excursionesibice@gmail.com",
+      //
       pass: "pkglddfmgmiwolot",
     },
   });
@@ -147,12 +150,96 @@ app.post("/api/contacto", (req, res) => {
   var mailOptionsUsuario = {
     from: `excursionesibice@gmail.com`,
     to: emailIntroducido,
-    subject: "Solicitud de contacto Excursiones Íbice",
+    subject: "Solicitud de contacto - Excursiones Íbice",
     text:
-      "Un resumen de tu solicitud: Asunto: " +
+      "Un resumen de la solicitud: Asunto: " +
       asunto +
       " Con este mensaje: " +
       mensaje,
+  };
+
+  transporter.sendMail(mailOptionsUsuario, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+  return res.status(200).send("OK");
+});
+
+//RECORDAR CONTRASEÑA
+
+//No se puede desencriptar un hash
+
+//La unica manera es mandar un enlace personalizado a un update de la contraseña con dos campos formulario cuando el id es tal?
+//Mirar como se hace el update de los datos_usuario y hacer una pagina que sea añadir nuevas contraseña como el de recordar contraseña
+
+app.post("/api/recordar-contrasena", (req, res) => {
+  const { nombre_usuario, email } = req.body;
+  var emailIntroducido = email;
+
+  const query = `SELECT * FROM usuarios WHERE nombre_usuario='${nombre_usuario}' AND email='${email}'`;
+  
+  dbcon.query(query, function (err, result, fields) {
+    if (err) throw err;
+    if (result.length === 0) {
+      console.log("Usuario y mail no encontrados")
+    }
+    //res.json(result);
+    //console.log("Esto es la variable result:");
+    //console.log(result)
+
+    console.log("Esto es la contraseña hasheada:");
+    console.log(result[0].password)
+
+    const hashedPassword = bcrypt.hashSync("holamundo", 12);
+    var contrasena = "";
+
+   if (bcrypt.compare(hashedPassword, result[0].password)){
+    return console.log("Comprobación de contraseña -- HECHA");
+   }else{
+    return console.log("No se pudo comprobar la contraseña");
+   }
+  });
+
+  var transporter = nodemailer.createTransport({
+    service: "gmail",
+    //autenticacion gmail
+    auth: {
+      user: "excursionesibice@gmail.com",
+      //
+      pass: "pkglddfmgmiwolot",
+    },
+  });
+  contrasena = "holamundo"
+
+  var mailOptions = {
+    from: `excursionesibice@gmail.com`,
+    to: emailIntroducido,
+    subject: "Recuerda tu contraseña",
+    text:
+      "Tu contraseña es: " +
+      contrasena +
+      ".",
+  };
+
+  transporter.sendMail(mailOptions, function (error, info) {
+    if (error) {
+      console.log(error);
+    } else {
+      console.log("Email sent: " + info.response);
+    }
+  });
+
+  var mailOptionsUsuario = {
+    from: `excursionesibice@gmail.com`,
+    to: `excursionesibice@gmail.com`,
+    subject: "Solicitud de contraseña - Excursiones Íbice",
+    text:
+      "Un resumen de la solicitud: Contraseña: " +
+      contrasena +
+      ".",
   };
 
   transporter.sendMail(mailOptionsUsuario, function (error, info) {
