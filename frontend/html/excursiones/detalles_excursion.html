@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>    
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="../../css/detalles_excursion.css" />
+    <script src="../../js/config.js"></script>
+    <script src="../../js/detalles_excursion.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+
+    <title>Detalles Excursión </title>
+  </head>  
+  <body onload="getExcursion()">
+    <!--CABECERA con imagen-->
+    <header>
+      <div id="header">        
+        <!--MENÚ-->          
+        <div id="menu">               
+          <nav class="navbar navbar-expand-lg">            
+            <button id="menu-desplegable"
+              class="navbar-toggler nav-bar-color navbar-light" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#navbarSupportedContent" 
+              aria-controls="navbarSupportedContent" 
+              aria-expanded="false" 
+              aria-label="Toggle navigation"
+            >
+              <span id="icono-menu"class="navbar-toggler-icon"></span>
+            </button>                      
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">              
+              <ul class="navbar-nav  justify-content-around">         
+                <a href="../index.html"><img id="logo" src="../media/logo.png"/></a>          
+                <li class="nav-item">
+                  <a  id="inicio" class="nav-link" href="../index.html" >INICIO</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a  id="excursiones" class="btn excursiones" href="../listado_excursiones.html">EXCURSIONES</a>
+                  <button 
+                    type="button" 
+                    class="btn dropdown-toggle dropdown-toggle-split" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false"
+                  >
+                  
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="../listado_excursiones.html?mes=septiembre">SEPTIEMBRE 2022</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="../listado_excursiones.html?mes=octubre">OCTUBRE 2022</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="../listado_excursiones.html?mes=noviembre">NOVIEMBRE 2022</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="../listado_excursiones.html?mes=diciembre">DICIEMBRE 2022</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a id="blog"class="nav-link" href="../blog.html" >BLOG</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a  id="conocenos"class="btn conocenos" href="../about-us.html">CONÓCENOS</a>
+                  <button 
+                    type="button" 
+                    class="btn dropdown-toggle dropdown-toggle-split" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false"
+                  >                  
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="../faq.html">FAQ</a>                                      
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a id="contact"class="nav-link" href="../contact.html" >CONTACTO</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a  class="btn user" href="../user/login.html"><i id="icono-usuario"class="fa fa-fw fa-user fa-lg"></i></a>
+                  <div id="header-nombre-usuario"></div>
+                  <button 
+                    type="button" 
+                    class="btn dropdown-toggle dropdown-toggle-split" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false"
+                  >                  
+                  </button>                 
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a id="iniciar-sesion" class="dropdown-item" href="../user/login.html">INICIAR SESIÓN</a>
+                    <div id="barra1"class="dropdown-divider"></div>
+                    <a id="registrarse" class="dropdown-item" href="../user/register.html">REGISTRARSE</a>
+                    <div id="barra2"class="dropdown-divider"></div>
+                    <a id="perfil" class="dropdown-item" href="../user/profile.html">PERFIL</a>
+                    <div id="barra3" class="dropdown-divider"></div>  
+                    <a id="cerrar-sesion" class="dropdown-item" onclick="cerrarSesion()">CERRAR SESIÓN</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div> 
+      </div>             
+    </header>
+
+     <!-- !!!!!!!! Arreglar el CSS y pulir el contenido-->   
+
+      <!-- !!!!!!!! Por ejemplo la imagen de la excursión debería reducirse al reducir ventana-->   
+
+    <!--CONTENIDO-->
+    <div class="container"  id="contenido"> 
+      <h1 id="titulo">Detalles de la excursión</h1> 
+      <div class="row detalles-excursion"> 
+          <!-- !!!!!!!! Deberíamos coger la imagen de la BBDD-->  
+          <div class="col-12" id="nombre-excursion"></div>               
+          <div class="col-6 img "><img id="imagenf" alt="Camino de Santiago Excursiones Íbice"></div>
+          <div class="col-6 info">
+            <!-- !!!!!!!! Deberíamos coger EL NOMBRE DE LA BBDD porque esta tambien se muestra en el formato pequeño, la necesitamos coger-->   
+            
+            <div>
+              <i class="fa fa-calendar" ></i>
+              <span class="span">Fecha inicio: </span><div class="d-inline-block" id="fecha-inicio"></div>
+            </div>
+            <div>
+              <i class="fa fa-calendar" ></i>
+              <span class="span">Fecha final: </span><div class="d-inline-block" id="fecha-final"></div>
+            </div>
+            <div>
+              <i class="fas fa-chart-area"></i>
+              <span class="span">Nivel: </span><div class="d-inline-block" id="nivel"></div>
+            </div>
+            <div>
+              <i class="fa fa-bus" ></i>
+              <span class="span">Transporte: </span><div class="d-inline-block" id="transporte"></div>
+            </div>
+            <div>
+              <i class="fa fa-map-signs"></i>
+              <span class="span">Destino: </span> <div class="d-inline-block" id="destino"></div>
+            </div>
+            <div>             
+              <i class="fa fa-clock" ></i>
+              <span class="span">Hora de salida: </span><div class="d-inline-block" id="hora-salida"></div> 
+            </div>
+            <div>
+              <i class="fa fa-clock"></i>
+              <span class="span">Hora de regreso: </span><div class="d-inline-block" id="hora-regreso"></div> 
+            </div> 
+            <div>
+              <i class="fa fa-map-marker"></i>
+              <span class="span">Punto de salida: </span><div class="d-inline-block" id="punto-salida"></div> 
+            </div>            
+            <hr>
+            Precio:
+            <div class="d-inline-block" id="precio"></div>
+          </div>         
+      </div>
+      <h1 id="titulo">Descripción del viaje</h1>
+      <div id="descripciones">
+        <div id="descripcion1" class="row">        
+          <div class="col-6 texto">
+              <p></p>
+          </div>
+          <div class="col-6 img">
+              <a href=""><img id="img-exc"/></a>
+          </div>
+        </div>
+        <div id="descripcion2" class="row">
+          <div class="col-6 img">
+              <a href=""><img id="img-exc"/></a>
+          </div>
+          <div class="col-6 texto">
+            <p></p>
+          </div>        
+        </div>
+      </div>
+      <div id="informacion">
+        <h3 class="titulo-inferior">Tipos de material</h3>
+        <div id="info-material" class="col-12">
+          <p></p>
+        </div>
+        <h3 class="titulo-inferior">Tiempo atmosférico</h3>
+        <div id="info-atmosferico" class="col-12">
+          <p></p>
+        </div>
+        <h3 class="titulo-inferior">Otros detalles</h3>
+        <div id="info-detalles" class="col-12">
+          <p></p>
+        </div>
+      </div>        
+      
+    </div>
+
+
+
+    <!--FOOTER-->
+    <footer class="text-center text-muted bg-light mt-5">
+  <div class="row">
+    <div class="col-4">
+      <img id="logo-footer" src="../../media/logo_body.png" width="30%"/>
+      <p class="text-center p-3">Excursiones Íbice ©2022</p>
+    </div>
+
+    <div id="secciones" class="col-4">
+      <h5 class="text-uppercase fw-bold mb-4">Secciones</h5>
+      <p>
+        <a href="../index.html" class="text-reset">Inicio</a>
+      </p>
+      <p>
+        <a href="../listado_excursiones.html" class="text-reset">Excursiones</a>
+      </p>
+      <p>
+        <a href="../blog.html" class="text-reset">Blog</a>
+      </p>
+      <p>
+        <a href="../about-us.html" class="text-reset">Conócenos</a>
+      </p>
+    </div>
+
+    <div class="col-4" id="contacto">
+      <h5 class="text-uppercase fw-bold mb-4">Contacto</h5></a>
+      <!-- hola@excursionesibice.com< -->
+      <p><a href="../contact.html">excursionesibice@gmail.com</a></p>          
+      <p>+34 666 666 666</p>
+      <a href="#" target="_blank">
+        <i class="fab fa-twitter fa-2x margin-top-20px margin-right-20px"></i>
+      </a>      
+      <a href="#" target="_blank">
+        <i class="fab fa-instagram fa-2x margin-top-20px margin-right-20px"></i>
+      </a>      
+      <a href="#" target="_blank">
+          <i class="fab fa-facebook fa-2x margin-top-20px margin-right-20px"></i>
+      </a>
+    </div>
+  </div>
+</footer>
+<script src="../../js/header.js"></script>
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+  crossorigin="anonymous"
+></script>
+</body>
+</html>

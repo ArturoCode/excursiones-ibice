@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  
+    <link rel="stylesheet" href="../css/faq.css" />
+    <script src="../js/config.js"></script>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+        integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+
+    <title>FAQ - Excursiones Íbice</title>
+  </head>
+  <body>
+    <!--CABECERA con imagen-->
+    <header>
+      <div id="header">        
+        <!--MENÚ-->          
+        <div id="menu">               
+          <nav class="navbar navbar-expand-lg">            
+            <button id="menu-desplegable"
+              class="navbar-toggler nav-bar-color navbar-light" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target="#navbarSupportedContent" 
+              aria-controls="navbarSupportedContent" 
+              aria-expanded="false" 
+              aria-label="Toggle navigation"
+            >
+              <span id="icono-menu"class="navbar-toggler-icon"></span>
+            </button>                      
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">              
+              <ul class="navbar-nav  justify-content-around">         
+                <a href="./index.html"><img id="logo" src="../media/logo.png"/></a>          
+                <li class="nav-item">
+                  <a  id="inicio" class="nav-link" href="./index.html" >INICIO</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a  id="excursiones" class="btn excursiones" href="./listado_excursiones.html">EXCURSIONES</a>
+                  <button 
+                    type="button" 
+                    class="btn dropdown-toggle dropdown-toggle-split" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false"
+                  >
+                  
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="./listado_excursiones.html?mes=septiembre">SEPTIEMBRE 2022</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="./listado_excursiones.html?mes=octubre">OCTUBRE 2022</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="./listado_excursiones.html?mes=noviembre">NOVIEMBRE 2022</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="./listado_excursiones.html?mes=diciembre">DICIEMBRE 2022</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a id="blog"class="nav-link" href="./blog.html" >BLOG</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a  id="conocenos"class="btn conocenos" href="./about-us.html">CONÓCENOS</a>
+                  <button 
+                    type="button" 
+                    class="btn dropdown-toggle dropdown-toggle-split" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false"
+                  >                  
+                  </button>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="./faq.html">FAQ</a>                                      
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a id="contact"class="nav-link" href="./contact.html" >CONTACTO</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a  class="btn user" href="./user/login.html"><i id="icono-usuario"class="fa fa-fw fa-user fa-lg"></i></a>
+                  <div id="header-nombre-usuario"></div>
+                  <button 
+                    type="button" 
+                    class="btn dropdown-toggle dropdown-toggle-split" 
+                    data-bs-toggle="dropdown" 
+                    aria-haspopup="true" 
+                    aria-expanded="false"
+                  >                  
+                  </button>                 
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a id="iniciar-sesion" class="dropdown-item" href="./user/login.html">INICIAR SESIÓN</a>
+                    <div id="barra1"class="dropdown-divider"></div>
+                    <a id="registrarse" class="dropdown-item" href="./user/register.html">REGISTRARSE</a>
+                    <div id="barra2"class="dropdown-divider"></div>
+                    <a id="perfil" class="dropdown-item" href="./user/profile.html">PERFIL</a>
+                    <div id="barra3" class="dropdown-divider"></div>  
+                    <a id="cerrar-sesion" class="dropdown-item" onclick="cerrarSesion()">CERRAR SESIÓN</a>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>       
+      </div>             
+    </header>
+
+    <!--CONTENIDO-->
+    <div class="container"  id="contenido">       
+
+        <!--PREGUNTAS FRECUENTES-->
+        <div class="faq-container">
+            <h1 id="titulo-faq">Preguntas frecuentes</h1>
+          <details>
+            <summary>¿Cómo solicito mi reserva?</summary>
+            <ol>
+              <li><span class="span">Por internet a través de nuestra web:</span> Para inscribirte en una actividad, pincha en la opción del menú que sea CONTACTO y deslizando hacia abajo está el apartado de la "Solicitud de contacto", donde aparece un formulario en el podrás indicarnos tus datos. Nos llegará tu mensaje e inmediatamente nos pondremos en contacto contigo para completar tu inscripción a dicha actividad. Si deseas inscribirte en una actividad programada puedes hacerlo telefónicamente al 918440176.</li>
+              <li><span  class="span">Por teléfono</span> Llamando a nuestras oficinas: 666666666, de Lunes a Domingo, te atenderemos de 9:00 h a 18:00h.
+              <li><span  class="span">Por e-mail a excursionesibice@gmail.com</span></li>
+              <li><span  class="span">Por WhatsApp al 666666666</span> Indica: Nombre+Apellido y excursión </li>
+              <li><span class="span">Por mensaje de texto al 666666666</span> Indica: Nombre+Apellido y excursión </li>
+            </ol>
+          </details>
+          <details>
+            <summary>¿Qué material tengo que llevar?</summary>
+            <ul>
+              <li><span class="span">BOTAS DE MONTAÑA:</span> Ligeras y preferiblemente impermeables, altas, que sujeten el tobillo, con suela flexible y dibujo bien marcado. (sólo para las marchas muy fáciles y llanas pueden servir unas deportivas fuertes).</li>
+              <li><span  class="span">MOCHILA:</span> De tamaño medio, donde meter la comida del día, agua, ropa de abrigo, etc… suele ser suficiente con una capacidad de 35/45 L., preferible con la espalda acolchada y cinturón lumbar. Ésto último ayuda a descargar los hombros del peso y hace más confortable la marcha. </li>
+              <li><span  class="span">CANTIMPLORA:</span> O botella de plástico. De un litro o más según la temporada, que habrá que llevar siempre llena desde casa.</li>
+              <li><span  class="span">CHUBASQUERO:</span> Que nos libre de una caladura en cualquier época del año. Si te haces asiduo senderista, puede convenirte una chaqueta impermeable o anorak, que también corta el aire y resiste mejor la lluvia. Si verdaderamente la marcha se prevé con agua y no es por terreno muy cerrado, es muy recomendable llevar un paraguas. Puede servirnos uno plegable que llevaremos en la mochila o, mejor aún, uno grande de punta metálica que nos servirá de bastón si no llueve. No consideramos recomendables las capas de agua, pues no permiten la transpiración, escurren el agua sobre las botas o el pantalón y son trabajosas de poner y quitar, así como incómodas para caminar con ellas.</li>
+              <li><span class="span">BASTÓN DE MARCHA:</span> telescópico, muy apropiado para casi todo tipo de ruta si está regulado a la altura apropiada. Especialmente recomendable para marchas que tengan mucha bajada.</li>
+            </ul>
+          </details>          
+          <details>
+            <summary>Me preocupa no seguir el ritmo en excursiones grupales...</summary>
+            <div>Excursiones Íbice es un Club de senderismo y Viajes que fomenta caminatas de nivel bajo-medio o medio: el 90% de las actividades son de nivel básico, aproximadamente 2/3  horas de camino antes y 2h después de comer, las cuales podría realizar cualquier persona con forma física normal. Se trata de disfrutar de la excursión o viaje, no de machacarnos. Siempre que se vaya a realizar una actividad con un poco más de nivel de dificultad, se avisará previamente.</div>
+          </details>            
+          <details>
+            <summary>Tengo ganas de apuntarme, pero no quiero ir solo</summary>             
+            <div> 
+              <p>No necesitas esperar a encontrar a alguien que pueda acompañarte, planear un viaje con familiares o amigos puede ser una tarea complicada: hay que adaptar fechas, presupuestos, gustos… Quizá lleves años guardando ese destino soñado en tu lista de deseos, pero nunca has tenido ocasión de ir por no haber encontrado a la persona que pueda acompañarte, que tenga vacaciones en las mismas fechas que tú o que en ese momento disponga del presupuesto necesario para dicho proyecto. Además, es posible que el viaje de tus sueños no acabe de corresponderse con el de tu acompañante.</p>
+              <p>Viajar de forma individual se dibuja como la solución idónea para poner, definitivamente, punto y final a la espera.</p>
+              <p>Anímate y no te cortes compañer@ de las montañas, en todas las excursiones hay senderistas nuevos, y la mayoria se apuntan solos y te aseguramos que así es más fácil integrarse,  es muy enriquecedor hacer amigos nuevos y que cuando te apuntas por tu cuenta a un club regresas con unos cuantos conocidos y unos pocos más de amigos y te sientes fenomenal y pletórico…No desperdicies esta oportunidad y no busques tus compañeros fuera del club, dentro te será muchísimo mas fácil encontrarlos y compartir vuestra afición por la naturaleza.</p>
+            </div> 
+            </details>            
+            <details>
+              <summary>No quiero que el tiempo me ague la fiesta</summary>
+              <div>Como decimos, todos tendremos materiales. Además, el tiempo es parte de la experiencia e incluso en los días más tormentosos se puede disfrutar de lo bonito que tiene el explorar</div>
+            </details>  
+            <details>
+              <summary>Tipos de pago y cómo realizarlo</summary>
+              <div> 
+                <p>En el momento de recibir el e-mail de inscripción a la excursión o viaje, es cuando se considerará tu plaza como reservada en firme y conlleva la aceptación de las condiciones generales descritas en la web.</p>
+                <p>En el e-mail de inscripción se indica cómo proceder al pago de la reserva, plazos e importes, en las siguientes cuentas:</p>
+                <p><span class="span">Nº cuenta CAIXA... – Titular: Excursiones Íbice Travel</span></p>
+                <p><span class="span">Nº cuenta SANTANDER / OPEN BANK... – Titular: Excursiones Íbice Travel</span></p>
+                <p>Nota: Debes indicar en el concepto del ingreso o transferencia tu NOMBRE, APELLIDOS y Código o nombre de la excursión). Desde el momento que se reserva plaza, cualquier cancelación deberá ser comunicada a EXCURSIONES ÍBICE y dichas condiciones se recogen en nuestras “Condiciones Generales”.</p>
+              </div>
+            </details>  
+            <details>
+              <summary>Quiero hacerme soci@</summary>
+              <div> 
+                <p>En Excursiones Íbice ser socio es opcional y la cuota es de 20 € durante un año a partir del mes en que te asocies.</p>
+                <p>A partir de la 2ª actividad que realices con EXCURSIONES ÍBICE, ya puedes hacerte socio y disfrutar de todas sus ventajas, como descuentos en excursiones y viajes:</p>
+                <ul>
+                  <li>Excursiones un día hasta 4 € de descuento.</li>
+                  <li>Excursiones nocturnas en el precio: 6/7 € de descuento</li>
+                  <li>Viajes hasta 10 € de descuento.</li>
+                  <li>Excursiones Íbice tramita licencias de la Federación Madrileña de Montañismo con descuento por el hecho de ser socio de EXCURSIONES ÍBICE.</li>
+                  <li>Además tendrás preferencia al reservar plaza en aquellas actividades con nº limitado de participantes.
+                    Para asociarte, puedes hacerlo de dos formas: </li>
+                  <li>Por teléfono: 666 666 666 </li>                  
+                  <li>Al inscribirte en una actividad se abona la cuota conjuntamente con el importe de la misma.</li>
+                </ul>
+              </div>
+            </details>
+            <details>
+              <summary>Horarios y puntos de salida</summary>
+              <div> 
+                <ul>
+                  <li><span class="span">Horario normal de salida:</span></li>                
+                  <p>Excursión de Sábado o Domingo (1 día): 9.00 a.m.</p>
+                  <p>Viajes combinados: 8.00h a.m (consultar en ficha)</p>
+                  <p><span class="span">SALIDA EN AUTOCAR:</span></p>                
+                  <li><span class="span">Parada GETAFE:</span> Plaza Fuente de Goya esquina con Av. Rigoberta Menchu. Cerca de la Estación de Metro “Los Espartales (L12) y Cercanías Renfe “Las Margaritas (C4)”. Con parking exterior . Asegúrate estar en esta parada con 10/15 minutos de antelación, ya que sólo tendrás 1 minuto de cortesía. IMPORTANTE: Esta parada sólo se realiza bajo petición.</li>
+                  <p>Ver enlace Google MAPS: pincha AQUI</p>
+                  <li><span class="span">Parada FUENCARRAL PUEBLO:</span> Plaza Fuente de Goya esquina con Av. Rigoberta Menchu. Cerca de la Estación de Metro “Los Espartales (L12) y Cercanías Renfe “Las Margaritas (C4)”. Con parking exterior . Asegúrate estar en esta parada con 10/15 minutos de antelación, ya que sólo tendrás 1 minuto de cortesía. IMPORTANTE: Esta parada sólo se realiza bajo petición.</li>
+                  <p>Ver enlace Google MAPS: pincha AQUI</p>
+                  <li><span class="span">Parada PLZA CASTILLA:</span> Paseo de la Castellana, 199. Cafeteria Solaire – Metro Plaza Castilla – Salida intercambiador, Castellana Impares.</li>
+                  <p>Ver enlace Google MAPS: pincha AQUI</p>
+                </ul>
+              </div>
+            </details> 
+            <details>
+              <summary>Tipos de transporte en Excursiones Íbice</summary>
+              <div>Como auténtico Club de viajes y aventuras, nosotros utilizamos todo tipo de trasporte, Autocar, Coches, Tren, Avión y Barco. Lo normal es en autocar, aunque rara vez utilizemos otro tipo de vehículos más porque sea el único medio de transporte posible en un destino particular que los accesos no permiten otro medio, o por la cantidad de participantes que asisten a la actividad.</div>
+            </details> 
+            
+            
+                      
+        </div>
+    </div>
+
+    
+        <!--FOOTER-->
+        <footer class="text-center text-muted bg-light mt-5">
+          <div class="row">
+            <div class="col-4">
+              <img id="logo-footer" src="../media/logo_body.png" width="30%"/>
+              <p class="text-center p-3">Excursiones Íbice ©2022</p>
+            </div>
+        
+            <div id="secciones" class="col-4">
+              <h5 class="text-uppercase fw-bold mb-4">Secciones</h5>
+              <p>
+                <a href="./index.html" class="text-reset">Inicio</a>
+              </p>
+              <p>
+                <a href="./listado_excursiones.html" class="text-reset">Excursiones</a>
+              </p>
+              <p>
+                <a href="./blog.html" class="text-reset">Blog</a>
+              </p>
+              <p>
+                <a href="./about-us.html" class="text-reset">Conócenos</a>
+              </p>
+            </div>
+        
+            <div class="col-4" id="contacto">
+              <h5 class="text-uppercase fw-bold mb-4">Contacto</h5></a>
+              <!-- hola@excursionesibice.com< -->
+              <p><a href="contact.html">excursionesibice@gmail.com</a></p>          
+              <p>+34 666 666 666</p>
+              <a href="#" target="_blank">
+                <i class="fab fa-twitter fa-2x margin-top-20px margin-right-20px"></i>
+              </a>      
+              <a href="#" target="_blank">
+                <i class="fab fa-instagram fa-2x margin-top-20px margin-right-20px"></i>
+              </a>      
+              <a href="#" target="_blank">
+                  <i class="fab fa-facebook fa-2x margin-top-20px margin-right-20px"></i>
+              </a>
+            </div>
+          </div>
+        </footer>
+            <script src="../js/header.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
