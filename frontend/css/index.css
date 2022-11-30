@@ -1,13 +1,7 @@
-/*IMPORTAR FUENTES*/
-
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
-
+/*PROYECTO */
 body {
   background-color: #ffffff;
 }
-
-/*HEADER*/
 
 #logo {
   width: 200px;
@@ -31,9 +25,9 @@ body {
   color:black;
   font-weight: 400;
 }
-
 #header div.dropdown-menu a {
-  color: black; 
+  color: black;
+  
 }
 
 .dropdown-menu {
@@ -45,10 +39,11 @@ body {
 
 a.btn{
   padding: 0;
+  
 }
-
 .dropdown-menu[data-bs-popper] {
   top:65%;
+  
 }
 
 .nav:link:hover a{
@@ -58,10 +53,12 @@ a.btn{
 a.btn:hover{
   background-color: #343434;
   color: white;
+ 
 }
 
 #header-nombre-usuario,#inicio,#excursiones,#blog,#conocenos,#contact{
-  border-radius: 10px;
+    border-radius: 10px;
+  
 }
 
 #excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
@@ -100,9 +97,13 @@ a.btn:hover{
 }
 
 #menu {
+  /*Cambiar el fixed por un boton que suba al inicio de la pagina/*
+  /*position: fixed;*/
   padding: 20px;
   width: 100%;
+  /*padding-bottom: 10px;*/
 }
+
 
 /*BARRA DE BUSQUEDA*/
 
@@ -122,6 +123,16 @@ a.btn:hover{
   width: fit-content;
   border-radius: 15px;
   
+  
+  /*top: 380px;
+  position: absolute;
+  transform: translate(-50%,-50% );
+  left: calc(100vw / 2);
+  background-color: black;
+  border-radius: 15px;
+  width: 25%;
+  margin: 0px;
+  */
 }
 
 #lugares,#meses{
@@ -131,6 +142,10 @@ a.btn:hover{
   border-radius: 5px;  
   width:200px; 
 }
+
+
+
+
 
 #barra-busqueda button {
   margin:3px;
@@ -151,17 +166,21 @@ a.btn:hover{
   color: black;
 }
 
-/*CONTENIDO*/
-
 .row{
   /*Para que no tenga el margen por defecto de bootstrap*/
   margin:0;
 }
+/*.col-4,.col5,.col-6,.col-7{
+  border: 1px solid black;
+
+}*/
+
 
 #titulo {
   margin-top: 30px;
   margin-bottom: 25px;
 }
+
 
 /*FICHA EXCURSION Y PROMOCIONES*/
 
@@ -170,6 +189,7 @@ a.btn:hover{
   align-items: center;
   justify-content: center;
   margin-top:10px;
+
 }
 
 .datosFicha div{
@@ -201,6 +221,8 @@ a.btn:hover{
 }
 
 .ficha{
+  /*height:500px;*/
+
   height:530px;
   width: 350px;
   border: 1px solid black;
@@ -212,6 +234,7 @@ a.btn:hover{
   padding-left: 0;
   padding-right: 0;
   transition: 0.3s;
+
 }
 
 .ficha:hover {
@@ -225,11 +248,18 @@ a.btn:hover{
   align-items: center;
   justify-content: center;
   transition: 0.3s;
+
 }
 
 .promo:hover{
   transform: scaleX(1.06);
 }
+
+/*
+#img-promo,#imagenf{
+  width: 100%;
+}
+*/
 
 #imagenf{
   width: 100%;
@@ -237,6 +267,7 @@ a.btn:hover{
   margin-bottom: 10px;
   height: 240px;
 }
+
 
 #nombre-excursion{
   text-decoration: none;
@@ -252,6 +283,19 @@ a.btn:hover{
 
 /*OPINIONES*/
 
+/*
+#opiniones{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
+  text-align: center;
+}
+#imagenop{
+  width: 50%;  
+}
+*/
+
 #carrusel-opiniones{
   display: flex;
   align-items: center;
@@ -263,32 +307,26 @@ a.btn:hover{
   background-color: white;
   padding: 0;
 }
-
 .review{
   font-size: 30px;
   font-weight: 600;
   padding: 30px 0 ;
 }
-
 .name{
   font-size: 18px;
   color: #c1e718;
   margin: 0;
 }
-
 .job{
   color: #c8c8c8;
   font-size: 14px;
 }
-
 .carousel-inner1{
   max-width: 800px;
 }
-
 .fa-minus {
   font-size: 14px;
 }
-
 .carousel-indicators1 {
   bottom: -20px;
   right: 0;
@@ -302,29 +340,33 @@ a.btn:hover{
   background-color: inherit;
   border-radius: 50%;
 }
-
 .carousel-indicators1 .active{
   border: 2px solid transparent;
   background-color:#c1e718;
 }
-
 .left{
   color: rgb(20, 20, 20);
   font-weight: 600;
 }
-
 .right{
   color: rgb(12, 12, 12);
   font-weight: 600;
 }
-
 .carousel-control-next1, .carousel-control-prev1 {
   position: relative;
+
 }
 
-.url-carrousel{
-  color:gold;
+
+/*PRESENTACION IBICE*/
+#presentacion-ibice{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  /*border: 1px solid black;*/
 }
+
 
 footer {
   padding: 30px 0;
@@ -334,6 +376,7 @@ footer {
   width:30%;
 }
 
+
 @media (max-width: 990px) {
 
   #menu-desplegable{
@@ -341,11 +384,9 @@ footer {
     border-radius: 15%;
     margin:  4px 10px 4px 4px;
   }
-
   #logo,#barra-busqueda{
     display: none;
   }  
-
   #header li:first-of-type {
     margin-left:0;
   }
@@ -353,21 +394,20 @@ footer {
   #header li{
     display:inline-block;
     background-color: #343434;
+    
   }
-
   #header a{
     margin:0;
     color:white;
+  
   }
   
   #header-nombre-usuario,#inicio,#excursione,#blog,#conocenos,#contact{   
     color: white;  
   }
-
   #header-nombre-usuario:hover,#inicio:hover,#excursiones:hover,#blog:hover,#conocenos:hover,#contact:hover{
      color: white;  
   }
-
   #excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
     padding:0;
   }
@@ -379,29 +419,27 @@ footer {
   #header div.dropdown-menu a {
    margin:0;
    padding-left:10px;
+   
   } 
-
   .nav-item{
     padding: 10px;
   }
   
   .navbar-nav{
     width: 250px;
-  }
 
+  }
   #header ul {   
     padding-left: 20px;
     padding-bottom: 10px;
+    
   }
-
   .nav-item.dropdown{
     margin-top:0;
   }
-
   .dropdown-menu {    
     transform:none;
   }
-
   .dropdown-menu {    
     transform:none!important;
   }
@@ -413,18 +451,14 @@ footer {
   .dropdown-toggle{
     color:white;
   }
-
   #logo-footer{
     width:70%;
   }
-
   i{
     display: inline-block;    
-  }
 
-  #contacto a{
-    margin: 0!important;
   }
+  
   
 }
 
@@ -448,28 +482,22 @@ a.text-reset{
 }
 
 @media (max-width:560px) {
-
   .review{
       font-size: 14px;
       font-weight: 600;
   }
-
   .name{
       font-size: 13px;
   }
-
   .job{
       font-size: 10px;
   }
-
   .right{
       font-size: 12px;
   }
-
   .left{
       font-size: 12px;
   }
-
   .carousel-indicators1 [data-bs-target ] {
       height: 8px;
       border: 1px solid black;
@@ -477,9 +505,9 @@ a.text-reset{
       background-color: inherit;
       border-radius: 50%;
   }
-
   .carousel-indicators1 .active{
       border: 1px solid transparent;
       background-color:#c1e718;
   }
 }
+

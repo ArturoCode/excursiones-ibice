@@ -1,4 +1,4 @@
-
+//PROYECTO
 var opciones = {
   weekday: "long",
   year: "numeric",
@@ -32,6 +32,7 @@ function getExcursiones() {
             //logica botones
             var botonContainer = fichaTemp.querySelector("#button-container")
             const user = JSON.parse(localStorage.getItem("user"));
+            //if(localStorage.getItem("user") && (user.rol === "user")){
 
               if(localStorage.getItem("user") && (user.rol === "usuario")){
               
@@ -54,7 +55,10 @@ function getExcursiones() {
                 botonGuardar.onclick = añadirExcursionGuardada(excursion.id_excursion, botonGuardar.id);        
                 botonGuardar.style.backgroundColor = "inherit"
               }
-            }else {              
+            }else {
+              console.log(user.rol)
+              //if(JSON.parse(localStorage.getItem("user")) && JSON.parse(localStorage.getItem("user")) === "admin")
+              //document.getElementById("button-container").remove();
               botonContainer.remove()
               }             
             
@@ -101,7 +105,7 @@ function filtrarExcursiones() {
   window.location = url;
 }
 
-//funcion que se repite en todas las pags con excursiones para q se de lista-deseos o viaje-realizado
+//funcion que se repite en todas las pags con excursiones para q se de mg o hechas
   function eliminarExcursionGuardada(id,idBoton) {
     return function()
     {var url = `${config.urlBackend}/usuario/excursiones-guardadas`;
@@ -114,7 +118,9 @@ function filtrarExcursiones() {
       .then((data) => {
         var boton = document.getElementById(idBoton)     
         boton.style.backgroundColor = "inherit";
-        boton.onclick =  añadirExcursionGuardada(id, boton.id);        
+        boton.onclick =  añadirExcursionGuardada(id, boton.id);
+          
+        
       });}
   }
   function añadirExcursionGuardada(id, idBoton) {
@@ -130,7 +136,9 @@ function filtrarExcursiones() {
         var boton = document.getElementById(idBoton)      
         boton.style.backgroundColor = "#FF0000";
         boton.onclick = 
-          eliminarExcursionGuardada(id, boton.id);       
+          eliminarExcursionGuardada(id, boton.id);
+          
+        
       });}
   }
   function añadirExcursionHecha(id, idBoton) {
@@ -165,7 +173,9 @@ function filtrarExcursiones() {
         var boton = document.getElementById(idBoton)      
         boton.style.backgroundColor = "inherit";
         boton.onclick = 
-          añadirExcursionHecha(id, boton.id);      
+          añadirExcursionHecha(id, boton.id);
+          
+      
       });}
   }
 

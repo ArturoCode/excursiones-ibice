@@ -1,4 +1,10 @@
-/*IMPORTAR FUENTES*/
+/*PROYECTO */
+
+/*
+* {
+  border:2px red solid;
+}
+*/
 
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
@@ -8,12 +14,10 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-/*HEADER*/
-
 #logo {
   width: 200px;
   height: 65px;
-  margin-top: -10px;
+  margin-top: -15px;
 }
 
 #header {
@@ -21,63 +25,32 @@ body {
   background-size: cover;
   height: 380px;
 }
-
+#header li{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 #header li:first-of-type {
   margin-left: 60px;
 }
 
-#header a { 
+#header a {
+  margin: 20px;
+  margin-right: 5px;
+ 
   justify-content: center;
   align-items: center;
   color:black;
   font-weight: 400;
 }
-
 #header div.dropdown-menu a {
   color: black;
-}
-
-.dropdown-menu {
-  left: 50% !important;
-  right: auto !important;
-  text-align: center !important;
-  transform: translate(-50%, 0) !important;
+  margin: 10px 0;
 }
 
 a.btn{
   padding: 0;
-}
-
-.dropdown-menu[data-bs-popper] {
-  top:65%;
-}
-
-.nav:link:hover a{
-  color: white;
-}
-
-a.btn:hover{
-  background-color: #343434;
-  color: white;
-}
-
-#header-nombre-usuario,#inicio,#excursiones,#blog,#conocenos,#contact{
-  border-radius: 10px;
-}
-
-#excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
-  padding:7px;
-}
-
-#header-nombre-usuario:hover,#inicio:hover,#excursiones:hover,#blog:hover,#conocenos:hover,#contact:hover{
-  background-color: #343434;
-  color: white;  
-}
-
-#icono-usuario:hover{
-  background-color: #343434;
-  color: white;
-  opacity: .5;
+  
 }
 
 .navbar-nav{
@@ -85,35 +58,37 @@ a.btn:hover{
 }
 
 .dropdown:hover .dropdown-menu {
-  display: block; 
-  left:auto; 
-}
+  display: block;
+  margin-top: 0; 
 
-#cerrar-sesion{
-  cursor: pointer;
-}
-
-#perfil,#cerrar-sesion,#header-nombre-usuario,#barra2,#barra3{
-  display: none;
-}
-
-#header-nombre-usuario{
-  display:inline-block!important;
 }
 
 #menu {
-  padding: 20px;
-  width: 100%;
-}
+  /*Cambiar el fixed por un boton que suba al inicio de la pagina/*
+  /*position: fixed;*/
 
-/*CONTENIDO*/
+  width: 100%;
+  /*padding-bottom: 10px;*/
+}
 
 .row{
   /*Para que no tenga el margen por defecto de bootstrap*/
   margin:0;
 }
 
-/*CONTENIDO DEL FORMULARIO*/
+p {
+
+  text-align: justify;
+}
+
+#titulo {
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+.span{
+  font-weight: bold;
+}
 
 #mensaje-ok{
   display: none;
@@ -124,13 +99,14 @@ a.btn:hover{
   background-color: #2ecc71;
 }
 
-#mensaje-ok-reset{
-  display: none;
-  text-align: center;
-  color: white;
-  margin-bottom: 10px;
-  border-radius: 4px;
-  background-color: #2ecc71;
+
+
+
+body {
+	
+	font-family: 'Open Sans', sans-serif;
+
+	margin: 0;
 }
 
 .container {
@@ -149,6 +125,7 @@ a.btn:hover{
 	border-bottom: 1px solid #f0f0f0;
 	background-color: #f7f7f7;
 	padding: 20px 40px;
+  
 }
 
 .titulo-registrarse h2 {
@@ -179,6 +156,7 @@ a.btn:hover{
 	padding: 10px;
 	width: 100%;
 }
+
 
 .form-control-input input:focus {
 	outline: 0;
@@ -235,19 +213,12 @@ a.btn:hover{
 	width: 100%;
 }
 
-#logo-footer{
-  width:30%;
-}
 
-footer p{
-  text-align: center;
- }
+
 
 footer {
   padding: 30px 0;
 }
-
-/*MEDIA QUERIES*/
 
 @media (max-width: 990px) {
 
@@ -256,81 +227,51 @@ footer {
     border-radius: 15%;
     margin:  4px 10px 4px 4px;
   }
-
   #logo,#barra-busqueda{
     display: none;
   }  
-
   #header li:first-of-type {
     margin-left:0;
   }
   
   #header li{
     display:inline-block;
-    background-color: #343434;
+    background-color: lightgray;
+    
   }
-
   #header a{
     margin:0;
-    color:white;
-  }
   
-  #header-nombre-usuario,#inicio,#excursione,#blog,#conocenos,#contact{   
-    color: white;  
-  }
-
-  #header-nombre-usuario:hover,#inicio:hover,#excursiones:hover,#blog:hover,#conocenos:hover,#contact:hover{
-     color: white;  
-  }
-
-  #excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
-    padding:0;
   }
   
   .btn{
     padding: 0;
   }
-
   #header div.dropdown-menu a {
    margin:0;
    padding-left:10px;
+   
   } 
-
   .nav-item{
     padding: 10px;
   }
   
   .navbar-nav{
     width: 250px;
-  }
 
-  #header ul {   
+  }
+  #header ul {
+
+    padding-top:5px;
     padding-left: 20px;
     padding-bottom: 10px;
+    
   }
 
-  .nav-item.dropdown{
-    margin-top:0;
-  }
+  .dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0; 
 
-  .dropdown-menu {    
-    transform:none;
-  }
-
-  .dropdown-menu {    
-    transform:none!important;
-  }
-
-  .container {    
-    max-width: 90%;
-  }
-
-  #contacto a{
-    margin: 0!important;
-  }
-
-  #logo-footer{
-    width: 70%;
   }
   
 }
@@ -339,11 +280,12 @@ footer {
 
   footer p{
     font-size: 10px;
-  }  
-}
+  }
+  #logo-footer{
+    width:100%;
+  }
 
-a.text-reset{
-  text-decoration: inherit;
+  
 }
 
 #menu nav {

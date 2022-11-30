@@ -14,7 +14,7 @@ function getEntrada() {
         var textoArray = data.texto_entrada.split("(fin-parrafo)");
         var imagesArray = data.url_imagen.split(",");
         
-        var secciones = document.getElementById("secciones-blog");
+        var secciones = document.getElementById("secciones");
         var seccion1 = document.getElementById("seccion1");
         var seccion2 = document.getElementById("seccion2");
         //poner texto izq o derecha 
@@ -25,11 +25,14 @@ function getEntrada() {
           textoTemporal.getElementsByTagName("p")[0].innerHTML =
           textoArray[i];
           textoTemporal.getElementsByTagName("img")[0].src =
-            imagesArray[i];          
+            imagesArray[i];
+          
           secciones.appendChild(textoTemporal);
-        }  
+        }
+  
         seccion1.remove();
-        seccion2.remove();  
+        seccion2.remove();
+  
       });
   }
   

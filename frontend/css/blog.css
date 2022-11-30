@@ -1,13 +1,7 @@
-/*IMPORTAR FUENTES*/
-
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
-
+/*PROYECTO */
 body {
   background-color: #ffffff;
 }
-
-/*HEADER*/
 
 #logo {
   width: 200px;
@@ -49,6 +43,7 @@ a.btn{
 }
 .dropdown-menu[data-bs-popper] {
   top:65%;
+  
 }
 
 .nav:link:hover a{
@@ -97,22 +92,88 @@ a.btn:hover{
 #perfil,#cerrar-sesion,#header-nombre-usuario,#barra2,#barra3{
   display: none;
 }
-
 #header-nombre-usuario{
   display:inline-block!important;
 }
 
 #menu {
+  /*Cambiar el fixed por un boton que suba al inicio de la pagina/*
+  /*position: fixed;*/
   padding: 20px;
   width: 100%;
+  /*padding-bottom: 10px;*/
 }
 
-/*CONTENIDO*/
+
+/*BARRA DE BUSQUEDA*/
+
+#centro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#barra-busqueda{
+  padding:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:100px;
+  background-color: black;  
+  width: fit-content;
+  border-radius: 15px;
+  
+  
+  /*top: 380px;
+  position: absolute;
+  transform: translate(-50%,-50% );
+  left: calc(100vw / 2);
+  background-color: black;
+  border-radius: 15px;
+  width: 25%;
+  margin: 0px;
+  */
+}
+
+#lugares,#meses{
+  padding: 13px;  
+  margin: 3px;
+  border: 1px solid black;
+  border-radius: 5px;  
+  width:200px; 
+}
+
+
+
+
+
+#barra-busqueda button {
+  margin:3px;
+  background-color:#C1E718;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+#barra-busqueda button:hover {
+  background-color: gold;
+}
+
+.nav-item a {
+  color: black;
+}
 
 .row{
   /*Para que no tenga el margen por defecto de bootstrap*/
   margin:0;
 }
+/*.col-4,.col5,.col-6,.col-7{
+  border: 1px solid black;
+
+}*/
 
 
 #titulo {
@@ -123,9 +184,6 @@ a.btn:hover{
 .span{
   font-weight: bold;
 }
-
-
-/*ENTRADAS DEL BLOG*/
 
 
 #imagen-principal{
@@ -158,26 +216,21 @@ a.btn:hover{
   text-decoration: none;
   color:#C1E718;
 }
-
 #imagen-principal{
   width: 270px; 
   height: 150px;
 }
-
 #leer-mas{
   text-decoration: none;
   color:#343434;
 }
-
 #titulo-entrada:hover,#leer-mas:hover{
   text-decoration: none;
   color:gold;
 }
-
 #mas-info{
   text-align:right;
 }
-
 footer {
   padding: 30px 0;
 }
@@ -186,7 +239,6 @@ footer {
   width:30%;
 }
 
-/*MEDIA QUERIES*/
 
 @media (max-width: 990px) {
   
@@ -266,23 +318,21 @@ footer {
   #descripcion-entrada{
     max-width: 100%;
   }
-  #contacto a{
-    margin: 0!important;
-  }
   
-  #logo-footer{
-    width: 70%;
-  }
+  
 }
 
 @media (max-width: 630px) {
 
   footer p{
     font-size: 10px;
-  } 
+  }
+  #logo-footer{
+    width:100%;
+  }
+
   
 }
-
 a.text-reset{
   text-decoration: inherit;
 }
@@ -294,3 +344,7 @@ a.text-reset{
 #contacto a{
   margin:10px;
 }
+
+
+
+
