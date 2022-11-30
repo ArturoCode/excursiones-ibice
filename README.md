@@ -16,11 +16,11 @@ Despliegue -> Servidor (node) y Railway <br/>
 
 Otras aplicaciones:
 
-Figma
-Canva
-XAMPP
-Visual Studio Code
-Control de ramas y versiones con Git en Github
+Figma<br/>
+Canva<br/>
+XAMPP<br/>
+Visual Studio Code<br/>
+Control de ramas y versiones con Git en Github<br/>
 
 ## Secciones de la página
 
