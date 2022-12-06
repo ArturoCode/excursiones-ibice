@@ -1,7 +1,9 @@
 //variables globales de configuracion
 
+const port = 2000 || process.env.PORT;
+
 var config = {
-    urlBackend: "http://localhost:2000/api",
-    url: "http://localhost:2000"
+    urlBackend: `http://localhost:${port}/api`,
+    url: `http://localhost:${port}`
 }
 

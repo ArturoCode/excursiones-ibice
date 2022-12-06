@@ -1,3 +1,5 @@
+//const port = 2000 || process.env.PORT;
+
 async function iniciarSesion(event) {
 
   const body = {
@@ -15,7 +17,7 @@ async function iniciarSesion(event) {
 
   if (res.status === 200) {
     await getSession();
-    window.location.href = "http://localhost:2000/index.html";
+    window.location.href = `http://localhost:${port}/index.html`;
   }
 
   return false;

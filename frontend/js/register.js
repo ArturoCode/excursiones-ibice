@@ -1,3 +1,5 @@
+//const port = 2000 || process.env.PORT;
+
 async function registrarse(event){    
     
     const body = {
@@ -10,7 +12,7 @@ async function registrarse(event){
 
     const res = await fetch(url,{method:"post", body:JSON.stringify(body), headers:{"Content-Type":"application/json"}}) 
 
-    if(res.status === 200) window.location.href = "http://localhost:2000/user/login.html"
+    if(res.status === 200) window.location.href = `http://localhost:${port}/user/login.html`
 
     return false
 
