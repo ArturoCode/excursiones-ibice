@@ -17,13 +17,29 @@ const port = process.env.PORT || 2000;
 
 var MySQLStore = require("express-mysql-session")(session);
 
-var options = {
+/*var options = {
   host: "localhost",
   port: 3306,
   user: "root",
   password: "",
   database: "excursiones-ibice",
 };
+*/
+
+const db_host = process.env.DB_HOST || "localhost"
+const db_user = process.env.DB_USER || "root"
+const db_password = process.env.DB_PASSWORD || ""
+const db_name = process.env.DB_NAME || "excursiones-ibice"
+const db_port = process.env.DB_PORT || 3306
+
+var options = {
+  host: db_host,
+  port: db_port,
+  user: db_user,
+  password: db_password,
+  database: db_name,
+}; 
+
 
 //SESION MYSQL
 var sessionStore = new MySQLStore(options);

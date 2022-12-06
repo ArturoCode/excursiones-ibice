@@ -5,6 +5,8 @@ const validator = require("validator");
 var crypto = require("crypto");
 var nodemailer = require("nodemailer");
 
+const port = process.env.PORT || 2000;
+
 var transporter = nodemailer.createTransport({
   service: "gmail",
   //autenticacion gmail
@@ -68,7 +70,7 @@ const confirmResetPassword = (req, res) => {
           to: email,
           subject: "Solicitud cambio contraseña - Excursiones Íbice",
           text:
-            "Accede a este enlace para cambiar la contraseña: http://localhost:2000/user/recordar-pass.html?token=" +
+            `Accede a este enlace para cambiar la contraseña: http://localhost:${port}/user/recordar-pass.html?token=` +
             token,
         };
         transporter.sendMail(mailOptions, function (error, info) {
