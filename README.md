@@ -12,7 +12,7 @@ Frontend -> JavaScript<br/>
 Backend -> Node.js y Express<br/>
 BBDD -> MySQL<br/>
 Lenguaje de Marcas & Diseño -> HTML, CSS, Bootstrap<br/>
-Despliegue -> Servidor (node) y Railway <br/>
+Despliegue -> Railway <br/>
 
 Otras aplicaciones:
 
