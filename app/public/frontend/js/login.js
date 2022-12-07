@@ -15,7 +15,7 @@ async function iniciarSesion(event) {
 
   if (res.status === 200) {
     await getSession();
-    window.location.href = "https://excursiones-ibice.up.railway.appindex.html";
+    window.location.href = "https://excursiones-ibice.up.railway.app/index.html";
   }
 
   return false;

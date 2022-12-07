@@ -10,7 +10,7 @@ async function registrarse(event){
 
     const res = await fetch(url,{method:"post", body:JSON.stringify(body), headers:{"Content-Type":"application/json"}}) 
 
-    if(res.status === 200) window.location.href = "https://excursiones-ibice.up.railway.appuser/login.html"
+    if(res.status === 200) window.location.href = "https://excursiones-ibice.up.railway.app/user/login.html"
 
     return false
 
