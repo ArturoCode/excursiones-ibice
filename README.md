@@ -75,4 +75,4 @@ Página con tu información básica de usuario, las últimas excursiones que has
 
 [Leer la memoria](https://www.dropbox.com/s/esj25x6hftummdc/DAW2_ExcursionesIbice.pdf?dl=0)
 
-[Ver la presentación]()
+[Ver la presentación](https://excursiones-ibice.up.railway.app/)
