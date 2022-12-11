@@ -75,4 +75,4 @@ Página con tu información básica de usuario, las últimas excursiones que has
 
 [Leer la memoria](https://www.dropbox.com/s/esj25x6hftummdc/DAW2_ExcursionesIbice.pdf?dl=0)
 
-[Ver la presentación]()
+[Ver la presentación](https://www.canva.com/design/DAFUBRG9Smc/HG7Ss6xX_m_1tes3bwr1_g/view?utm_content=DAFUBRG9Smc&utm_campaign=designshare&utm_medium=link&utm_source=viewer#1)
