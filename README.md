@@ -70,9 +70,3 @@ Página que permite solicitar un enlace con token para que el usuario pueda camb
 
 Página con tu información básica de usuario, las últimas excursiones que has realizado, tu lista de deseos... Además de promociones exclusivas. Los usuarios de tipo administrador pueden añadir, eliminar o actualizar los datos de las excursiones y entradas de blog.
 
-
-## Consulta de archivos sobre el proyecto
-
-[Leer la memoria](https://www.dropbox.com/s/esj25x6hftummdc/DAW2_ExcursionesIbice.pdf?dl=0)
-
-[Ver la presentación](https://www.canva.com/design/DAFUBRG9Smc/HG7Ss6xX_m_1tes3bwr1_g/view?utm_content=DAFUBRG9Smc&utm_campaign=share_your_design&utm_medium=link&utm_source=shareyourdesignpanel)
