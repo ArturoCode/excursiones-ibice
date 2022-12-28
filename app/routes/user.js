@@ -68,7 +68,7 @@ const confirmResetPassword = (req, res) => {
           to: email,
           subject: "Solicitud cambio contraseña - Excursiones Íbice",
           text:
-            "Accede a este enlace para cambiar la contraseña: https://excursiones-ibice.up.railway.app/user/recordar-pass.html?token=" +
+            "Accede a este enlace para cambiar la contraseña: http://localhost:2000/cambiar-contraseña?token=" +
             token,
         };
         transporter.sendMail(mailOptions, function (error, info) {

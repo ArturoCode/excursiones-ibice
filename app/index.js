@@ -1,9 +1,8 @@
 var session = require("express-session");
 var crypto = require("crypto");
 var db = require("./sqlconnector");
-var compression = require('compression')
 
-
+//rutas y datos
 const dbcon = db.connect();
 const excursionRoutes = require("./routes/excursion")
 const blogRoutes = require("./routes/blog")
@@ -14,31 +13,25 @@ const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const app = express();
+
+const reservaRoutes = require("./routes/reserva")
+
+
 //EN CONFIG.JS
 const port = process.env.PORT || 2000;
 
 var MySQLStore = require("express-mysql-session")(session);
 
-var dbHost = process.env.MYSQLHOST || "localhost"
-var dbUser = process.env.MYSQLUSER || "root"
-var dbPassword = process.env.MYSQLPASSWORD || ""
-var dbPort = process.env.MYSQLPORT || "3306"
-var dbName = process.env.MYSQLDATABASE || "excursiones-ibice"
-
 var options = {
-  host: dbHost,
-  port: dbPort,
-  user: dbUser,
-  password: dbPassword,
-  database: dbName,
+  host: "localhost",
+  port: 3306,
+  user: "root",
+  password: "",
+  database: "excursiones-ibice",
 };
-
-
 
 //SESION MYSQL
 var sessionStore = new MySQLStore(options);
-
-app.use(compression())
 
 app.use(
   session({
@@ -71,6 +64,9 @@ app.get("/api/blog/:id", blogRoutes.getBlogById);
 
 //SELECCIONAR BLOG 
 app.get("/api/blog", blogRoutes.getBlog);
+
+//RESERVA. CON EL NODEMAILER COGEMOS LA SOLICITUD DE CONTACTO ESCRITA EN LA WEB, QUE NOS LLEGA A NOSOTROS Y OTRO EMAIL AL CORREO DE LA PERSONA QUE NOS LO ENVIA 
+app.post("/api/reserva", reservaRoutes.reserva);
 
 //CONTACTO.HTML , CON EL NODEMAILER COGEMOS LA SOLICITUD DE CONTACTO ESCRITA EN LA WEB, QUE NOS LLEGA A NOSOTROS Y OTRO EMAIL AL CORREO DE LA PERSONA QUE NOS LO ENVIA 
 app.post("/api/contacto", contactRoutes.contact);
@@ -146,13 +142,84 @@ app.post("/api/blog", blogRoutes.insertBlog);
 //ELIMINAR BLOG DESDE PERFIL ADMIN
 app.delete("/api/blog", blogRoutes.deleteBlog);
 
+//SUBIDA DE ARCHIVOS
+
+const path = require("path")
+const multer = require("multer")
+
+// View Engine Setup
+app.set("views",path.join(__dirname,"views"))
+app.set("view engine","ejs")
+	
+var storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+		// Carpeta de destino
+		cb(null, "./public/images")
+	},
+  //file.originalname - coje el nombre del archivo original
+  //también puedes personalizarlo como:
+  //cb(null, file.fieldname + "-" + Date.now()+".jpg")
+	filename: function (req, file, cb) {
+	cb(null, file.originalname)
+	}
+})
+
+//Máximo tamaño: 1MB
+const maxSize = 1 * 1000 * 1000;
+	
+var upload = multer({
+	storage: storage,
+	limits: { fileSize: maxSize },
+	fileFilter: function (req, file, cb){
+	
+		// Tipos de archivos que se puede subir
+		var filetypes = /jpeg|jpg|png/;
+		var mimetype = filetypes.test(file.mimetype);
+
+		var extname = filetypes.test(path.extname(
+					file.originalname).toLowerCase());
+		
+		if (mimetype && extname) {
+			return cb(null, true);
+		}
+	
+		console.log("Error: Solo se pueden subir archivos" + filetypes);
+	}
+
+// nombre del artibuto del archivo
+}).single("archivo");	
+	
+app.post("/subir-archivos",function (req, res, next) {
+		
+	//Funcion para no subir en el caso de errores
+	upload(req,res,function(err) {
+
+		if(err) {
+			//Error: Si ocupa más de 1MB, por ejemplo
+			console.log(err)
+		}
+		else {
+			console.log("Imagen subida")
+		}
+	})
+})
+	
+app.listen(8080,function(error) {
+	if(error) throw error
+		console.log("Subida de archivos (puerto 8080)")
+})
+
+
+
 //servir estaticamente el frontend
-app.use("/js", express.static("public/frontend/js"));
-app.use("/css", express.static("public/frontend/css"));
-app.use("/media", express.static("public/frontend/media"));
-app.use("/", express.static("public/frontend/html"));
+app.use("/js", express.static("../frontend/js"));
+app.use("/css", express.static("../frontend/css"));
+app.use("/media", express.static("../frontend/media"));
+app.use("/", express.static("../frontend/html"));
 
 //VER SI ESTA EL PUERTO FUNCIONANDO
 app.listen(port, () => {
-  console.log(`App escuchando en el puerto ${port}`);
+  console.log(`Servidor`, process.pid, `escuchando en el puerto ${port}`);
 });
+
+module.exports = app;
