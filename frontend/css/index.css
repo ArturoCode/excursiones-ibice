@@ -1,0 +1,485 @@
+/*IMPORTAR FUENTES*/
+
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,500&display=swap');
+
+body {
+  background-color: #ffffff;
+}
+
+/*HEADER*/
+
+#logo {
+  width: 200px;
+  height: 65px;
+  margin-top: -10px;
+}
+
+#header {
+  background-image: url("../media/header.jpg");
+  background-size: cover;
+  height: 380px;
+}
+
+#header li:first-of-type {
+  margin-left: 60px;
+}
+
+#header a { 
+  justify-content: center;
+  align-items: center;
+  color:black;
+  font-weight: 400;
+}
+
+#header div.dropdown-menu a {
+  color: black; 
+}
+
+.dropdown-menu {
+  left: 50% !important;
+  right: auto !important;
+  text-align: center !important;
+  transform: translate(-50%, 0) !important;
+}
+
+a.btn{
+  padding: 0;
+}
+
+.dropdown-menu[data-bs-popper] {
+  top:65%;
+}
+
+.nav:link:hover a{
+  color: white;
+}
+
+a.btn:hover{
+  background-color: #343434;
+  color: white;
+}
+
+#header-nombre-usuario,#inicio,#excursiones,#blog,#conocenos,#contact{
+  border-radius: 10px;
+}
+
+#excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
+  padding:7px;
+}
+
+#header-nombre-usuario:hover,#inicio:hover,#excursiones:hover,#blog:hover,#conocenos:hover,#contact:hover{
+  background-color: #343434;
+  color: white;  
+}
+
+#icono-usuario:hover{
+  background-color: #343434;
+  color: white;
+  opacity: .5;
+}
+
+.navbar-nav{
+  width: 100%;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block; 
+  left:auto; 
+}
+
+#cerrar-sesion{
+  cursor: pointer;
+}
+
+#perfil,#cerrar-sesion,#header-nombre-usuario,#barra2,#barra3{
+  display: none;
+}
+#header-nombre-usuario{
+  display:inline-block!important;
+}
+
+#menu {
+  padding: 20px;
+  width: 100%;
+}
+
+/*BARRA DE BUSQUEDA*/
+
+#centro{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#barra-busqueda{
+  padding:10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top:100px;
+  background-color: black;  
+  width: fit-content;
+  border-radius: 15px;
+  
+}
+
+#lugares,#meses{
+  padding: 13px;  
+  margin: 3px;
+  border: 1px solid black;
+  border-radius: 5px;  
+  width:200px; 
+}
+
+#barra-busqueda button {
+  margin:3px;
+  background-color:#238636;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition-duration: 0.4s;
+}
+
+#barra-busqueda button:hover {
+  background-color: gold;
+}
+
+.nav-item a {
+  color: black;
+}
+
+/*CONTENIDO*/
+
+.row{
+  /*Para que no tenga el margen por defecto de bootstrap*/
+  margin:0;
+}
+
+#titulo {
+  margin-top: 30px;
+  margin-bottom: 25px;
+}
+
+/*FICHA EXCURSION Y PROMOCIONES*/
+
+#button-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top:10px;
+}
+
+.datosFicha div{
+  display: inline-block;
+  margin-top:5px;
+}
+
+.datosFicha div div{  
+  margin-left: 10px;
+}
+
+#populares{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#excursion-otono{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.datosFicha{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ficha{
+  height:530px;
+  width: 350px;
+  border: 1px solid black;
+  border-radius: 5%;
+  box-shadow: 0 2px 5px rgba(0.3, 0.3, 0.3, 0.9);
+	overflow: hidden;
+  margin-right: 30px;
+  margin: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  transition: 0.3s;
+}
+
+.ficha:hover {
+  transform: translateY(-15px);
+  box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
+}
+
+.promo{
+  height:300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s;
+}
+
+.promo:hover{
+  transform: scaleX(1.06);
+}
+
+#imagenf{
+  width: 100%;
+  border-radius: 5%;
+  margin-bottom: 10px;
+  height: 240px;
+}
+
+#nombre-excursion{
+  text-decoration: none;
+  color:#238636;
+}
+#nombre-excursion:hover{
+  text-decoration: none;
+  color:gold;
+}
+#img-promo{
+  width: 100%;
+}
+
+/*OPINIONES*/
+
+#carrusel-opiniones{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container1{
+  max-width: 800px;
+  background-color: white;
+  padding: 0;
+}
+
+.review{
+  font-size: 30px;
+  font-weight: 600;
+  padding: 30px 0 ;
+}
+
+.name{
+  font-size: 18px;
+  color: #238636;
+  margin: 0;
+}
+
+.job{
+  color: #c8c8c8;
+  font-size: 14px;
+}
+
+.carousel-inner1{
+  max-width: 800px;
+}
+
+.fa-minus {
+  font-size: 14px;
+}
+
+.carousel-indicators1 {
+  bottom: -20px;
+  right: 0;
+  margin: 0;
+}
+
+.carousel-indicators1 [data-bs-target ] {
+  height: 10px;
+  border: 2px solid black;
+  width: 10px;
+  background-color: inherit;
+  border-radius: 50%;
+}
+
+.carousel-indicators1 .active{
+  border: 2px solid transparent;
+  background-color:#238636;
+}
+
+.left{
+  color: rgb(20, 20, 20);
+  font-weight: 600;
+}
+
+.right{
+  color: rgb(12, 12, 12);
+  font-weight: 600;
+}
+
+.carousel-control-next1, .carousel-control-prev1 {
+  position: relative;
+}
+
+.url-carrousel{
+  color:gold;
+}
+
+footer {
+  padding: 30px 0;
+}
+
+#logo-footer{
+  width:30%;
+}
+
+@media (max-width: 990px) {
+
+  #menu-desplegable{
+    background-color: none;
+    border-radius: 15%;
+    margin:  4px 10px 4px 4px;
+  }
+
+  #logo,#barra-busqueda{
+    display: none;
+  }  
+
+  #header li:first-of-type {
+    margin-left:0;
+  }
+  
+  #header li{
+    display:inline-block;
+    background-color: #343434;
+  }
+
+  #header a{
+    margin:0;
+    color:white;
+  }
+  
+  #header-nombre-usuario,#inicio,#excursione,#blog,#conocenos,#contact{   
+    color: white;  
+  }
+
+  #header-nombre-usuario:hover,#inicio:hover,#excursiones:hover,#blog:hover,#conocenos:hover,#contact:hover{
+     color: white;  
+  }
+
+  #excursiones,#conocenos,#icono-perfil,#header-nombre-usuario{
+    padding:0;
+  }
+  
+  .btn{
+    padding: 0;
+  }
+
+  #header div.dropdown-menu a {
+   margin:0;
+   padding-left:10px;
+  } 
+
+  .nav-item{
+    padding: 10px;
+  }
+  
+  .navbar-nav{
+    width: 250px;
+  }
+
+  #header ul {   
+    padding-left: 20px;
+    padding-bottom: 10px;
+  }
+
+  .nav-item.dropdown{
+    margin-top:0;
+  }
+
+  .dropdown-menu {    
+    transform:none;
+  }
+
+  .dropdown-menu {    
+    transform:none!important;
+  }
+  
+  .promo{
+    width: 100%;
+  }
+
+  .dropdown-toggle{
+    color:white;
+  }
+
+  #logo-footer{
+    width:70%;
+  }
+
+  i{
+    display: inline-block;    
+  }
+
+  #contacto a{
+    margin: 0!important;
+  }
+  
+}
+
+@media (max-width: 630px) {
+
+  footer p{
+    font-size: 10px;
+  }
+}
+
+a.text-reset{
+  text-decoration: inherit;
+}
+
+#menu nav {
+  padding: 0.5rem 0;
+}
+
+#contacto a{
+  margin:10px;
+}
+
+@media (max-width:560px) {
+
+  .review{
+      font-size: 14px;
+      font-weight: 600;
+  }
+
+  .name{
+      font-size: 13px;
+  }
+
+  .job{
+      font-size: 10px;
+  }
+
+  .right{
+      font-size: 12px;
+  }
+
+  .left{
+      font-size: 12px;
+  }
+
+  .carousel-indicators1 [data-bs-target ] {
+      height: 8px;
+      border: 1px solid black;
+      width: 8px;
+      background-color: inherit;
+      border-radius: 50%;
+  }
+
+  .carousel-indicators1 .active{
+      border: 1px solid transparent;
+      background-color:#238636;
+  }
+}
