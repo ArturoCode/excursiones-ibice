@@ -13,21 +13,23 @@ const express = require("express");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 const app = express();
-
-const reservaRoutes = require("./routes/reserva")
-
-
 //EN CONFIG.JS
 const port = process.env.PORT || 2000;
 
 var MySQLStore = require("express-mysql-session")(session);
 
+var dbHost = process.env.MYSQLHOST || "localhost"
+var dbUser = process.env.MYSQLUSER || "root"
+var dbPassword = process.env.MYSQLPASSWORD || ""
+var dbPort = process.env.MYSQLPORT || "3306"
+var dbName = process.env.MYSQLDATABASE || "excursiones-ibice"
+
 var options = {
-  host: "localhost",
-  port: 3306,
-  user: "root",
-  password: "",
-  database: "excursiones-ibice",
+  host: dbHost,
+  port: dbPort,
+  user: dbUser,
+  password: dbPassword,
+  database: dbName,
 };
 
 //SESION MYSQL
@@ -209,13 +211,11 @@ app.listen(8080,function(error) {
 		console.log("Subida de archivos (puerto 8080)")
 })
 
-
-
 //servir estaticamente el frontend
-app.use("/js", express.static("../frontend/js"));
-app.use("/css", express.static("../frontend/css"));
-app.use("/media", express.static("../frontend/media"));
-app.use("/", express.static("../frontend/html"));
+app.use("/js", express.static("public/frontend/js"));
+app.use("/css", express.static("public/frontend/css"));
+app.use("/media", express.static("public/frontend/media"));
+app.use("/", express.static("public/frontend/html"));
 
 //VER SI ESTA EL PUERTO FUNCIONANDO
 app.listen(port, () => {
