@@ -2,7 +2,7 @@ var session = require("express-session");
 var crypto = require("crypto");
 var db = require("./sqlconnector");
 
-//rutas y datos
+//variables de rutas
 const dbcon = db.connect();
 const excursionRoutes = require("./routes/excursion")
 const blogRoutes = require("./routes/blog")
